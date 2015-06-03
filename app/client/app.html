@@ -14,5 +14,25 @@
 	</div>
 </template>
 
+<template name="NavBar">
+	<ul>
+		<li><a href="/home">Home</a></li>
+		<li><a href="/map">Map</a></li>
+		<li><a href="/observations">Observations Diary</a></li>
+	</ul>
+</template>
+
 <template name="Home">
+	<h3>Nature Heals</h3>
+	{{> NavBar}}
+</template>
+
+<template name="Map">
+	<h3>Map</h3>
+	{{> NavBar}}
+</template>
+
+<template name="Observations">
+	<h3>Observations</h3>
+	{{> NavBar}}
 </template>

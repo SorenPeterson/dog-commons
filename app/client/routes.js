@@ -2,6 +2,8 @@ Router.route('/', function() {
 	this.render('Splash');
 });
 
-Router.route('/home', function() {
-	this.render('Home');
-});
+Router.route('/home');
+
+Router.route('/map');
+
+Router.route('/observations');
