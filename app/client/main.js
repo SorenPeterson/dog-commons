@@ -1,2 +1,3 @@
 if(Meteor.isCordova) {
+
 }
