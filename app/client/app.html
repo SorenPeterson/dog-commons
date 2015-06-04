@@ -35,5 +35,8 @@
 <template name="Observations">
 	<h3>Observations</h3>
 	{{> NavBar}}
-	{{observations}}
+	{{#each observations}}
+		{{this}}
+	{{/each}}
+	{{today}}
 </template>

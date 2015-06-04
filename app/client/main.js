@@ -1,5 +1,9 @@
 Template.Observations.helpers({
 	observations: function() {
-		return Session.get('doge');
+		var dbObj = Session.get('nbtappdb') || {};
+		var today = moment(new Date()).format('YYYYMMDD');
+		var todaysObservations = dbObj[today] || [];
+		todaysObservations.push('hi');
+		return todaysObservations;
 	}
 });
