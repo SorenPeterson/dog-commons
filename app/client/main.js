@@ -7,3 +7,18 @@ Template.Observations.helpers({
 		return todaysObservations;
 	}
 });
+
+Template.Map.helpers({
+	mapOptions: function() {
+		if(GoogleMaps.loaded()) {
+			return {
+				center: new google.maps.LatLng(44.858948, -93.614045),
+				zoom: 8
+			};
+		}
+	}
+});
+
+Meteor.startup(function() {
+	GoogleMaps.load();
+});

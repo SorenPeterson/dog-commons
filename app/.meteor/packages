@@ -8,3 +8,4 @@ meteor-platform
 iron:router
 u2622:persistent-session
 momentjs:moment
+dburles:google-maps
