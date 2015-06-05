@@ -27,19 +27,3 @@
 	{{> NavBar}}
 </template>
 
-<template name="Map">
-	<h3>Map</h3>
-	{{> NavBar}}
-	<div class="map-container">
-		{{> googleMap name="mainMap" options=mapOptions}}
-	</div>
-</template>
-
-<template name="Observations">
-	<h3>Observations</h3>
-	{{> NavBar}}
-	{{#each observations}}
-		{{this}}
-	{{/each}}
-	{{today}}
-</template>
