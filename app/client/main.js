@@ -2,6 +2,8 @@ Meteor.startup(function() {
 	GoogleMaps.load();
 });
 
+Meteor.subscribe('observations');
+
 if(Meteor.isCordova) {
 	GeolocationBG.config({
 		url: 'http://example.com/api/geolocation',
