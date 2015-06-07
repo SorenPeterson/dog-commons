@@ -12,11 +12,13 @@ Template.Observations.events({
 	'submit form': function(e, tmpl) {
 		e.preventDefault();
 		var textArea = tmpl.find('textarea');
-		if(Observations.find({date: today()}).count < 3) {
-			Observations.insert({date: today(), content: textArea.value });
-		} else {
-			alert('no more today');
+		if(textArea.value !== '') {
+			if(Observations.find({date: today()}).count() < 3) {
+				Observations.insert({date: today(), content: textArea.value });
+			} else {
+				alert('no more today');
+			}
+			textArea.value = '';
 		}
-		textArea.value = '';
 	}
 });
