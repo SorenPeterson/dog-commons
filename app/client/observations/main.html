@@ -2,7 +2,10 @@
 	<h3>Observations</h3>
 	{{> NavBar}}
 	{{#each observations}}
+	<div>
 		{{content}}
+		<button class="delete" data-id="{{_id}}">Delete</button>
+	</div>
 	{{/each}}
 	<form>
 		<textarea></textarea>

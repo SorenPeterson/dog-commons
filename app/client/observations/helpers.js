@@ -20,5 +20,8 @@ Template.Observations.events({
 			}
 			textArea.value = '';
 		}
+	},
+	'click .delete': function(e, tmpl) {
+		Observations.remove({_id: e.target.dataset.id});
 	}
 });
