@@ -1,6 +1,6 @@
 Template.Observations.helpers({
 	observations: function() {
-		return Observations.find();
+		return DataBase.todaysObservations();
 	}
 });
 

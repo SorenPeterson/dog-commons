@@ -1,0 +1,9 @@
+[[[[[ ~/Programming/3030/app ]]]]]
+
+=> Started proxy.
+=> Started MongoDB.
+=> Started app on Android Device.
+[32mI20150606-11:28:57.835(-7)? [39m- waiting for device -
+=> Started your app.
+
+=> App running at: http://localhost:3000/
