@@ -5,6 +5,12 @@
 <body>
 </body>
 
+<template name="Layout">
+	<div class="content">
+		{{> yield}}
+	</div>
+</template>
+
 <template name="Splash">
 	<div class="splash-template">
 		<h1>Nature Heals</h1>
@@ -15,11 +21,11 @@
 </template>
 
 <template name="NavBar">
-	<ul>
-		<li><a href="/home">Home</a></li>
-		<li><a href="/map">Map</a></li>
-		<li><a href="/observations">Observations Diary</a></li>
-	</ul>
+	<header class="bar nav-bar">
+		<div><a href="/home">Home</a></div>
+		<div><a href="/map">Map</a></div>
+		<div><a href="/observations">Observations Diary</a></div>
+	</header>
 </template>
 
 <template name="Home">
