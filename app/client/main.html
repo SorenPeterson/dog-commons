@@ -37,6 +37,10 @@
 	<div class="map-container">
 		{{> googleMap name="mainMap" options=mapOptions}}
 	</div>
+	{{#if isCordova}}
+	{{else}}
+		<p>Sorry, you need to use a device to get path data</p>
+	{{/if}}
 </template>
 
 <template name="Observations">

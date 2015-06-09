@@ -6,6 +6,10 @@ Meteor.startup(function() {
 
 Meteor.subscribe('observations');
 
+Template.registerHelper('isCordova', function() {
+	return Meteor.icCordova;
+});
+
 if(Meteor.isCordova) {
 	GeolocationBG.config({
 		url: 'http://example.com/api/geolocation',
@@ -56,7 +60,10 @@ if(Meteor.isCordova) {
 		this.render('Map');
 	});
 
-	Router.route('/observations');
+	Router.route('/observations', function() {
+		this.testDataCon = 1;
+	});
+
 	Template.Map.helpers({
 		mapOptions: function() {
 			if(GoogleMaps.loaded()) {
