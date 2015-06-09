@@ -2,7 +2,6 @@ window.Observations = new Ground.Collection('observations', {connection: null});
 
 Meteor.startup(function() {
 	GoogleMaps.load();
-	Session.set('ObservationsShowAll', true);
 });
 
 Meteor.subscribe('observations');
@@ -84,13 +83,11 @@ var today = function() {
 
 Template.Observations.helpers({
 	observations: function() {
-		return Observations.find({date: today()});
-	},
-	allObservations: function() {
-		return Observations.find({});
-	},
-	showAll: function() {
-		return Session.get('ObservationsShowAll');
+		var parameters = {};
+		if(!Session.get('ObservationsShowAll')) {
+			parameters.date = today();
+		}
+		return Observations.find(parameters);
 	}
 });
 Template.Observations.helpers(Velociratchet.helpers);
