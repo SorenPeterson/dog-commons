@@ -7,7 +7,7 @@ Meteor.startup(function() {
 Meteor.subscribe('observations');
 
 Template.registerHelper('isCordova', function() {
-	return Meteor.icCordova;
+	return Meteor.isCordova;
 });
 
 if(Meteor.isCordova) {
@@ -40,7 +40,14 @@ if(Meteor.isCordova) {
 		this.render('Splash');
 	});
 
-	Router.route('/home');
+	Router.route('/home', function() {
+		Meteor.call('facebook_feed', function(err, response) {
+			var parsed = JSON.parse(response);
+			Session.set('FBFeedResponse', parsed);
+			console.log(parsed);
+		});
+		this.render('Home');
+	});
 
 	Router.route('/map', function() {
 		GoogleMaps.ready('mainMap', function(map) {
@@ -85,6 +92,16 @@ Helpers = {
 		return Session.get('ObservationsShowAll');
 	}
 }
+
+Template.Home.helpers({
+	recentPost: function() {
+		var data = Session.get('FBFeedResponse') || [];
+		return data[0];
+	},
+	postsLoaded: function() {
+		return !!Session.get('FBFeedResponse');
+	}
+});
 
 Template.Observations.helpers({
 	observations: function() {
