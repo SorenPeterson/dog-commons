@@ -92,7 +92,7 @@ Template.Observations.helpers({
 		if(!Helpers.showAll()) {
 			parameters.date = Helpers.today();
 		}
-		return Observations.find(parameters);
+		return Observations.find(parameters).fetch().reverse();
 	}
 });
 Template.Observations.helpers(Helpers);
@@ -103,8 +103,8 @@ Template.Observations.events({
 		e.preventDefault();
 		var textArea = tmpl.find('textarea');
 		if(textArea.value !== '') {
-			if(Observations.find({date: today()}).count() < 3) {
-				Observations.insert({date: today(), content: textArea.value });
+			if(Observations.find({date: Helpers.today()}).count() < 3) {
+				Observations.insert({date: Helpers.today(), content: textArea.value });
 			} else {
 				alert('no more today');
 			}
@@ -126,9 +126,7 @@ Template.Observations.events({
 Template.Observations.events(Velociratchet.events);
 
 window.DataBase = (function() {
-	var today = function() {
-		return moment(new Date).format('YYYYMMDD');
-	};
+	var today = Helpers.today();
 
 	var save = function(obj) {
 		Session.setPermanent('nbtappdb', obj);

@@ -45,16 +45,18 @@
 
 <template name="Observations">
 	<h3>Observations</h3>
-	<p class="show-all">Show All</p>
+	<p class="show-all">Show {{#if showAll}}just today's{{else}}all{{/if}}</p>
 	{{#each observations}}
 		<div>
 			{{content}}
 			<button class="delete" data-id="{{_id}}">Delete</button>
 		</div>
 	{{/each}}
-	<form>
-		<textarea></textarea>
-		<input type='submit'/>
-	</form>
+	{{#unless showAll}}
+		<form>
+			<textarea></textarea>
+			<input type='submit'/>
+		</form>
+	{{/unless}}
 </template>
 
