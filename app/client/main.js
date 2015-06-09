@@ -40,9 +40,16 @@ if(Meteor.isCordova) {
 
 	Router.route('/map', function() {
 		GoogleMaps.ready('mainMap', function(map) {
+			var xstart = 44.865549;
+			var ystart = -93.594901;
+			var xdiff = 0.012108529;
+			var ydiff = 0.032895851;
+			var xend = xstart - xdiff;
+			var yend = ystart - ydiff;
 			var overlayBounds = new google.maps.LatLngBounds(
-				new google.maps.LatLng(44.85, -93.632),
-				new google.maps.LatLng(44.87, -93.597));
+				// LatLngBounds(SouthWest, NorthEast);
+				new google.maps.LatLng(xend, yend),
+				new google.maps.LatLng(xstart, ystart));
 			var mapOverlay = new google.maps.GroundOverlay('testmap.gif', overlayBounds);
 			mapOverlay.setMap(map.instance);
 		});
