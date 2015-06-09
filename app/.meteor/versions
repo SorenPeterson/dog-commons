@@ -48,6 +48,9 @@ momentjs:moment@2.10.3
 mongo@1.1.0
 observe-sequence@1.0.6
 ordered-dict@1.0.3
+percolate:momentum@0.7.2
+percolate:momentum-iron-router@0.7.0
+percolate:velocityjs@1.1.0
 raix:eventemitter@0.1.2
 raix:onetimeout@1.0.3
 raix:stubfence@1.0.1
@@ -68,4 +71,5 @@ underscore@1.0.3
 url@1.0.4
 webapp@1.2.0
 webapp-hashing@1.0.3
+zendy:velociratchet@2.0.0
 zeroasterisk:cordova-geolocation-background@0.0.7
