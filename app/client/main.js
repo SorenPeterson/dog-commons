@@ -77,19 +77,25 @@ if(Meteor.isCordova) {
 	});
 })();
 
-var today = function() {
-	return moment(new Date).format('YYYYMMDD');
+Helpers = {
+	today: function() {
+		return moment(new Date).format('YYYYMMDD');
+	},
+	showAll: function() {
+		return Session.get('ObservationsShowAll');
+	}
 }
 
 Template.Observations.helpers({
 	observations: function() {
 		var parameters = {};
-		if(!Session.get('ObservationsShowAll')) {
-			parameters.date = today();
+		if(!Helpers.showAll()) {
+			parameters.date = Helpers.today();
 		}
 		return Observations.find(parameters);
 	}
 });
+Template.Observations.helpers(Helpers);
 Template.Observations.helpers(Velociratchet.helpers);
 
 Template.Observations.events({
