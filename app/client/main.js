@@ -50,7 +50,7 @@ if(Meteor.isCordova) {
 				// LatLngBounds(SouthWest, NorthEast);
 				new google.maps.LatLng(south, west),
 				new google.maps.LatLng(north, east));
-			var mapOverlay = new google.maps.GroundOverlay('testmap.gif', overlayBounds);
+			var mapOverlay = new google.maps.GroundOverlay('map.gif', overlayBounds);
 			mapOverlay.setMap(map.instance);
 		});
 		this.render('Map');
