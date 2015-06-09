@@ -7,29 +7,49 @@
 
 <template name="Layout">
 	<div class="content">
+		{{> Header pageTitle='Nature Based Therapy'}}
 		{{> yield}}
 	</div>
 </template>
 
 <template name="Splash">
-	<div class="splash-template">
-		<h1>Nature Heals</h1>
-		<div class='button'>
-			<a href='/home'>Enter</a>
-		</div>
+	<h1>Nature Heals</h1>
+	<div class='button'>
+		<a href='/home'>Enter</a>
 	</div>
 </template>
 
-<template name="NavBar">
-	<header class="bar nav-bar">
-		<div><a href="/home">Home</a></div>
-		<div><a href="/map">Map</a></div>
-		<div><a href="/observations">Observations Diary</a></div>
+<template name="Header">
+	<header>
+		<h1>{{pageTitle}}</h1>
 	</header>
+	<div>
+		<a href="/home">Home</a>
+		<a href="/map">Map</a>
+		<a href="/observations">Observations Diary</a>
+	</div>
 </template>
 
 <template name="Home">
-	<h3>Nature Heals</h3>
-	{{> NavBar}}
+</template>
+
+<template name="Map">
+	<div class="map-container">
+		{{> googleMap name="mainMap" options=mapOptions}}
+	</div>
+</template>
+
+<template name="Observations">
+	<h3>Observations</h3>
+	{{#each observations}}
+	<div>
+		{{content}}
+		<button class="delete" data-id="{{_id}}">Delete</button>
+	</div>
+	{{/each}}
+	<form>
+		<textarea></textarea>
+		<input type='submit'/>
+	</form>
 </template>
 

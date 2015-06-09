@@ -23,26 +23,107 @@ if(Meteor.isCordova) {
 	});
 }
 
-Router.onBeforeAction(function() {
-	this.layout('Layout');
-	this.next();
-});
-
-Router.route('/', function() {
-	this.render('Splash');
-});
-
-Router.route('/home');
-
-Router.route('/map', function() {
-	GoogleMaps.ready('mainMap', function(map) {
-		var overlayBounds = new google.maps.LatLngBounds(
-			new google.maps.LatLng(44.85, -93.632),
-			new google.maps.LatLng(44.87, -93.597));
-		var mapOverlay = new google.maps.GroundOverlay('http://otterhive.com/img/backgrounds/doge.gif', overlayBounds);
-		mapOverlay.setMap(map.instance);
+/* Routing */
+(function() {
+	Router.onBeforeAction(function(args) {
+		if(args.url !== '/') {
+			this.layout('Layout');
+		}
+		this.next();
 	});
-	this.render('Map');
-});
 
-Router.route('/observations');
+	Router.route('/', function() {
+		this.render('Splash');
+	});
+
+	Router.route('/home');
+
+	Router.route('/map', function() {
+		GoogleMaps.ready('mainMap', function(map) {
+			var overlayBounds = new google.maps.LatLngBounds(
+				new google.maps.LatLng(44.85, -93.632),
+				new google.maps.LatLng(44.87, -93.597));
+			var mapOverlay = new google.maps.GroundOverlay('http://otterhive.com/img/backgrounds/doge.gif', overlayBounds);
+			mapOverlay.setMap(map.instance);
+		});
+		this.render('Map');
+	});
+
+	Router.route('/observations');
+	Template.Map.helpers({
+		mapOptions: function() {
+			if(GoogleMaps.loaded()) {
+				return {
+					center: new google.maps.LatLng(44.858948, -93.614045),
+					zoom: 14
+				};
+			}
+		}
+	});
+})();
+
+var today = function() {
+	return moment(new Date).format('YYYYMMDD');
+}
+
+Template.Observations.helpers({
+	observations: function() {
+		return Observations.find({date: today()});
+	}
+});
+Template.Observations.helpers(Velociratchet.helpers);
+
+Template.Observations.events({
+	'submit form': function(e, tmpl) {
+		e.preventDefault();
+		var textArea = tmpl.find('textarea');
+		if(textArea.value !== '') {
+			if(Observations.find({date: today()}).count() < 3) {
+				Observations.insert({date: today(), content: textArea.value });
+			} else {
+				alert('no more today');
+			}
+			textArea.value = '';
+		}
+	},
+	'click .delete': function(e, tmpl) {
+		Observations.remove({_id: e.target.dataset.id});
+	}
+});
+Template.Observations.events(Velociratchet.events);
+
+window.DataBase = (function() {
+	var today = function() {
+		return moment(new Date).format('YYYYMMDD');
+	};
+
+	var save = function(obj) {
+		Session.setPermanent('nbtappdb', obj);
+	}
+
+	var fromDB = function() {
+		return Session.get('nbtappdb') || {};
+	}
+
+	var todaysObservations = function() {
+		return fromDB()[today()] || [];
+	};
+
+	var insert = function(obs) {
+		var dbObj = fromDB();
+		var today = today();
+		dbObj[today] = dbObj[today] || [];
+		dbObj[today].push(obs);
+		save(dbObj);
+	};
+
+	var remove = function() {
+	};
+
+	return {
+		todaysObservations: todaysObservations,
+		insert: insert,
+		remove: remove
+	};
+})();
+
