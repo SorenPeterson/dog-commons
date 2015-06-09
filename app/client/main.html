@@ -45,15 +45,19 @@
 
 <template name="Observations">
 	<h3>Observations</h3>
-	{{#each observations}}
-	<div>
-		{{content}}
-		<button class="delete" data-id="{{_id}}">Delete</button>
-	</div>
-	{{/each}}
-	<form>
-		<textarea></textarea>
-		<input type='submit'/>
-	</form>
+	<p class="show-all">Show All</p>
+	{{#if showAll}}
+		{{#each observations}}
+			<div>
+				{{content}}
+				<button class="delete" data-id="{{_id}}">Delete</button>
+			</div>
+		{{/each}}
+		<form>
+			<textarea></textarea>
+			<input type='submit'/>
+		</form>
+	{{else}}
+	{{/if}}
 </template>
 

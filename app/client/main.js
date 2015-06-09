@@ -2,6 +2,7 @@ window.Observations = new Ground.Collection('observations', {connection: null});
 
 Meteor.startup(function() {
 	GoogleMaps.load();
+	Session.set('ObservationsShowAll', true);
 });
 
 Meteor.subscribe('observations');
@@ -61,7 +62,8 @@ if(Meteor.isCordova) {
 	});
 
 	Router.route('/observations', function() {
-		this.testDataCon = 1;
+		this.state.doge = 1;
+		this.render('Observations');
 	});
 
 	Template.Map.helpers({
@@ -83,6 +85,12 @@ var today = function() {
 Template.Observations.helpers({
 	observations: function() {
 		return Observations.find({date: today()});
+	},
+	allObservations: function() {
+		return Observations.find({});
+	},
+	showAll: function() {
+		return Session.get('ObservationsShowAll');
 	}
 });
 Template.Observations.helpers(Velociratchet.helpers);
@@ -102,6 +110,14 @@ Template.Observations.events({
 	},
 	'click .delete': function(e, tmpl) {
 		Observations.remove({_id: e.target.dataset.id});
+	},
+	'click .show-all': function() {
+		var state;
+		Tracker.nonreactive(function() {
+			state = Session.get('ObservationsShowAll');
+			state = !state;
+		});
+		Session.set('ObservationsShowAll', state);
 	}
 });
 Template.Observations.events(Velociratchet.events);
