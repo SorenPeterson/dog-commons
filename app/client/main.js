@@ -43,7 +43,7 @@ if(Meteor.isCordova) {
 			var overlayBounds = new google.maps.LatLngBounds(
 				new google.maps.LatLng(44.85, -93.632),
 				new google.maps.LatLng(44.87, -93.597));
-			var mapOverlay = new google.maps.GroundOverlay('http://otterhive.com/img/backgrounds/doge.gif', overlayBounds);
+			var mapOverlay = new google.maps.GroundOverlay('testmap.gif', overlayBounds);
 			mapOverlay.setMap(map.instance);
 		});
 		this.render('Map');
