@@ -9,3 +9,10 @@
 	padding-top: 50px;
 }
 
+.panel-body {
+	word-wrap: break-word;
+}
+
+.panel-body h3 {
+	margin: 0;
+}
