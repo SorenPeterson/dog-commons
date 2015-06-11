@@ -60,10 +60,16 @@
 	<h2>Arboretum Happenings!</h2>
 	{{#each recentPost}}
 		<div class="panel panel-default">
+			{{#if name}}
+				<div class="panel-heading">
+					<div class="panel-title">
+						<a href="{{link}}" target="_blank">
+							{{name}}
+						</a>
+					</div>
+				</div>
+			{{/if}}
 			<div class="panel-body">
-				<a href="{{link}}" target="_blank">
-					{{#if name}}<h3>{{name}}</h3>{{/if}}
-				</a>
 				<p>{{message}}</p>
 				{{#if picture}}
 					<img src="{{picture}}"/>
@@ -89,9 +95,11 @@
 		<h3>Observations</h3>
 		<p class="show-all">Show {{#if showAll}}just today's{{else}}all{{/if}}</p>
 		{{#each observations}}
-	<div>
+	<div class="well">
 		{{content}}
-		<button class="delete" data-id="{{_id}}">Delete</button>
+		<button type="button" class="delete btn btn-default" data-id="{{_id}}">
+			<span class="glyphicon glyphicon-trash"></span>
+		</button>
 	</div>
 	{{/each}}
 	{{#unless showAll}}
