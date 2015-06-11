@@ -42,6 +42,13 @@ Template.Layout.helpers({
 		}
 	}
 });
+
+Template.Layout.events({
+	'click button.navbar-toggle': function(e, tmpl) {
+		$('div.navbar').toggle();
+	}	
+});
+
 Template.Home.helpers({
 	recentPost: function() {
 		var data = Session.get('FBFeedResponse');
