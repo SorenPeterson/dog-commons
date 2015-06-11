@@ -58,7 +58,7 @@ Template.Observations.helpers({
 	}
 });
 Template.Observations.helpers(Helpers);
-Template.Observations.helpers(Velociratchet.helpers);
+// Template.Observations.helpers(Velociratchet.helpers);
 
 Template.Observations.events({
 	'submit form': function(e, tmpl) {
@@ -85,7 +85,7 @@ Template.Observations.events({
 		Session.set('ObservationsShowAll', state);
 	}
 });
-Template.Observations.events(Velociratchet.events);
+// Template.Observations.events(Velociratchet.events);
 
 Template.Map.helpers({
 	mapOptions: function() {

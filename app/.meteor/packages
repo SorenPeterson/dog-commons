@@ -13,4 +13,5 @@ zeroasterisk:cordova-geolocation-background
 ground:db
 pauldowman:dotenv
 http
-twbs:bootstrap
+mrt:fittext
+zendy:velociratchet

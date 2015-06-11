@@ -1,8 +1,4 @@
 /* Routing */
-Router.configure({
-	notFoundTemplate: '404'
-});
-
 Router.onBeforeAction(function(args) {
 	if(args.url !== '/') {
 		this.layout('Layout');
