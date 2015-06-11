@@ -11,6 +11,6 @@ momentjs:moment
 dburles:google-maps
 zeroasterisk:cordova-geolocation-background
 ground:db
-zendy:velociratchet
 pauldowman:dotenv
 http
+twbs:bootstrap

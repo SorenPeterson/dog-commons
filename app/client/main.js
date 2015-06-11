@@ -27,63 +27,6 @@ if(Meteor.isCordova) {
 	});
 }
 
-/* Routing */
-(function() {
-	Router.onBeforeAction(function(args) {
-		if(args.url !== '/') {
-			this.layout('Layout');
-		}
-		this.next();
-	});
-
-	Router.route('/', function() {
-		this.render('Splash');
-	});
-
-	Router.route('/home', function() {
-		Meteor.call('facebook_feed', function(err, response) {
-			var parsed = JSON.parse(response);
-			Session.set('FBFeedResponse', parsed);
-			console.log(parsed);
-		});
-		this.render('Home');
-	});
-
-	Router.route('/map', function() {
-		GoogleMaps.ready('mainMap', function(map) {
-			var south = 44.851;
-			var west = -93.6278;
-			var LatDiff = 0.016;
-			var LngDiff = 0.027;
-			var north = south + LatDiff;
-			var east = west + LngDiff;
-			var overlayBounds = new google.maps.LatLngBounds(
-				// LatLngBounds(SouthWest, NorthEast);
-				new google.maps.LatLng(south, west),
-				new google.maps.LatLng(north, east));
-			var mapOverlay = new google.maps.GroundOverlay('map.gif', overlayBounds);
-			mapOverlay.setMap(map.instance);
-		});
-		this.render('Map');
-	});
-
-	Router.route('/observations', function() {
-		this.state.doge = 1;
-		this.render('Observations');
-	});
-
-	Template.Map.helpers({
-		mapOptions: function() {
-			if(GoogleMaps.loaded()) {
-				return {
-					center: new google.maps.LatLng(44.858948, -93.614045),
-					zoom: 14
-				};
-			}
-		}
-	});
-})();
-
 Helpers = {
 	today: function() {
 		return moment(new Date).format('YYYYMMDD');
@@ -95,13 +38,15 @@ Helpers = {
 
 Template.Home.helpers({
 	recentPost: function() {
-		var data = Session.get('FBFeedResponse') || [];
-		return data[0];
+		var data = Session.get('FBFeedResponse');
+		data = data || {};
+		data = data.data || [];
+		return data;
 	},
 	postsLoaded: function() {
 		return !!Session.get('FBFeedResponse');
 	}
-});
+})
 
 Template.Observations.helpers({
 	observations: function() {
@@ -141,6 +86,17 @@ Template.Observations.events({
 	}
 });
 Template.Observations.events(Velociratchet.events);
+
+Template.Map.helpers({
+	mapOptions: function() {
+		if(GoogleMaps.loaded()) {
+			return {
+				center: new google.maps.LatLng(44.858948, -93.614045),
+				zoom: 14
+			};
+		}
+	}
+});
 
 window.DataBase = (function() {
 	var today = Helpers.today();
