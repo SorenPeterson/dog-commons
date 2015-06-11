@@ -73,16 +73,15 @@ Template.Observations.helpers({
 Template.Observations.helpers(Helpers);
 
 Template.Observations.events({
-	'submit form': function(e, tmpl) {
-		e.preventDefault();
-		var textArea = tmpl.find('textarea');
-		if(textArea.value !== '') {
+	'click .record': function(e, tmpl) {
+		var input = tmpl.find('input[type=text]');
+		if(input.value !== '') {
 			if(Observations.find({date: Helpers.today()}).count() < 3) {
-				Observations.insert({date: Helpers.today(), content: textArea.value });
+				Observations.insert({date: Helpers.today(), content: input.value });
 			} else {
 				alert('no more today');
 			}
-			textArea.value = '';
+			input.value = '';
 		}
 	},
 	'click .delete': function(e, tmpl) {
