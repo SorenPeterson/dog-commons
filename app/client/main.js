@@ -36,6 +36,12 @@ Helpers = {
 	}
 }
 
+Template.Layout.helpers({
+	options: function() {
+		return {
+		}
+	}
+});
 Template.Home.helpers({
 	recentPost: function() {
 		var data = Session.get('FBFeedResponse');

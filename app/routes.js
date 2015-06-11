@@ -42,3 +42,6 @@ Router.route('/observations', function() {
 	this.render('Observations');
 });
 
+Router.route('/art');
+
+Router.route('/identification');
