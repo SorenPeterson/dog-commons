@@ -51,37 +51,37 @@
 
 <template name="Home">
 	<h2>Arboretum Happenings!</h2>
-	<div class="panel panel-default">
-		{{#each recentPost}}
-				{{#if name}}
-					<div class="panel-heading">
-						<div class="panel-title">
-							{{#if link}}
-								<a href="{{link}}" target="_blank">
-									{{name}}
-								</a>
-							{{else}}
+	{{#each recentPost}}
+		<div class="panel panel-default">
+			{{#if name}}
+				<div class="panel-heading">
+					<div class="panel-title">
+						{{#if link}}
+							<a href="{{link}}" target="_blank">
 								{{name}}
-							{{/if}}
-						</div>
-					</div>
-				{{/if}}
-				{{#if message}}
-					<div class="panel-body">
-						<p>{{message}}</p>
-						{{#if picture}}
-							<img src="{{picture}}"/>
+							</a>
+						{{else}}
+							{{name}}
 						{{/if}}
 					</div>
-				{{/if}}
-		{{else}}
-			<div class="panel-heading">
-				<div class="panel-title">
-					Loading posts from Facebook
 				</div>
+			{{/if}}
+			{{#if message}}
+				<div class="panel-body">
+					<p>{{message}}</p>
+					{{#if picture}}
+						<img src="{{picture}}"/>
+					{{/if}}
+				</div>
+			{{/if}}
+		</div>
+	{{else}}
+		<div class="panel-heading">
+			<div class="panel-title">
+				Loading posts from Facebook
 			</div>
-		{{/each}}
-	</div>
+		</div>
+	{{/each}}
 </template>
 
 <template name="Map">

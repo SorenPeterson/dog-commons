@@ -10,13 +10,13 @@ Router.route('/', function() {
 
 Router.route('/home', function() {
 	var LoadFeed = new Promise(function(resolve, reject) {
-		Meteor.call('facebook_feed', function(err, response) {
-			resolve(response)
-		});
-		
-		setTimeout(function() {
+		if(Meteor.status().connected) {
+			Meteor.call('facebook_feed', function(err, response) {
+				resolve(response);
+			});
+		} else {
 			reject();
-		}, 3000);
+		}
 	}).then(function(response) {
 		var parsed = JSON.parse(response);
 		Session.set('FBFeedResponse', parsed);
