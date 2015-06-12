@@ -5,14 +5,20 @@ Router.onBeforeAction(function(args) {
 });
 
 Router.route('/', function() {
-	this.render('Home');
+	this.redirect('/home');
 });
 
 Router.route('/home', function() {
-	Meteor.call('facebook_feed', function(err, response) {
-		var parsed = JSON.parse(response);
-		Session.set('FBFeedResponse', parsed);
-		console.log(parsed);
+	var LoadFeed = new Promise(function(resolve, reject) {
+		Meteor.call('facebook_feed', function(err, response) {
+			var parsed = JSON.parse(response);
+			Session.set('FBFeedResponse', parsed);
+			resolve()
+		});
+		
+		setTimeout(function() {
+			reject();
+		}, 3000);
 	});
 	this.render('Home');
 });
