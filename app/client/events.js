@@ -38,3 +38,9 @@ Template.Layout.events({
 	}
 });
 
+Template.Art.helpers({
+	todaysPainting: function() {
+		return Helpers.today() + '.jpg';
+	}
+})
+

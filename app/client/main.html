@@ -132,6 +132,12 @@
 </template>
 
 <template name="Art">
+	<h3>Today</h3>
+	{{#if todaysPainting}}
+		<img src="/img/art/{{todaysPainting}}"/>
+	{{else}}
+		<p>There is no painting for today</p>
+	{{/if}}
 </template>
 
 <template name="Identification">
