@@ -11,7 +11,8 @@ Template.Observations.events({
 		}
 	},
 	'click .delete': function(e, tmpl) {
-		Observations.remove({_id: e.target.dataset.id});
+		var id = e.target.dataset.id || e.target.parentNode.dataset.id;
+		Observations.remove({_id: id});
 	},
 	'click .show-all': function() {
 		var state;
