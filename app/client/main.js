@@ -46,7 +46,10 @@ Template.Layout.helpers({
 Template.Layout.events({
 	'click button.navbar-toggle': function(e, tmpl) {
 		$('div.navbar').toggle();
-	}	
+	},
+	'click #navbar ul a': function(e, tmpl) {
+		$('button.navbar-toggle').click();
+	}
 });
 
 Template.Home.helpers({
