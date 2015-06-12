@@ -20,6 +20,11 @@ Template.Observations.events({
 			state = !state;
 		});
 		Session.set('ObservationsShowAll', state);
+	},
+	'keyup input[type=text]': function(e, tmpl) {
+		if(e.keyCode === 13) {
+			tmpl.find('.record').click();
+		}
 	}
 });
 
