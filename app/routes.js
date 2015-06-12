@@ -1,13 +1,11 @@
 /* Routing */
 Router.onBeforeAction(function(args) {
-	if(args.url !== '/') {
-		this.layout('Layout');
-	}
+	this.layout('Layout');
 	this.next();
 });
 
 Router.route('/', function() {
-	this.render('Splash');
+	this.render('Home');
 });
 
 Router.route('/home', function() {
