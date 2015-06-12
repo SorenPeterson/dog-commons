@@ -20,6 +20,7 @@ Router.route('/home', function() {
 	}).then(function(response) {
 		var parsed = JSON.parse(response);
 		Session.set('FBFeedResponse', parsed);
+		console.log(parsed);
 	}, function() {
 		Session.set('FBFeedResponse', {
 			data: [{

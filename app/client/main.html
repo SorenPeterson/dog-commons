@@ -50,7 +50,7 @@
 </template>
 
 <template name="Home">
-	<h2>Arboretum Happenings!</h2>
+<h2><a href="http://www.arboretum.umn.edu/" target="_blank">Arboretum</a> Happenings!</h2>
 	{{#each recentPost}}
 		<div class="panel panel-default">
 			{{#if name}}
@@ -141,5 +141,24 @@
 </template>
 
 <template name="Identification">
+	<div class="panel panel-default">
+		<h3>Birds</h3>
+		<div class="panel-body">
+			<ul>
+				<li><a href="http://merlin.allaboutbirds.org/" target="_blank">Download the Merlin Bird Identification App</a></li>
+				<li><a href="https://www.audubon.org/field-guide" target="_blank">For immediate assistance with bird identification, use the Audubon Field Guide</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Trees
+		</div>
+		<div class="panel-body">
+			<ul>
+				<li><a href="http://www.dnr.state.mn.us/trees_shrubs/index.html" target="_blank">For information about trees and shrubs, click here (MN DNR)</a></li>
+			</ul>
+		</div>
+	</div>
 </template>
 
