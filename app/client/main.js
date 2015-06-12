@@ -6,10 +6,6 @@ Meteor.startup(function() {
 
 Meteor.subscribe('observations');
 
-Template.registerHelper('isCordova', function() {
-	return Meteor.isCordova;
-});
-
 if(Meteor.isCordova) {
 	GeolocationBG.config({
 		url: 'http://example.com/api/geolocation',
@@ -26,90 +22,6 @@ if(Meteor.isCordova) {
 		debug: false
 	});
 }
-
-Helpers = {
-	today: function() {
-		return moment(new Date).format('YYYYMMDD');
-	},
-	showAll: function() {
-		return Session.get('ObservationsShowAll');
-	}
-}
-
-Template.Layout.helpers({
-	options: function() {
-		return {
-		}
-	}
-});
-
-Template.Layout.events({
-	'click button.navbar-toggle': function(e, tmpl) {
-		$('div.navbar').toggle();
-	},
-	'click #navbar ul a': function(e, tmpl) {
-		$('button.navbar-toggle').click();
-	}
-});
-
-Template.Home.helpers({
-	recentPost: function() {
-		var data = Session.get('FBFeedResponse');
-		data = data || {};
-		data = data.data || [];
-		return data;
-	},
-	postsLoaded: function() {
-		return !!Session.get('FBFeedResponse');
-	}
-})
-
-Template.Observations.helpers({
-	observations: function() {
-		var parameters = {};
-		if(!Helpers.showAll()) {
-			parameters.date = Helpers.today();
-		}
-		return Observations.find(parameters).fetch().reverse();
-	}
-});
-Template.Observations.helpers(Helpers);
-
-Template.Observations.events({
-	'click .record': function(e, tmpl) {
-		var input = tmpl.find('input[type=text]');
-		if(input.value !== '') {
-			if(Observations.find({date: Helpers.today()}).count() < 3) {
-				Observations.insert({date: Helpers.today(), content: input.value });
-			} else {
-				alert('no more today');
-			}
-			input.value = '';
-		}
-	},
-	'click .delete': function(e, tmpl) {
-		Observations.remove({_id: e.target.dataset.id});
-	},
-	'click .show-all': function() {
-		var state;
-		Tracker.nonreactive(function() {
-			state = Session.get('ObservationsShowAll');
-			state = !state;
-		});
-		Session.set('ObservationsShowAll', state);
-	}
-});
-
-Template.Map.helpers({
-	mapOptions: function() {
-		if(GoogleMaps.loaded()) {
-			return {
-				center: new google.maps.LatLng(44.858948, -93.614045),
-				zoom: 14
-			};
-		}
-	}
-});
 
 window.DataBase = (function() {
 	var today = Helpers.today();
