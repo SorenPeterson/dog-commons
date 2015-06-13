@@ -9,24 +9,14 @@
 </body>
 
 <template name="Layout">
-	{{> Header pageTitle='Nature Based Therapy'}}
-	<div class="container">
-		{{> yield}}
-	</div>
-</template>
-
-<template name="Header">
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-header">
 			<a class="navbar-brand">{{pageTitle}}</a>
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
 		</div>
 	</nav>
+	<div class="container">
+		{{> yield}}
+	</div>
 </template>
 
 <template name="Splash">

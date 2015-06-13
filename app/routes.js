@@ -32,6 +32,7 @@ Router.route('/home', function() {
 			}]
 		});
 	});
+	Session.set('pageTitle', 'Nature Based Therapy');
 	this.render('Home');
 });
 

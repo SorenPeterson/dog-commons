@@ -15,6 +15,9 @@ Template.Layout.helpers({
 	options: function() {
 		return {
 		}
+	},
+	pageTitle: function() {
+		return Session.get('pageTitle');
 	}
 });
 

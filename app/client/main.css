@@ -10,7 +10,6 @@
 	position: fixed;
 	left: 0;
 	bottom: 0;
-	height: 100vw;
 	width: 100vw;
 }
 
@@ -38,6 +37,7 @@
 
 .splash-logo {
 	width: 50vw;
+	max-width: 30vh;
 	display: block;
 	position: relative;
 	top: 20px;
