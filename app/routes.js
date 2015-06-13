@@ -51,18 +51,27 @@ Router.route('/map', function() {
 		var mapOverlay = new google.maps.GroundOverlay('map.gif', overlayBounds);
 		mapOverlay.setMap(map.instance);
 	});
+	Session.set('pageTitle', 'Google Maps');
 	this.render('Map');
 });
 
 Router.route('/map2', function() {
+	Session.set('pageTitle', 'Mapbox');
 	this.render('Map2');
 });
 
 Router.route('/observations', function() {
 	this.state.doge = 1;
+	Session.set('pageTitle', 'Observation Diary');
 	this.render('Observations');
 });
 
-Router.route('/art');
+Router.route('/art', function() {
+	Session.set('pageTitle', '3030 Art');
+	this.render('Art');
+});
 
-Router.route('/identification');
+Router.route('/identification', function() {
+	Session.set('pageTitle', 'Wildlife Identification');
+	this.render('Identification');
+});
