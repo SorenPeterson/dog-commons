@@ -1,4 +1,9 @@
 /* CSS declarations go here */
+@font-face {
+	font-family: HumanNature;
+	src: url('/HumanNature.ttf');
+}
+
 .map-container {
 	position: fixed;
 	left: 0;
@@ -40,7 +45,7 @@
 	max-width: 30vh;
 	display: block;
 	position: relative;
-	top: 20px;
+	top: 50px;
 	margin: 0 auto 0;
 }
 
@@ -49,5 +54,10 @@
 	top: 50vh;
 	width: 100%;
 	text-align: center;
-	font-size: 60px;
+	font-size: 50px;
+	font-family: HumanNature;
+}
+
+.splash-enter a {
+	font-size: 20px;
 }
