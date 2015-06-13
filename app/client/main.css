@@ -16,3 +16,28 @@
 .panel-body h3 {
 	margin: 0;
 }
+
+.splash {
+	width: 100vw;
+	height: 100vh;
+	background: url('/splash.jpg') center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.splash-logo {
+	width: 50vw;
+	display: block;
+	position: relative;
+	top: 20px;
+	margin: 0 auto 0;
+}
+
+.splash-enter {
+	position: absolute;
+	top: 50vh;
+	width: 100%;
+	text-align: center;
+}

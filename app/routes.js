@@ -5,7 +5,8 @@ Router.onBeforeAction(function(args) {
 });
 
 Router.route('/', function() {
-	this.redirect('/home');
+	this.layout(null);
+	this.render('Splash');
 });
 
 Router.route('/home', function() {
