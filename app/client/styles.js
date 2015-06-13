@@ -3,6 +3,10 @@ jss.style = function(style) {
 	jss.currentStyleSheet.attach();
 }
 
+Template.Splash.onRendered(function() {
+	$('.splash-enter').fitText(1.1);
+});
+
 Template.Map.onRendered(function() {
 	var navHeight = $('nav').height();
 	var windowHeight = window.innerHeight;
