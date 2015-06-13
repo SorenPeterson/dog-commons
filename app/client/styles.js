@@ -4,7 +4,9 @@ jss.style = function(style) {
 }
 
 Template.Splash.onRendered(function() {
-	$('.splash-enter').fitText(1.1);
+	if(innerWidth < 768) {
+		$('.splash-enter').fitText(1.1);
+	}
 });
 
 Template.Map.onRendered(function() {
