@@ -40,42 +40,13 @@
 </template>
 
 <template name="Home">
-<h2><a href="http://www.arboretum.umn.edu/" target="_blank">Arboretum</a> Happenings!</h2>
-	<!--
-	{{#each recentPost}}
-		<div class="panel panel-default">
-			{{#if name}}
-				<div class="panel-heading">
-					<div class="panel-title">
-						{{#if link}}
-							<a href="{{link}}" target="_blank">
-								{{name}}
-							</a>
-						{{else}}
-							{{name}}
-						{{/if}}
-					</div>
-				</div>
-			{{/if}}
-			{{#if message}}
-				<div class="panel-body">
-					<p>{{message}}</p>
-					{{#if picture}}
-						<img src="{{picture}}"/>
-					{{/if}}
-				</div>
-			{{/if}}
-		</div>
-	{{else}}
-		<div class="panel-heading">
-			<div class="panel-title">
-				Loading posts from Facebook
-			</div>
-		</div>
-	{{/each}}
-	-->
 	<div>
-		<ul>
+		<button>Arboretum</button>
+		<button>Map</button>
+		<button>Observations Diary</button>
+		<button>Identification</button>
+		<button>3030 Project</button>
+		<!-- <ul>
 			<li>
 				<a href="/home">Home</a>
 			</li>
@@ -91,7 +62,7 @@
 			<li>
 				<a href="/art">3030 Art</a>
 			</li>
-		</ul>
+		</ul> -->
 	</div>
 </template>
 
