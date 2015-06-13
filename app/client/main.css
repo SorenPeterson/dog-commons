@@ -1,7 +1,9 @@
 /* CSS declarations go here */
 .map-container {
-	width: 100%;
-	max-width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100vw;
 }
 
 .container {
