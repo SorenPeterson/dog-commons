@@ -2,6 +2,7 @@ window.Observations = new Ground.Collection('observations', {connection: null});
 
 Meteor.startup(function() {
 	GoogleMaps.load();
+	Mapbox.load();
 });
 
 Meteor.subscribe('observations');

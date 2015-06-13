@@ -50,6 +50,7 @@ mrt:fittext@1.2.0
 observe-sequence@1.0.6
 ordered-dict@1.0.3
 pauldowman:dotenv@1.0.1
+pauloborges:mapbox@2.1.4_3
 raix:eventemitter@0.1.2
 raix:onetimeout@1.0.3
 raix:stubfence@1.0.1

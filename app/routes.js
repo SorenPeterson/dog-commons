@@ -53,6 +53,10 @@ Router.route('/map', function() {
 	this.render('Map');
 });
 
+Router.route('/map2', function() {
+	this.render('Map2');
+});
+
 Router.route('/observations', function() {
 	this.state.doge = 1;
 	this.render('Observations');

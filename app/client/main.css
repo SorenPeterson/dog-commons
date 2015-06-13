@@ -6,6 +6,14 @@
 	width: 100vw;
 }
 
+#map {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 100vw;
+	width: 100vw;
+}
+
 .container {
 	padding-top: 70px;
 }
