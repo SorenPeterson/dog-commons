@@ -9,20 +9,11 @@
 </body>
 
 <template name="Layout">
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-header">
-			<a href="/home">
-				<button type="button" class="btn btn-default navbar-btn">
-					<span class="glyphicon glyphicon-arrow-left"></span>
-				</button>
-			</a>
-			<a class="navbar-text">
-				{{pageTitle}}
-			</a>
-		</div>
-	</nav>
 	<div class="container">
 		{{> yield}}
+	</div>
+	<div class="btn btn-lg btn-back">
+		<a href="/home">Home</a>
 	</div>
 </template>
 

@@ -18,10 +18,6 @@
 	width: 100vw;
 }
 
-.container {
-	padding-top: 70px;
-}
-
 .panel-body {
 	word-wrap: break-word;
 }
@@ -61,3 +57,45 @@
 .splash-enter a {
 	font-size: 20px;
 }
+
+.btn {
+	background-color: salmon;
+	border-radius: 100%;
+	box-shadow: 0 0 10px black;
+	position: fixed;
+}
+
+.btn.btn-back {
+	text-align: center;
+	width: 30vw;
+	height: 30vw;
+	bottom: -40px;
+	right: -10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
