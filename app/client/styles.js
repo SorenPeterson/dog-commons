@@ -9,6 +9,20 @@ jss.style = function(style) {
 	});
 }
 
+Template.Layout.onRendered(function() {
+	jss.style(function() {
+		return {
+			body: {
+				background: Session.get('background') + ' no-repeat center center fixed',
+				'-webkit-background-size': 'cover',
+				'-moz-background-size': 'cover',
+				'-o-background-size': 'cover',
+				'background-size': 'cover',
+			}
+		}
+	});
+});
+
 Template.Splash.onRendered(function() {
 	if(innerWidth < 768) {
 		$('.splash-enter').fitText(1.1);

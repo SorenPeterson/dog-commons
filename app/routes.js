@@ -2,6 +2,13 @@
 Router.onBeforeAction(function(args) {
 	this.layout('Layout');
 	this.next();
+	var backgrounds = [
+		'url("/butterfly.jpg")',
+		'url("/purpleflower.jpg")',
+		'url("/blossom.jpg")'
+	];
+	var rn = Math.floor(Math.random() * backgrounds.length);
+	Session.set('background', backgrounds[rn]);
 });
 
 Router.route('/', function() {
@@ -10,25 +17,6 @@ Router.route('/', function() {
 });
 
 Router.route('/home', function() {
-	var LoadFeed = new Promise(function(resolve, reject) {
-		if(Meteor.status().connected) {
-			Meteor.call('facebook_feed', function(err, response) {
-				resolve(response);
-			});
-		} else {
-			reject();
-		}
-	}).then(function(response) {
-		var parsed = JSON.parse(response);
-		Session.set('FBFeedResponse', parsed);
-		console.log(parsed);
-	}, function() {
-		Session.set('FBFeedResponse', {
-			data: [{
-				name: "Sorry, the Facebook feed can't load right now"
-			}]
-		});
-	});
 	Session.set('pageTitle', 'Nature Based Therapy');
 	this.render('Home');
 });
