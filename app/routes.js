@@ -2,9 +2,6 @@
 Router.onBeforeAction(function(args) {
 	this.layout('Layout');
 	this.next();
-	if(jss.currentStyleSheet) {
-		jss.currentStyleSheet.detach();
-	}
 });
 
 Router.route('/', function() {
