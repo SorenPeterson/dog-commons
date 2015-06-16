@@ -29,7 +29,7 @@ Template.Splash.onRendered(function() {
 	}
 });
 
-Template.Map2.onRendered(function() {
+Template.Map.onRendered(function() {
 	this.autorun(function() {
 		if(Mapbox.loaded()) {
 			L.mapbox.accessToken = 'pk.eyJ1Ijoic29yZW40NjgiLCJhIjoiOTZiMTc3MThlZjFlMTFmOGQ0NjIwNzcwODJhZTM4YWQifQ.Ycl3ox-mvLD4IM64nGNCxA';
