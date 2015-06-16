@@ -12,15 +12,20 @@
 	<div class="container">
 		{{> yield}}
 	</div>
-	<div class="btn btn-lg btn-back">
-		<a href="/home">Home</a>
-	</div>
+	<a href="/home">
+		<div class="btn btn-lg btn-back">
+			Home
+		</div>
+	</a>
+	<center>
+		<img class="logo logo-corner" src="/logo.png"/>
+	</center>
 </template>
 
 <template name="Splash">
 	<div class="splash">
 		<a href="/art">
-			<img class="splash-logo" src="/logo.png"/>
+			<img class="logo logo-splash" src="/logo.png"/>
 		</a>
 		<div class="splash-enter">
 			NATURE HEALS
