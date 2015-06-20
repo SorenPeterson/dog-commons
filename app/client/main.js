@@ -1,5 +1,9 @@
 window.Observations = new Ground.Collection('observations', {connection: null});
 
+Tracker.autorun(function() {
+	console.log(Session.get('showHome'));
+});
+
 Meteor.startup(function() {
 	Mapbox.load();
 });

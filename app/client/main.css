@@ -28,6 +28,8 @@
 
 .logo-corner {
 	position: fixed;
+	max-width: 100px;
+	max-height: 100px;
 	width: 30vw;
 	left: 0;
 	bottom: 0;
@@ -84,35 +86,11 @@
 	border-radius: 100%;
 	position: fixed;
 	text-align: center;
+	max-width: 100px;
+	max-height: 100px;
 	width: 30vw;
 	height: 30vw;
-	bottom: -40px;
-	right: -10px;
+	bottom: 0;
+	right: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -12,11 +12,13 @@
 	<div class="container">
 		{{> yield}}
 	</div>
-	<a href="/home">
-		<div class="btn btn-lg btn-back">
-			Home
-		</div>
-	</a>
+	{{#unless isHome}}
+		<a href="/home">
+			<div class="btn btn-lg btn-back">
+				Home
+			</div>
+		</a>
+	{{/unless}}
 	<center>
 		<img class="logo logo-corner" src="/logo.png"/>
 	</center>

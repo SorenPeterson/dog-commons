@@ -18,6 +18,13 @@ Router.route('/', function() {
 
 Router.route('/home', function() {
 	Session.set('pageTitle', 'Nature Based Therapy');
+	this.layout('Layout', {
+		data: function() {
+			return {
+				isHome: true
+			}
+		}
+	});
 	this.render('Home');
 });
 
