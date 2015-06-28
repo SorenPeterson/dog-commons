@@ -6,4 +6,5 @@ App.info({
 
 App.accessRule('*.otterhive.com/*');
 App.accessRule('192.168.1.131/*');
+App.accessRule('localhost/*');
 
