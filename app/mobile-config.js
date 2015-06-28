@@ -5,11 +5,12 @@ App.info({
 });
 
 App.icons({
-	'iphone': 'icons/icon-60.png',
-	'iphone_2x': 'icons/icon-60@2x.png'
+	'iphone': 'icons/icon-57.png',
+	'ipad': 'icons/icon-72.png'
 });
 
 App.accessRule('*.otterhive.com/*');
 App.accessRule('192.168.1.131/*');
 App.accessRule('localhost/*');
+App.accessRule('*.meteor.com/*');
 
