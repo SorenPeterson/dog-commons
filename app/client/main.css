@@ -82,8 +82,8 @@
 }
 
 .btn {
-	background-color: salmon;
-	box-shadow: 0 0 10px black;
+	display: block;
+	font-size: 2em;
 }
 
 .btn.btn-back {
@@ -96,5 +96,23 @@
 	height: 30vw;
 	bottom: 0;
 	right: 0;
+}
+
+.btn.map-btn {
+	background-image: url("leaf2.png");
+	background-size: 200px;
+	width: 200px;
+	height: 200px;
+}
+
+.btn.map-btn .text {
+	color: white;
+	position: relative;
+	left: 65px;
+	top: 80px;
+}
+
+.navigation a {
+	text-decoration: none;
 }
 

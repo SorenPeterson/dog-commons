@@ -1,14 +1,21 @@
 /* Routing */
 Router.onBeforeAction(function(args) {
 	this.layout('Layout');
-	this.next();
-	var backgrounds = [
-		'url("/butterfly.jpg")',
-		'url("/purpleflower.jpg")',
-		'url("/blossom.jpg")'
-	];
-	var rn = Math.floor(Math.random() * backgrounds.length);
-	Session.set('background', backgrounds[rn]);
+	var that = this;
+	setTimeout(function() {
+		that.next();
+	}, 1000);
+	Tracker.nonreactive(function() {
+		if(!Session.get('background')) {
+			var backgrounds = [
+				'url("/butterfly.jpg")',
+				'url("/purpleflower.jpg")',
+				'url("/blossom.jpg")'
+			];
+			var rn = Math.floor(Math.random() * backgrounds.length);
+			Session.set('background', backgrounds[rn]);
+		}
+	});
 });
 
 Router.route('/', function() {
