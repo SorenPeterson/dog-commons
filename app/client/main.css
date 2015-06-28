@@ -103,6 +103,9 @@
 	background-size: 200px;
 	width: 200px;
 	height: 200px;
+	position: absolute;
+	left: -20px;
+	top: -10px;
 }
 
 .btn.map-btn .text {
