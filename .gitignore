@@ -1,3 +1,5 @@
-**/*.sw*
-/devbuild
+**/*.swp
+.meteor/local
+.meteor/meteorite
+**/.DS_Store
 
