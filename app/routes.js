@@ -1,10 +1,7 @@
 /* Routing */
 Router.onBeforeAction(function(args) {
 	this.layout('Layout');
-	var that = this;
-	setTimeout(function() {
-		that.next();
-	}, 1000);
+	this.next();
 	Tracker.nonreactive(function() {
 		if(!Session.get('background')) {
 			var backgrounds = [
