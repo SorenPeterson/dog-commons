@@ -25,24 +25,52 @@
 }
 
 .leaf.map-btn {
+	background-image: url("/leaves/Leaf1.png");
+	background-size: 200px;
+	width: 200px;
+	height: 200px;
+	position: fixed;
+	left: -20px;
+	top: -20px;
 }
 
 .leaf.map-btn .text {
 }
 
 .leaf.observations-btn {
+	background-image: url("/leaves/Leaf2.png");
+	background-size: 200px;
+	width: 200px;
+	height: 300px;
+	position: fixed;
+	right: -20px;
+	top: -60px;
 }
 
 .leaf.observations-btn .text {
 }
 
 .leaf.identification-btn {
+	background-image: url("/leaves/Leaf9.png");
+	background-size: 200px;
+	width: 200px;
+	height: 200px;
+	position: fixed;
+	left: -20px;
+	bottom: -60px;
 }
 
 .leaf.identification-btn .text {
 }
 
 .leaf.art-btn {
+	background-image: url("/leaves/Leaf11.png");
+	background-size: 50vw;
+	width: 50vw;
+	height: 50vh;
+	position: fixed;
+	right: 0;
+	bottom: 0;
 }
 
 .leaf.art-btn .text {
