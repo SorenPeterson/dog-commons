@@ -4,15 +4,20 @@
 }
 
 .leaf.back-btn {
-	border-radius: 100%;
-	position: fixed;
-	text-align: center;
-	max-width: 100px;
-	max-height: 100px;
-	width: 30vw;
-	height: 30vw;
-	bottom: 0;
-	right: 0;
+	background-image: url("leaves/Leaf10.png");
+	background-size: 200px;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	bottom: -70px;
+	right: -60px;
+}
+
+.leaf.back-btn .text {
+	position: relative;
+	left: 50px;
+	top: 70px;
+	color: white;
 }
 
 .leaf.map-btn {
@@ -30,6 +35,24 @@
 	position: relative;
 	left: 65px;
 	top: 80px;
+}
+
+.leaf.observations-btn {
+}
+
+.leaf.observations-btn .text {
+}
+
+.leaf.identification-btn {
+}
+
+.leaf.identification-btn .text {
+}
+
+.leaf.art-btn {
+}
+
+.leaf.art-btn .text {
 }
 
 .navigation a {
