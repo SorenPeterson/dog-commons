@@ -2,13 +2,17 @@
 Router.onBeforeAction(function(args) {
 	this.layout('Layout');
 	this.next();
-	var backgrounds = [
-		'url("/butterfly.jpg")',
-		'url("/purpleflower.jpg")',
-		'url("/blossom.jpg")'
-	];
-	var rn = Math.floor(Math.random() * backgrounds.length);
-	Session.set('background', backgrounds[rn]);
+	Tracker.nonreactive(function() {
+		if(!Session.get('background')) {
+			var backgrounds = [
+				'url("/butterfly.jpg")',
+				'url("/purpleflower.jpg")',
+				'url("/blossom.jpg")'
+			];
+			var rn = Math.floor(Math.random() * backgrounds.length);
+			Session.set('background', backgrounds[rn]);
+		}
+	});
 });
 
 Router.route('/', function() {

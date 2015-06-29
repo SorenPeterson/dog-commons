@@ -4,6 +4,10 @@
 	src: url('/HumanNature.ttf');
 }
 
+.container {
+	padding-top: 30px;
+}
+
 .map-container {
 	position: fixed;
 	left: 0;
@@ -75,22 +79,5 @@
 
 .splash-enter a {
 	font-size: 20px;
-}
-
-.btn {
-	background-color: salmon;
-	box-shadow: 0 0 10px black;
-}
-
-.btn.btn-back {
-	border-radius: 100%;
-	position: fixed;
-	text-align: center;
-	max-width: 100px;
-	max-height: 100px;
-	width: 30vw;
-	height: 30vw;
-	bottom: 0;
-	right: 0;
 }
 

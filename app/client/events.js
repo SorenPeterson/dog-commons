@@ -35,6 +35,9 @@ Template.Layout.events({
 	},
 	'click #navbar ul a': function(e, tmpl) {
 		$('button.navbar-toggle').click();
+	},
+	'load window': function() {
+		console.log('window is loaded');
 	}
 });
 

@@ -14,7 +14,7 @@
 	</div>
 	{{#unless isHome}}
 		<a href="/home">
-			<div class="btn btn-lg btn-back">
+			<div class="back-btn">
 				Home
 			</div>
 		</a>
@@ -38,11 +38,27 @@
 </template>
 
 <template name="Home">
-	<div>
-		<div class="btn"><a href="/map">Map</a></div>
-		<div class="btn"><a href="/observations">Observations Diary</a></div>
-		<div class="btn"><a href="/identification">Identification</a></div>
-		<div class="btn"><a href="/art">3030 Art</a></div>
+	<div class="navigation">
+		<a href="/map">
+			<div class="map-btn leaf animated rotateIn">
+				<div class="text">Map</div>
+			</div>
+		</a>
+		<a href="/observations">
+			<div class="observations-btn leaf animated rotateIn">
+				<div class="text">Observations Diary</div>
+			</div>
+		</a>
+		<a href="/identification">
+			<div class="identification-btn leaf animated rotateIn">
+				<div class="text">Identification</div>
+			</div>
+		</a>
+		<a href="/Art">
+			<div class="art-btn leaf animated rotateIn">
+				<div class="text">3030 Art</div>
+			</div>
+		</a>
 	</div>
 </template>
 
