@@ -1,7 +1,7 @@
 App.info({
 	name: '3030 - Nature Based Therapy',
 	description: 'Minnesota Landscape Arboretum',
-	version: '0.0.4'
+	version: '0.0.5'
 });
 
 App.icons({
