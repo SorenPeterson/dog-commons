@@ -15,6 +15,13 @@ Router.onBeforeAction(function(args) {
 	});
 });
 
+Router.onBeforeAction(function() {
+	Session.set('showHomeButton', false);
+	this.next();
+}, {
+	except: ['/', '/home']
+});
+
 Router.route('/', function() {
 	this.layout(null);
 	this.render('Splash');

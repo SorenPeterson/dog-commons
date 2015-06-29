@@ -12,18 +12,14 @@
 	<div class="container">
 		{{> yield}}
 	</div>
-	{{#unless isHome}}
-		<a href="/home">
-			<div class="leaf back-btn">
-				<div class="text">
-					Home
-				</div>
+	<a href="/home">
+		<div class="leaf back-btn animated {{#unless isHome}}bounceInUp{{else}}bounceOutDown{{/unless}}">
+			<div class="text">
+				Home
 			</div>
-		</a>
-	{{/unless}}
-	<center>
-		<img class="logo logo-corner" src="/logo.png"/>
-	</center>
+			<img class="logo logo-corner" src="/logo.png"/>
+		</div>
+	</a>
 </template>
 
 <template name="Splash">
@@ -42,22 +38,22 @@
 <template name="Home">
 	<div class="navigation">
 		<a href="/map">
-			<div class="map-btn leaf animated rotateIn">
+			<div class="map-btn leaf animated fadeIn">
 				<div class="text">Map</div>
 			</div>
 		</a>
 		<a href="/observations">
-			<div class="observations-btn leaf animated rotateIn">
+			<div class="observations-btn leaf animated fadeIn">
 				<div class="text">Observations Diary</div>
 			</div>
 		</a>
 		<a href="/identification">
-			<div class="identification-btn leaf animated rotateIn">
+			<div class="identification-btn leaf animated fadeIn">
 				<div class="text">Identification</div>
 			</div>
 		</a>
 		<a href="/Art">
-			<div class="art-btn leaf animated rotateIn">
+			<div class="art-btn leaf animated fadeIn">
 				<div class="text">3030 Art</div>
 			</div>
 		</a>

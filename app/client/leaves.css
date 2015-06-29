@@ -3,10 +3,14 @@
 	font-size: 2em;
 }
 
+.leaf .text {
+	color: white;
+}
+
 .leaf.back-btn {
-	background-image: url("leaves/Leaf10.png");
+	background-image: url("leaves/Leaf10Small.png");
 	background-size: 200px;
-	position: absolute;
+	position: fixed;
 	width: 200px;
 	height: 200px;
 	bottom: -70px;
@@ -21,20 +25,9 @@
 }
 
 .leaf.map-btn {
-	background-image: url("leaves/Leaf2.png");
-	background-size: 200px;
-	width: 200px;
-	height: 200px;
-	position: absolute;
-	left: -20px;
-	top: -10px;
 }
 
 .leaf.map-btn .text {
-	color: white;
-	position: relative;
-	left: 65px;
-	top: 80px;
 }
 
 .leaf.observations-btn {
@@ -57,5 +50,13 @@
 
 .navigation a {
 	text-decoration: none;
+}
+
+.logo-corner {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	left: 85px;
+	top: -20px;
 }
 
