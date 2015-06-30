@@ -6,8 +6,8 @@ Router.onBeforeAction(function(args) {
 		if(!Session.get('background')) {
 			var backgrounds = [
 				'url("/butterfly.jpg")',
-				'url("/purpleflower.jpg")',
-				'url("/blossom.jpg")'
+				'url("/willow.jpg")',
+				'url("/caterpillar.jpg")'
 			];
 			var rn = Math.floor(Math.random() * backgrounds.length);
 			Session.set('background', backgrounds[rn]);

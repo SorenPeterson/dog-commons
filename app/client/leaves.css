@@ -5,6 +5,7 @@
 
 .leaf .text {
 	color: white;
+	position: relative;
 }
 
 .leaf.back-btn {
@@ -18,10 +19,8 @@
 }
 
 .leaf.back-btn .text {
-	position: relative;
 	left: 50px;
 	top: 70px;
-	color: white;
 }
 
 .leaf.map-btn {
@@ -35,6 +34,10 @@
 }
 
 .leaf.map-btn .text {
+	left: 75px;
+	top: 120px;
+	transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
 }
 
 .leaf.observations-btn {
@@ -48,19 +51,27 @@
 }
 
 .leaf.observations-btn .text {
+	text-align: center;
+	font-size: 0.75em;
+	top: 150px;
+	transform: rotate(20deg);
 }
 
 .leaf.identification-btn {
-	background-image: url("/leaves/Leaf9.png");
-	background-size: 200px;
-	width: 200px;
-	height: 200px;
+	background-image: url("/leaves/Leaf9Small.png");
+	background-size: 250px;
+	width: 250px;
+	height: 250px;
 	position: fixed;
-	left: -20px;
-	bottom: -60px;
+	left: -40px;
+	bottom: 0;
 }
 
 .leaf.identification-btn .text {
+	font-size: 0.75em;
+	left: 55px;
+	top: 110px;
+	transform: rotate(-5deg);
 }
 
 .leaf.art-btn {
