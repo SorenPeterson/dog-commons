@@ -11,6 +11,6 @@ App.icons({
 App.accessRule('*.otterhive.com/*');
 App.accessRule('192.168.1.131/*');
 App.accessRule('localhost/*');
-App.accessRule('*.meteor.com/*');
+App.accessRule('nbt.meteor.com/*');
 App.accessRule('*.mapbox.com/*');
 
