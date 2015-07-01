@@ -3,9 +3,6 @@ Template.registerHelper('isCordova', function() {
 });
 
 Helpers = {
-	today: function() {
-		return moment(new Date).format('YYYYMMDD');
-	},
 	showAll: function() {
 		return Session.get('ObservationsShowAll');
 	}
@@ -20,18 +17,6 @@ Template.Layout.helpers({
 		return Session.get('pageTitle');
 	}
 });
-
-Template.Home.helpers({
-	recentPost: function() {
-		var data = Session.get('FBFeedResponse');
-		data = data || {};
-		data = data.data || [];
-		return data;
-	},
-	postsLoaded: function() {
-		return !!Session.get('FBFeedResponse');
-	}
-})
 
 Template.Observations.helpers({
 	observations: function() {

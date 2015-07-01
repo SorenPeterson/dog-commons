@@ -1,9 +1,5 @@
 window.Observations = new Ground.Collection('observations', {connection: null});
 
-Tracker.autorun(function() {
-	console.log(Session.get('showHome'));
-});
-
 Meteor.startup(function() {
 	Mapbox.load();
 });
@@ -26,37 +22,4 @@ if(Meteor.isCordova) {
 		debug: false
 	});
 }
-
-window.DataBase = (function() {
-	var today = Helpers.today();
-
-	var save = function(obj) {
-		Session.setPermanent('nbtappdb', obj);
-	}
-
-	var fromDB = function() {
-		return Session.get('nbtappdb') || {};
-	}
-
-	var todaysObservations = function() {
-		return fromDB()[today()] || [];
-	};
-
-	var insert = function(obs) {
-		var dbObj = fromDB();
-		var today = today();
-		dbObj[today] = dbObj[today] || [];
-		dbObj[today].push(obs);
-		save(dbObj);
-	};
-
-	var remove = function() {
-	};
-
-	return {
-		todaysObservations: todaysObservations,
-		insert: insert,
-		remove: remove
-	};
-})();
 

@@ -29,21 +29,3 @@ Template.Observations.events({
 	}
 });
 
-Template.Layout.events({
-	'click button.navbar-toggle': function(e, tmpl) {
-		$('div.navbar').toggle();
-	},
-	'click #navbar ul a': function(e, tmpl) {
-		$('button.navbar-toggle').click();
-	},
-	'load window': function() {
-		console.log('window is loaded');
-	}
-});
-
-Template.Art.helpers({
-	todaysPainting: function() {
-		return Helpers.today() + '.jpg';
-	}
-})
-
