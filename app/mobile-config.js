@@ -5,7 +5,7 @@ App.info({
 });
 
 App.icons({
-	'iphone': '/icons/icon-57.png'
+	'iphone': 'icons/icon-57.png'
 });
 
 App.accessRule('nbt.otterhive.com/*');
