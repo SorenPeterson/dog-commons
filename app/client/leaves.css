@@ -31,18 +31,17 @@
 }
 
 .leaf.map-btn {
-	background-image: url("/leaves/Leaf1.png");
-	background-size: 50vw;
-	width: 50vw;
-	height: 50vw;
+	background: url("/leaves/Leaf1.png") no-repeat center top;
+	background-size: 200px;
+	width: 100vw;
+	height: 200px;
 	position: fixed;
-	left: 20vw;
-	bottom: 90px;
+	bottom: 100px;
 }
 
 .leaf.map-btn .text {
-	left: 16vw;
-	top: 29vw;
+	left: 130px;
+	top: 120px;
 	transform: rotate(-5deg);
 	-webkit-transform: rotate(-5deg);
 }
