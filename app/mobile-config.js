@@ -5,7 +5,9 @@ App.info({
 });
 
 App.icons({
-	'iphone': 'icons/icon-57.png'
+	'iphone': 'icons/icon-57.png',
+	'iphone_2x': 'icons/icon-120.png',
+	'iphone_3x': 'icons/icon-180.png'
 });
 
 App.accessRule('nbt.otterhive.com/*');
