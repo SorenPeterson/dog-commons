@@ -42,8 +42,8 @@
 .leaf.map-btn .text {
 	left: 50vw;
 	top: 120px;
-	transform: rotate(-5deg) translateX(-25px);
-	-webkit-transform: rotate(-5deg) translateX(-25px);
+	transform: rotate(-3deg) translateX(-25px);
+	-webkit-transform: rotate(-3deg) translateX(-25px);
 }
 
 .leaf.observations-btn {
@@ -78,7 +78,7 @@
 	font-size: 0.75em;
 	left: 55px;
 	top: 110px;
-	transform: rotate(-5deg);
+	transform: rotate(-3deg);
 }
 
 .leaf.art-btn {
