@@ -4,8 +4,14 @@
 }
 
 .leaf .text {
+	display: inline-block;
 	color: white;
 	position: relative;
+	pointer-events: auto;
+}
+
+.leaf.btn {
+	pointer-events: none;
 }
 
 .leaf.back-btn {
@@ -25,36 +31,37 @@
 
 .leaf.map-btn {
 	background-image: url("/leaves/Leaf1.png");
-	background-size: 200px;
-	width: 200px;
-	height: 200px;
+	background-size: 50vw;
+	width: 50vw;
+	height: 50vw;
 	position: fixed;
-	left: -20px;
-	top: -20px;
+	left: 20vw;
+	bottom: 90px;
 }
 
 .leaf.map-btn .text {
-	left: 75px;
-	top: 120px;
+	left: 16vw;
+	top: 29vw;
 	transform: rotate(-5deg);
 	-webkit-transform: rotate(-5deg);
 }
 
 .leaf.observations-btn {
 	background-image: url("/leaves/Leaf2.png");
-	background-size: 200px;
-	width: 200px;
-	height: 300px;
+	background-size: 300px;
+	width: 300px;
+	height: 200px;
 	position: fixed;
-	right: -20px;
-	top: -60px;
+	right: -80px;
+	bottom: -40px;
 }
 
 .leaf.observations-btn .text {
 	text-align: center;
 	font-size: 0.75em;
-	top: 150px;
-	transform: rotate(20deg);
+	left: 80px;
+	top: 80px;
+	transform: rotate(17deg);
 }
 
 .leaf.identification-btn {
@@ -64,7 +71,7 @@
 	height: 250px;
 	position: fixed;
 	left: -40px;
-	bottom: 0;
+	bottom: -70px;
 }
 
 .leaf.identification-btn .text {
