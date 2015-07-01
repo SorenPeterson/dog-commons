@@ -15,6 +15,9 @@ Template.Layout.helpers({
 	},
 	pageTitle: function() {
 		return Session.get('pageTitle');
+	},
+	showHomeButton: function() {
+		return Session.get('showHomeButton');
 	}
 });
 

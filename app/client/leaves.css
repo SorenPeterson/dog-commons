@@ -14,6 +14,10 @@
 	pointer-events: none;
 }
 
+.back-btn.hidden {
+	display: none;
+}
+
 .leaf.back-btn {
 	background-image: url("leaves/Leaf10Small.png");
 	background-size: 200px;

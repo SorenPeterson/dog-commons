@@ -2,6 +2,7 @@ window.Observations = new Ground.Collection('observations', {connection: null});
 
 Meteor.startup(function() {
 	Mapbox.load();
+	Session.set('showHomeButton', 'hidden');
 });
 
 Meteor.subscribe('observations');

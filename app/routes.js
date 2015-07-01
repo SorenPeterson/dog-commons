@@ -16,24 +16,24 @@ Router.onBeforeAction(function(args) {
 });
 
 Router.onBeforeAction(function() {
-	Session.set('showHomeButton', false);
+	Session.set('showHomeButton', 'bounceInUp');
+	console.log('hi');
 	this.next();
 }, {
-	except: ['/', '/home']
+	except: ['splash', 'home']
 });
 
 Router.route('/', function() {
 	this.layout(null);
 	this.render('Splash');
+}, {
+	name: 'splash'
 });
 
 Router.route('/home', function() {
-	Session.set('pageTitle', 'Nature Based Therapy');
-	this.layout('Layout', {
-		data: function() {
-			return {
-				isHome: true
-			}
+	Tracker.nonreactive(function() {
+		if(Session.get('showHomeButton') !== 'hidden') {
+			Session.set('showHomeButton', 'bounceOutDown');
 		}
 	});
 	this.render('Home');
@@ -45,7 +45,6 @@ Router.route('/map', function() {
 });
 
 Router.route('/observations', function() {
-	this.state.doge = 1;
 	Session.set('pageTitle', 'Observation Diary');
 	this.render('Observations');
 });
