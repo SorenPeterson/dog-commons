@@ -4,6 +4,10 @@
 	src: url('/HumanNature.ttf');
 }
 
+html {
+	-webkit-touch-callout: none;
+}
+
 .container {
 	padding-top: 30px;
 }
