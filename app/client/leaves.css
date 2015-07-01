@@ -10,7 +10,7 @@
 	pointer-events: auto;
 }
 
-.leaf.btn {
+.leaf {
 	pointer-events: none;
 }
 
@@ -22,6 +22,7 @@
 	height: 200px;
 	bottom: -70px;
 	right: -60px;
+	pointer-events: auto;
 }
 
 .leaf.back-btn .text {
