@@ -27,7 +27,7 @@
 
 .leaf.back-btn .text {
 	left: 50px;
-	top: 70px;
+	top: 50px;
 }
 
 .leaf.map-btn {
@@ -103,7 +103,6 @@
 	position: relative;
 	width: 50px;
 	height: 50px;
-	left: 85px;
-	top: -20px;
+	top: 20px;
 }
 
