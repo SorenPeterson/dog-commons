@@ -58,3 +58,21 @@ Router.route('/identification', function() {
 	Session.set('pageTitle', 'Wildlife Identification');
 	this.render('Identification');
 });
+
+// REST(ish) API
+// Cordova background/foreground can post GPS data HERE
+//
+// POST data should be in this format
+//   {
+//     location: {
+//       latitude: Number,
+//       longitude: Number,
+//       accuracy: Match.Optional(Number),
+//       speed: Match.Optional(Number),
+//       recorded_at: Match.Optional(String)
+//     },
+//     userId: Match.Optional(String),
+//     uuid: Match.Optional(String),
+//     device: Match.Optional(String)
+//   }
+
