@@ -1,0 +1,14 @@
+<template name="Layout">
+	<div class="container animated fadeIn">
+		{{> yield}}
+	</div>
+	<a href="/home">
+		<div class="leaf back-btn animated {{showHomeButton}}">
+			<div class="text">
+				Home
+			</div>
+			<img class="logo logo-corner" src="/logo.png"/>
+		</div>
+	</a>
+</template>
+

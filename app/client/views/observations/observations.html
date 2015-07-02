@@ -1,0 +1,23 @@
+<template name="Observations">
+	<div>
+		<h3>Observations</h3>
+	</div>
+	<button class="btn btn-primary show-all">Show {{#if showAll}}just today's{{else}}all{{/if}}</button>
+	{{#each observations}}
+		<div class="well">
+			{{content}}
+			<button type="button" class="delete btn btn-default" data-id="{{_id}}">
+				<span class="glyphicon glyphicon-trash"></span>
+			</button>
+		</div>
+	{{/each}}
+	{{#unless showAll}}
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Write something you've observed..."/>
+			<span class="input-group-btn">
+				<button type="button" class="record btn btn-default">Record</button>
+			</span>
+		</div>
+	{{/unless}}
+</template>
+
