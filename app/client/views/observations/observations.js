@@ -29,3 +29,16 @@ Template.Observations.events({
 	}
 });
 
+Template.Observations.helpers({
+	observations: function() {
+		var parameters = {};
+		if(!Helpers.showAll()) {
+			parameters.date = Helpers.today();
+		}
+		return Observations.find(parameters).fetch().reverse();
+	},
+	showAll: function() {
+		return Session.get('ObservationsShowAll');
+	}
+});
+
