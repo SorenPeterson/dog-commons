@@ -1,7 +1,6 @@
 /* Routing */
 Router.onBeforeAction(function(args) {
 	this.layout('Layout');
-	this.next();
 	Tracker.nonreactive(function() {
 		if(!Session.get('background')) {
 			var backgrounds = [
@@ -13,6 +12,9 @@ Router.onBeforeAction(function(args) {
 			Session.set('background', backgrounds[rn]);
 		}
 	});
+	this.next();
+}, {
+	except: ['GeolocationBGRoute']
 });
 
 Router.onBeforeAction(function() {
@@ -93,7 +95,7 @@ Router.route('/api/geolocation', function() {
 	// Can insert into a Collection from the server (or whatever)
 	if (GeolocationLog.insert(requestData)) {
 		this.response.writeHead(200, {'Content-Type': 'application/json'});
-		this.response.end('ok');
+		this.response.end(JSON.stringify(GeolocationLog.findOne({})));
 		return;
 	}
 
