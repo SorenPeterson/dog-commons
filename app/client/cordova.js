@@ -3,7 +3,7 @@ if (Meteor.isCordova) {
 		// your server url to send locations to
 		//   YOU MUST SET THIS TO YOUR SERVER'S URL
 		//   (see the setup instructions below)
-		url: 'http://nbt.otterhive.com/',
+		url: 'http://nbt.otterhive.com/api/geolocation',
 		params: {
 			// will be sent in with 'location' in POST data (root level params)
 			// these will be added automatically in setup()
