@@ -28,10 +28,20 @@ html {
 	height: 100vh;
 }
 
+.back-btn {
+	position: fixed;
+	background-color: white;
+	pading: 10px;
+}
+
 .logo {
 	border-radius: 100%;
 	background-color: #5665fe;
 	box-shadow: 0 0 20px black;
+}
+
+.logo-corner {
+	width: 100px;
 }
 
 .panel-body {
@@ -74,5 +84,16 @@ html {
 
 .splash-enter a {
 	font-size: 20px;
+}
+
+.navigation-btn {
+	display: block;
+	background-color: white;
+	padding: 10px;
+	margin: 10px;
+}
+
+.hidden {
+	display: none;
 }
 
