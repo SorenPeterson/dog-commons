@@ -85,8 +85,8 @@ Router.route('/api/geolocation', function() {
 	var requestData = this.request.body;
 
 	// log stuff
-	//console.log('GeolocationBG post: ' + requestMethod);
-	//console.log(JSON.stringify(requestData));
+	console.log('GeolocationBG post: ' + requestMethod);
+	console.log(JSON.stringify(requestData));
 
 	// TODO: security/validation
 	//  require some security with data
@@ -95,7 +95,7 @@ Router.route('/api/geolocation', function() {
 	// Can insert into a Collection from the server (or whatever)
 	if (GeolocationLog.insert(requestData)) {
 		this.response.writeHead(200, {'Content-Type': 'application/json'});
-		this.response.end(JSON.stringify(GeolocationLog.findOne({})));
+		this.response.end('ok');
 		return;
 	}
 

@@ -5,7 +5,7 @@ Meteor.startup(function() {
 	Session.set('showHomeButton', 'hidden');
 });
 
-Meteor.subscribe('observations');
+Meteor.subscribe('GeolocationLog');
 
 if(Meteor.isCordova) {
 	GeolocationBG.config({
