@@ -32,6 +32,8 @@ html {
 	position: fixed;
 	background-color: white;
 	padding: 10px;
+	bottom: 0;
+	right: 0;
 }
 
 .logo {
