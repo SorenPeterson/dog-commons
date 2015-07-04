@@ -88,11 +88,21 @@ html {
 	font-size: 20px;
 }
 
+.navigation {
+	position: fixed;
+}
+
 .navigation-btn {
-	display: block;
+	border-radius: 100%;
+	text-align: center;
 	background-color: white;
-	padding: 10px;
-	margin: 10px;
+	width: 200px;
+	height: 200px;
+	margin: 10px auto;
+}
+
+.navigation-btn a {
+	margin-top: 100px;
 }
 
 .hidden {
