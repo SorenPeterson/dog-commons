@@ -1,3 +1,12 @@
+var Helpers = {
+	today: function() {
+		return moment().format('YYYYMMDD');
+	},
+	showAll: function() {
+		return Session.get('ObservationsShowAll');
+	}
+}
+
 Template.Observations.events({
 	'click .record': function(e, tmpl) {
 		var input = tmpl.find('input[type=text]');
@@ -36,9 +45,6 @@ Template.Observations.helpers({
 			parameters.date = Helpers.today();
 		}
 		return Observations.find(parameters).fetch().reverse();
-	},
-	showAll: function() {
-		return Session.get('ObservationsShowAll');
 	}
 });
 

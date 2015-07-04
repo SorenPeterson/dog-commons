@@ -19,7 +19,6 @@ Router.onBeforeAction(function(args) {
 
 Router.onBeforeAction(function() {
 	Session.set('showHomeButton', 'bounceInUp');
-	console.log('hi');
 	this.next();
 }, {
 	except: ['splash', 'home', 'GeolocationBGRoute']
