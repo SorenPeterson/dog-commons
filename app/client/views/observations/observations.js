@@ -47,4 +47,5 @@ Template.Observations.helpers({
 		return Observations.find(parameters).fetch().reverse();
 	}
 });
+Template.Observations.helpers(Helpers);
 
