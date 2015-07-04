@@ -2,13 +2,14 @@
 	<div>
 		<h3>Observations</h3>
 	</div>
-	<button class="btn btn-primary show-all">Show {{#if showAll}}just today's{{else}}all{{/if}}</button>
+	<button class="show-all">Show {{#if showAll}}just today's{{else}}all{{/if}}</button>
+	<button class="edit">Edit</button>
 	{{#each observations}}
 		<div class="well">
 			{{content}}
-			<button type="button" class="delete btn btn-default" data-id="{{_id}}">
-				<span class="glyphicon glyphicon-trash"></span>
-			</button>
+			{{#if editMode}}
+				<button type="button" class="delete btn btn-default" data-id="{{_id}}">Delete</button>
+			{{/if}}
 		</div>
 	{{/each}}
 	{{#unless showAll}}

@@ -1,11 +1,29 @@
+var ShowAll = new ReactiveVar(false);
+var EditMode = new ReactiveVar(false);
+
 var Helpers = {
 	today: function() {
 		return moment().format('YYYYMMDD');
 	},
 	showAll: function() {
-		return Session.get('ObservationsShowAll');
+		return ShowAll.get();
+	},
+	editMode: function() {
+		return EditMode.get();
 	}
 }
+
+Template.Observations.helpers(Helpers);
+
+Template.Observations.helpers({
+	observations: function() {
+		var parameters = {};
+		if(!Helpers.showAll()) {
+			parameters.date = Helpers.today();
+		}
+		return Observations.find(parameters).fetch().reverse();
+	}
+});
 
 Template.Observations.events({
 	'click .record': function(e, tmpl) {
@@ -26,10 +44,18 @@ Template.Observations.events({
 	'click .show-all': function() {
 		var state;
 		Tracker.nonreactive(function() {
-			state = Session.get('ObservationsShowAll');
+			state = ShowAll.get();
 			state = !state;
 		});
-		Session.set('ObservationsShowAll', state);
+		ShowAll.set(state);
+	},
+	'click .edit': (e, tmpl) => {
+		var state;
+		Tracker.nonreactive(function() {
+			state = EditMode.get();
+			state = !state;
+		});
+		EditMode.set(state);
 	},
 	'keyup input[type=text]': function(e, tmpl) {
 		if(e.keyCode === 13) {
@@ -37,15 +63,4 @@ Template.Observations.events({
 		}
 	}
 });
-
-Template.Observations.helpers({
-	observations: function() {
-		var parameters = {};
-		if(!Helpers.showAll()) {
-			parameters.date = Helpers.today();
-		}
-		return Observations.find(parameters).fetch().reverse();
-	}
-});
-Template.Observations.helpers(Helpers);
 
