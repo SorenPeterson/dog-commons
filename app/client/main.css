@@ -85,6 +85,11 @@ html {
 	top: 50%;
 	transform: translateY(-50%);
 	vertical-align: top;
+	width: 100%;
+}
+
+.navigation .row {
+	text-align: center;
 }
 
 .navigation .btn {
@@ -92,10 +97,11 @@ html {
 	height: 100px;
 	display: inline-block;
 	border-radius: 100%;
-	background-color: white;
-	box-shadow: 0 4px 4px black;
+	background-color: rgba(255, 255, 255, 0.75);
+	box-shadow: 0 2px 4px black;
 	vertical-align: top;
 	text-align: center;
+	margin: 20px;
 }
 
 .navigation .btn a {
@@ -103,5 +109,7 @@ html {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
+	color: black;
+	text-decoration: none;
 }
 
