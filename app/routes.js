@@ -32,6 +32,7 @@ Router.route('/', function() {
 });
 
 Router.route('/home', function() {
+	Session.set('pageTitle', 'Nature Heals');
 	Tracker.nonreactive(function() {
 		if(Session.get('showHomeButton') !== 'hidden') {
 			Session.set('showHomeButton', 'bounceOutDown');
@@ -51,7 +52,7 @@ Router.route('/observations', function() {
 });
 
 Router.route('/art', function() {
-	Session.set('pageTitle', '3030 Art');
+	Session.set('pageTitle', '3030 Project');
 	this.render('Art');
 });
 
