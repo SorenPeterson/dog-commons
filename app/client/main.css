@@ -3,10 +3,6 @@ html {
 	-webkit-touch-callout: none;
 }
 
-.container {
-	padding-top: 30px;
-}
-
 .map-container {
 	position: fixed;
 	left: 0;
@@ -26,9 +22,11 @@ html {
 .back-btn {
 	position: fixed;
 	background-color: white;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 40px;
 	padding: 10px;
-	bottom: 0;
-	right: 0;
 }
 
 .logo {
@@ -80,26 +78,5 @@ html {
 
 .splash-enter a {
 	font-size: 20px;
-}
-
-.navigation {
-	position: fixed;
-}
-
-.navigation-btn {
-	border-radius: 100%;
-	text-align: center;
-	background-color: white;
-	width: 200px;
-	height: 200px;
-	margin: 10px auto;
-}
-
-.navigation-btn a {
-	margin-top: 100px;
-}
-
-.hidden {
-	display: none;
 }
 
