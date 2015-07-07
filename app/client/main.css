@@ -23,7 +23,7 @@ html {
 	height: 100vh;
 }
 
-header {
+.header {
 	position: fixed;
 	background-color: white;
 	top: 0;
@@ -33,13 +33,15 @@ header {
 	padding: 10px;
 }
 
-header img {
+.header img {
 	height: 100%;
 }
 
-header .title {
+.header .title {
+	display: inline-block;
 	font-size: 30px;
 	color: black;
+	vertical-align: top;
 }
 
 .logo {
