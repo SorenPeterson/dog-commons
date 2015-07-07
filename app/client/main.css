@@ -4,7 +4,7 @@ html {
 }
 
 .container {
-	margin-top: 40px;
+	margin-top: 60px;
 }
 
 .map-container {
@@ -39,6 +39,7 @@ header img {
 
 header .title {
 	font-size: 30px;
+	color: black;
 }
 
 .logo {
