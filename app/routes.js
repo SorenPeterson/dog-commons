@@ -42,7 +42,7 @@ Router.route('/home', function() {
 });
 
 Router.route('/map', function() {
-	Session.set('pageTitle', 'Mapbox');
+	Session.set('pageTitle', 'Map');
 	this.render('Map');
 });
 
