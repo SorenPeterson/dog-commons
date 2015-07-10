@@ -11,6 +11,13 @@
 html {
 	-webkit-touch-callout: none;
 	font-family: 'Copse';
+	width: 100vw;
+	height: 100vh;
+	background: url('/splash.jpg') center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 .container {
@@ -70,28 +77,6 @@ html {
 
 .panel-body h3 {
 	margin: 0;
-}
-
-.splash {
-	width: 100vw;
-	height: 100vh;
-	background: url('/splash.jpg') center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-.splash-enter {
-	position: absolute;
-	top: 50vh;
-	width: 100%;
-	text-align: center;
-	font-size: 50px;
-}
-
-.splash-enter a {
-	font-size: 20px;
 }
 
 .navigation {
