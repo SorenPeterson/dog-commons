@@ -21,7 +21,10 @@ html {
 }
 
 .container {
-	margin-top: 60px;
+	margin: 70px 10px 10px 10px;
+	padding: 10px;
+	box-shadow: 0 0 5px black;
+	background-color: rgba(255, 255, 255, 0.75);
 }
 
 .map-container {
