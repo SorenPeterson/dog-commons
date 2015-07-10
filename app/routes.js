@@ -56,9 +56,9 @@ Router.route('/art', function() {
 	this.render('Art');
 });
 
-Router.route('/identification', function() {
-	Session.set('pageTitle', 'Wildlife Identification');
-	this.render('Identification');
+Router.route('/trees', function() {
+	Session.set('pageTitle', 'Tree Identification');
+	this.render('Trees');
 });
 
 // REST(ish) API
