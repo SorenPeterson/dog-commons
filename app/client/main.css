@@ -119,15 +119,15 @@ html {
 }
 
 .navigation .btn {
-	width: 100px;
-	height: 100px;
+	width: 30vw;
+	height: 30vw;
 	display: inline-block;
 	border-radius: 100%;
 	background-color: rgba(255, 255, 255, 0.75);
 	box-shadow: 0 2px 4px black;
 	vertical-align: top;
 	text-align: center;
-	margin: 20px;
+	margin: 0 1vw;
 }
 
 .navigation .btn a {
