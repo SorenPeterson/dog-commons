@@ -49,7 +49,7 @@ Template.Observations.events({
 		});
 		ShowAll.set(state);
 	},
-	'click .edit': (e, tmpl) => {
+	'click .edit': function(e, tmpl) {
 		var state;
 		Tracker.nonreactive(function() {
 			state = EditMode.get();

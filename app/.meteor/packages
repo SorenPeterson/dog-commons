@@ -11,11 +11,8 @@ momentjs:moment
 zeroasterisk:cordova-geolocation-background
 ground:db
 pauldowman:dotenv
-http
 mrt:fittext
 soren468:jssmeteor
 pauloborges:mapbox
 natestrauser:animate-css
-mquandalle:harmony
 reactive-var
-solderzzc:disable-hot-code-push
