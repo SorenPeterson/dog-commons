@@ -46,10 +46,8 @@ mobile-status-bar@1.0.3
 momentjs:moment@2.10.3
 mongo@1.1.0
 mrt:fittext@1.2.0
-natestrauser:animate-css@3.2.6
 observe-sequence@1.0.6
 ordered-dict@1.0.3
-pauldowman:dotenv@1.0.1
 pauloborges:mapbox@2.1.4_3
 raix:eventemitter@0.1.2
 raix:onetimeout@1.0.3
@@ -61,7 +59,6 @@ reload@1.1.3
 retry@1.0.3
 routepolicy@1.0.5
 session@1.1.0
-soren468:jssmeteor@0.0.1
 spacebars@1.0.6
 spacebars-compiler@1.0.6
 templating@1.1.1

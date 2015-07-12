@@ -8,11 +8,8 @@ meteor-platform
 iron:router
 u2622:persistent-session
 momentjs:moment
-zeroasterisk:cordova-geolocation-background
 ground:db
-pauldowman:dotenv
 mrt:fittext
-soren468:jssmeteor
 pauloborges:mapbox
-natestrauser:animate-css
 reactive-var
+zeroasterisk:cordova-geolocation-background
