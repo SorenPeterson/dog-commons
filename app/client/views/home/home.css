@@ -12,11 +12,10 @@
 }
 
 .navigation .btn {
-	width: 20vw;
-	height: 20vw;
+	width: 30vw;
+	height: 30vw;
 	max-width: 20vh;
 	max-height: 20vh;
-	padding: 5vw;
 	display: inline-block;
 	border-radius: 100%;
 	box-shadow: 0 2px 4px black;
