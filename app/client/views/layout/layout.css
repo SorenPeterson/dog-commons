@@ -1,10 +1,28 @@
+.back-btn {
+}
+
 .header {
 	text-align: center;
 	box-shadow: 0 0 10px black;
+	position: fixed;
+	background-color: white;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	padding: 10px;
 }
 
-.back-btn {
+.header img {
 	position: absolute;
-	left: 0;
+	left: 10px;
+	height: 40px;
+}
+
+.header .title {
+	display: inline-block;
+	font-size: 30px;
+	color: black;
+	vertical-align: top;
 }
 

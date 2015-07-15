@@ -43,27 +43,6 @@ html {
 	height: 100vh;
 }
 
-.header {
-	position: fixed;
-	background-color: white;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 40px;
-	padding: 10px;
-}
-
-.header img {
-	height: 100%;
-}
-
-.header .title {
-	display: inline-block;
-	font-size: 30px;
-	color: black;
-	vertical-align: top;
-}
-
 .logo-corner {
 	width: 100px;
 }
