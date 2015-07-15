@@ -18,6 +18,13 @@ html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	z-index: -2;
+}
+
+.mute {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(115,189,219, 0.5);
 }
 
 .container {
