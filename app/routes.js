@@ -61,6 +61,11 @@ Router.route('/trees', function() {
 	this.render('Trees');
 });
 
+Router.route('/pedometer', function() {
+	Session.set('pageTitle', 'Pedometer');
+	this.render('Pedometer');
+});
+
 // REST(ish) API
 // Cordova background/foreground can post GPS data HERE
 //
