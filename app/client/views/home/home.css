@@ -22,6 +22,11 @@
 	vertical-align: top;
 	text-align: center;
 	margin: 0 1vw;
+	background-color: #7be7d8;
+}
+
+.navigation .btn.logo {
+	background-color: #5665fd;
 }
 
 .navigation .btn.text {
