@@ -1,0 +1,7 @@
+.observations.bg {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-image: url("/paper.jpg");
+	z-index: -1;
+}
