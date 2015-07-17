@@ -40,7 +40,7 @@ Router.route('/home', function() {
 	});
 	this.layout('Layout', {
 		data: {
-			isHome: true
+			hideNav: true
 		}
 	});
 	this.render('Home');

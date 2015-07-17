@@ -1,6 +1,6 @@
 <template name="Layout">
 	{{> yield}}
-	{{#unless isHome}}
+	{{#unless hideNav}}
 		<div class="header">
 			<div class="title">{{pageTitle}}</div>
 			<a href="/home">

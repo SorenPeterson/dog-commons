@@ -1,5 +1,6 @@
 var ShowAll = new ReactiveVar(false);
 var EditMode = new ReactiveVar(false);
+var Notes = new Ground.Collection('notes', { connection: null });
 
 var Helpers = {
 	today: function() {
