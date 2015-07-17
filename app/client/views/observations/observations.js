@@ -1,6 +1,5 @@
-var ShowAll = new ReactiveVar(false);
+/*var ShowAll = new ReactiveVar(false);
 var EditMode = new ReactiveVar(false);
-var Notes = new Ground.Collection('notes', { connection: null });
 
 var Helpers = {
 	today: function() {
@@ -62,6 +61,25 @@ Template.Observations.events({
 		if(e.keyCode === 13) {
 			tmpl.find('.record').click();
 		}
+	}
+});*/
+
+Template.Observations.helpers({
+	notes: function() {
+		return Notes.find();
+	},
+	created: function(note) {
+		return moment(note.createdAt).fromNow();
+	}
+});
+
+Template.Observations.events({
+	'click button.add': function() {
+		console.log('hi');
+		Notes.insert({
+			createdAt: moment().format('YYYYMMDD'),
+			title: 'Untitled'
+		});
 	}
 });
 

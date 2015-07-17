@@ -3,6 +3,18 @@
 	</div>
 	
 	<div class="header-spacer"></div>
+
+	<button class="add">+</button>
+	<div>
+		{{#each notes}}
+			<div class="note-compact" data-id={{_id}}>
+				<button class="edit">Edit</button>
+				<h1>{{title}}</h1>
+				<p>Created {{created this}}</p>
+			</div>
+		{{/each}}
+	</div>
+	<!--
 	<button class="show-all">Show {{#if showAll}}just today's{{else}}all{{/if}}</button>
 	<button class="edit">Edit</button>
 	{{#each observations}}
@@ -21,5 +33,6 @@
 			</span>
 		</div>
 	{{/unless}}
+	-->
 </template>
 
