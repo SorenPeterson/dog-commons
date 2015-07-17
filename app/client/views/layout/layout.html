@@ -1,10 +1,12 @@
 <template name="Layout">
 	{{> yield}}
-	<div class="header">
-		<div class="title">{{pageTitle}}</div>
-		<a href="/home">
-			<img class="back-btn" src="/back57.png"/>
-		</a>
-	</div>
+	{{#unless isHome}}
+		<div class="header">
+			<div class="title">{{pageTitle}}</div>
+			<a href="/home">
+				<img class="back-btn" src="/back57.png"/>
+			</a>
+		</div>
+	{{/unless}}
 </template>
 
