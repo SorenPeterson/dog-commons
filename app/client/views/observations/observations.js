@@ -64,22 +64,36 @@ Template.Observations.events({
 	}
 });*/
 
+var editingNoteId = new ReactiveVar();
+
 Template.Observations.helpers({
 	notes: function() {
 		return Notes.find();
 	},
 	created: function(note) {
 		return moment(note.createdAt).fromNow();
+	},
+	editing: function() {
+		return !!editingNoteId.get();
+	},
+	openNote: function() {
+		return Notes.findOne({_id: editingNoteId.get() });
 	}
 });
 
 Template.Observations.events({
 	'click button.add': function() {
-		console.log('hi');
 		Notes.insert({
 			createdAt: moment().format('YYYYMMDD'),
 			title: 'Untitled'
 		});
+	},
+	'click button.close': function() {
+		editingNoteId.set(null);
+	},
+	'click .note-compact': function(e, tmpl) {
+		console.log(e.target.dataset.id);
+		editingNoteId.set(e.target.dataset.id);
 	}
 });
 
