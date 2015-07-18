@@ -85,8 +85,6 @@ Template.Observations.events({
 	'click button.add': function() {
 		Notes.insert({
 			createdAt: (new Date).toISOString(),
-			title: 'Untitled',
-			content: "Write about something you've observed or attach an image"
 		});
 	},
 	'click button.close': function() {
@@ -116,9 +114,8 @@ Template.Observations.events({
 		editingNoteId.set(e.target.dataset.id);
 	},
 	keydown: function(e) {
-		if(e.keyCode === 13) {
+		if(e.keyCode === 13)
 			e.preventDefault();
-		}
 	}
 });
 
