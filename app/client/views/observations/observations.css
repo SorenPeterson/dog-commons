@@ -39,12 +39,10 @@ button.add {
 }
 
 .note-expanded h1:focus::after {
-	content: '';
 	color: gray;
 }
 
 .note-expanded div.content:focus::after {
-	content: '';
 	color: gray;
 }
 
