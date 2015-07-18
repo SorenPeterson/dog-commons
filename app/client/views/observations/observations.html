@@ -9,8 +9,10 @@
 		<button class="save">Save</button>
 		<button class="delete">Delete</button>
 		{{#with openNote}}
-			<h1 contentEditable="true">{{title}}</h1>
-			<div class="content" contentEditable="true">{{content}}</div>
+			<div class="note-expanded">
+				<h1 contentEditable="true">{{title}}</h1>
+				<div class="content" contentEditable="true">{{content}}</div>
+			</div>
 		{{/with}}
 	{{else}}
 		<button class="add">+</button>

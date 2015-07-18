@@ -95,12 +95,6 @@ Template.Observations.events({
 	'click button.save': function() {
 		var title = $('h1').text();
 		var content = $('div.content').text();
-		if(title === '') {
-			title = 'Untitled';
-		}
-		if(content === '') {
-			content = "Write about something you've observed or attach an image"
-		}
 		Notes.update({
 			_id: editingNoteId.get()
 		}, {

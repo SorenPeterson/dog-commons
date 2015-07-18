@@ -26,6 +26,28 @@ button.add {
 	margin: 0;
 }
 
+.note-compact h1:empty::after {
+	content: 'Untitled';
+}
+
+.note-expanded h1:empty::after {
+	content: 'Untitled';
+}
+
+.note-expanded div.content:empty::after {
+	content: "Write about something you've observed or attach an image"
+}
+
+.note-expanded h1:focus::after {
+	content: '';
+	color: gray;
+}
+
+.note-expanded div.content:focus::after {
+	content: '';
+	color: gray;
+}
+
 .note-compact:last-child {
 	border: none;
 }
