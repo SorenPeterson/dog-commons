@@ -114,6 +114,11 @@ Template.Observations.events({
 	'click .note-compact': function(e, tmpl) {
 		console.log(e.target.dataset.id);
 		editingNoteId.set(e.target.dataset.id);
+	},
+	keydown: function(e) {
+		if(e.keyCode === 13) {
+			e.preventDefault();
+		}
 	}
 });
 

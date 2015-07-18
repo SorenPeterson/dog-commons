@@ -30,6 +30,10 @@ button.add {
 	content: 'Untitled';
 }
 
+.note-compact:last-child {
+	border: none;
+}
+
 .note-expanded h1:empty::after {
 	content: 'Untitled';
 }
@@ -46,7 +50,7 @@ button.add {
 	color: gray;
 }
 
-.note-compact:last-child {
-	border: none;
+div br::after {
+	content: 'doge';
 }
 
