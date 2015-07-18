@@ -110,7 +110,6 @@ Template.Observations.events({
 		$('button.close').click();
 	},
 	'click .note-compact': function(e, tmpl) {
-		console.log(e.target.dataset.id);
 		editingNoteId.set(e.target.dataset.id);
 	},
 	keydown: function(e) {
