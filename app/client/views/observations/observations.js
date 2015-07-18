@@ -84,7 +84,7 @@ Template.Observations.helpers({
 Template.Observations.events({
 	'click button.add': function() {
 		Notes.insert({
-			createdAt: (new Date).toString(),
+			createdAt: (new Date).toISOString(),
 			title: 'Untitled',
 			content: "Write about something you've observed or attach an image"
 		});
@@ -94,14 +94,19 @@ Template.Observations.events({
 	},
 	'click button.save': function() {
 		var title = $('h1').text();
+		var content = $('div.content').text();
 		if(title === '') {
 			title = 'Untitled';
+		}
+		if(content === '') {
+			content = "Write about something you've observed or attach an image"
 		}
 		Notes.update({
 			_id: editingNoteId.get()
 		}, {
 			$set: {
-				title: title
+				title: title,
+				content: content
 			}
 		});
 		$('button.close').click();
