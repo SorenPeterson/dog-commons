@@ -85,7 +85,8 @@ Template.Observations.events({
 	'click button.add': function() {
 		Notes.insert({
 			createdAt: moment().format('YYYYMMDD'),
-			title: 'Untitled'
+			title: 'Untitled',
+			content: "Write about something you've observed or attach an image"
 		});
 	},
 	'click button.close': function() {
