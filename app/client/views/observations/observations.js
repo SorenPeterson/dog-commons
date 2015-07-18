@@ -71,7 +71,7 @@ Template.Observations.helpers({
 		return Notes.find();
 	},
 	created: function(note) {
-		return moment(note.createdAt).fromNow();
+		return moment(note.createdAt).calendar();
 	},
 	editing: function() {
 		return !!editingNoteId.get();
@@ -84,13 +84,27 @@ Template.Observations.helpers({
 Template.Observations.events({
 	'click button.add': function() {
 		Notes.insert({
-			createdAt: moment().format('YYYYMMDD'),
+			createdAt: (new Date).toString(),
 			title: 'Untitled',
 			content: "Write about something you've observed or attach an image"
 		});
 	},
 	'click button.close': function() {
 		editingNoteId.set(null);
+	},
+	'click button.save': function() {
+		var title = $('h1').text();
+		if(title === '') {
+			title = 'Untitled';
+		}
+		Notes.update({
+			_id: editingNoteId.get()
+		}, {
+			$set: {
+				title: title
+			}
+		});
+		$('button.close').click();
 	},
 	'click .note-compact': function(e, tmpl) {
 		console.log(e.target.dataset.id);
