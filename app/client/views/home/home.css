@@ -11,6 +11,10 @@
 	text-align: center;
 }
 
+.navigation .row a {
+	text-decoration: none;
+}
+
 .navigation .btn {
 	width: 30vw;
 	height: 30vw;
