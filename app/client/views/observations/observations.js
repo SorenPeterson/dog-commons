@@ -82,15 +82,15 @@ Template.Observations.helpers({
 });
 
 Template.Observations.events({
-	'click button.add': function() {
+	'click .add': function() {
 		Notes.insert({
 			createdAt: (new Date).toISOString(),
 		});
 	},
-	'click button.close': function() {
+	'click .close': function() {
 		editingNoteId.set(null);
 	},
-	'click button.save': function() {
+	'click .save': function() {
 		var title = $('h1').text();
 		var content = $('div.content').text();
 		Notes.update({
@@ -101,13 +101,13 @@ Template.Observations.events({
 				content: content
 			}
 		});
-		$('button.close').click();
+		$('.close').click();
 	},
-	'click button.delete': function() {
+	'click .delete': function() {
 		Notes.remove({
 			_id: editingNoteId.get()
 		});
-		$('button.close').click();
+		$('.close').click();
 	},
 	'click .note-compact': function(e, tmpl) {
 		editingNoteId.set(e.target.dataset.id);

@@ -5,10 +5,12 @@
 	<div class="header-spacer"></div>
 
 	{{#if editing}}
-		<button class="close">Close</button>
-		<button class="save">Save</button>
-		<button class="delete">Delete</button>
-		<button class="picture">Add a picture</button>
+		<div id="action-btns">
+			<div class="obs close">Cancel</div>
+			<div class="obs save">Save</div>
+			<div class="obs delete">Delete</div>
+			<div class="obs picture">+ Picture</div>
+		</div>
 		{{#with openNote}}
 			<div class="note-expanded">
 				<h1 contentEditable="true">{{title}}</h1>
@@ -16,7 +18,9 @@
 			</div>
 		{{/with}}
 	{{else}}
-		<button class="add">+</button>
+		<div class="obs add">
+			<div class="text">+</div>
+		</div>
 		<div>
 			{{#each notes}}
 				<div class="note-compact" data-id={{_id}}>

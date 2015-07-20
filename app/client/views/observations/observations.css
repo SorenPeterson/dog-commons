@@ -7,11 +7,39 @@
 	z-index: -1;
 }
 
-button.add {
+div.add {
+	width: 40px;
+	height: 40px;
 	position: fixed;
 	top: 10px;
 	right: 10px;
 	z-index: 1;
+}
+
+div.add .text {
+	font-size: 2em;
+	font-weight: bold;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+div.obs {
+	border-radius: 3px;
+	background-color: white;
+	box-shadow: 0 2px 5px black;
+	display: inline-block;
+	text-align: center;
+}
+
+div.obs:not(.add) {
+	width: 20vw;
+	padding: 3px;
+}
+
+div#action-btns {
+	text-align: center;
 }
 
 .note-compact {
