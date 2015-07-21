@@ -47,3 +47,18 @@
 	text-decoration: none;
 }
 
+.home.quote {
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	font-weight: normal;
+}
+
+.home.title {
+	font-weight: normal;
+	position: absolute;
+	top: 20px;
+	text-align: center;
+	width: 100%;
+}
+

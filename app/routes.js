@@ -38,11 +38,12 @@ Router.route('/home', function() {
 			Session.set('showHomeButton', 'bounceOutDown');
 		}
 	});
-	this.layout('Layout', {
+	/*this.layout('Layout', {
 		data: {
 			hideNav: true
 		}
-	});
+	});*/
+	this.layout(null);
 	this.render('Home');
 });
 
