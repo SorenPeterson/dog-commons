@@ -15,3 +15,12 @@
 	text-decoration: none;
 }
 
+.splash-bg {
+	width: 100vw;
+	height: 100vh;
+	background: url('/background.jpg') center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
