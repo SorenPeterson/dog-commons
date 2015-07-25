@@ -97,10 +97,27 @@ div br::after {
 	background-color: white;
 	box-shadow: 0 3px 10px black;
 	border-radius: 10px;
-	padding: 5px;
+	padding: 10px;
 }
 
+#observations-msg p {
+	padding: 10px 0;
+}
 
+#observations-msg .button {
+	background-color: #aceee5;
+	box-shadow: 0 3px 5px black;
+	display: inline-block;
+	padding: 10px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 10px;
+	max-width: 50%;
+}
+
+#observations-msg .button.dontShow {
+	right: 10px;
+}
 
 
 
