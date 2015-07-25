@@ -58,7 +58,7 @@ Router.route('/observations', function() {
 });
 
 Router.route('/art', function() {
-	Session.set('pageTitle', '3030 Project');
+	this.layout(null);
 	this.render('Art');
 });
 

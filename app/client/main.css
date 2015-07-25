@@ -66,3 +66,11 @@ html {
 	height: 60px;
 }
 
+div.button {
+	background-color: #aceee5;
+	box-shadow: 0 3px 5px black;
+	display: inline-block;
+	padding: 10px;
+	border-radius: 5px;
+	position: absolute;
+}

@@ -1,9 +1,10 @@
 <template name="Art">
-	<h3>Today</h3>
-	{{#if todaysPainting}}
-		<img src="/img/art/{{todaysPainting}}"/>
-	{{else}}
-		<p>There is no painting for today</p>
-	{{/if}}
+	<div id="art">
+		<p>You are about to go to the official website for the 30 x 30 project. You will be leaving this application. At any time you can hit "done" to return to this application.</p>
+		<div class="button go">Go to external site</div>
+		<a href="/home">
+			<div class="button back">Go back</div>
+		</a>
+	</div>
 </template>
 
