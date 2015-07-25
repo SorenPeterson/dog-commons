@@ -104,6 +104,10 @@ div br::after {
 	padding: 10px 0;
 }
 
+#observations-msg p:first-child {
+	padding: 0;
+}
+
 #observations-msg .button {
 	background-color: #aceee5;
 	box-shadow: 0 3px 5px black;
