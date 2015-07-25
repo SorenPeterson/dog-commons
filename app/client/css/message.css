@@ -1,0 +1,17 @@
+#message {
+	padding: 10px;
+}
+
+#message div.button {
+	bottom: 10px;
+}
+
+#message div.button.go {
+	right: 10px;
+}
+
+#message div.button.back {
+	left: 10px;
+	color: black;
+}
+
