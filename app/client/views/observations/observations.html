@@ -2,7 +2,9 @@
 	<div class="observations bg">
 	</div>
 
-	{{> ObservationsMsg}}
+	{{#unless hideMsg}}
+		{{> ObservationsMsg}}
+	{{/unless}}
 	
 	{{#if editing}}
 		<div id="action-btns">

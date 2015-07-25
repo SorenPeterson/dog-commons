@@ -78,6 +78,9 @@ Template.Observations.helpers({
 	},
 	openNote: function() {
 		return Notes.findOne({_id: editingNoteId.get() });
+	},
+	hideMsg: function() {
+		return Session.get('hideObsMsg');
 	}
 });
 
@@ -115,6 +118,15 @@ Template.Observations.events({
 	keydown: function(e) {
 		if(e.keyCode === 13)
 			e.preventDefault();
+	}
+});
+
+Template.ObservationsMsg.events({
+	'click .button.close': function() {
+		Session.set('hideObsMsg', true);
+	},
+	'click .button.dontShow': function() {
+		Session.setPersistent('hideObsMsg', true);
 	}
 });
 
