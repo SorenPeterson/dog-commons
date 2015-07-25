@@ -101,7 +101,7 @@ div br::after {
 }
 
 #observations-msg p {
-	padding: 10px 0;
+	padding-top: 10px;
 }
 
 #observations-msg p:first-child {
