@@ -62,6 +62,11 @@ Router.route('/art', function() {
 	this.render('Art');
 });
 
+Router.route('/birds', function() {
+	this.layout(null);
+	this.render('Birds');
+});
+
 Router.route('/trees', function() {
 	Session.set('pageTitle', 'Tree Identification');
 	this.render('Trees');
