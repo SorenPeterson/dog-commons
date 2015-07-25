@@ -1,6 +1,8 @@
 <template name="Observations">
 	<div class="observations bg">
 	</div>
+
+	{{> ObservationsMsg}}
 	
 	{{#if editing}}
 		<div id="action-btns">
@@ -30,3 +32,10 @@
 	{{/if}}
 </template>
 
+<template name="ObservationsMsg">
+	<div id="observations-msg">
+		<p>Writing about and documenting your experiences is a very powerful way to grow closer to nature. Even three simple observations will help you appreciate what is around you.</p>
+		<p>This observation diary is a place for you to record your moments in nature. You can write about the things you've and include the pictures you've taken.</p>
+		<p>The information you enter here is stored only on your phone and will not be used, uploaded, viewed or distributed by anyone else. You are free to write about anything you would like.</p>
+	</div>
+</template>

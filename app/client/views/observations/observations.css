@@ -87,3 +87,37 @@ div br::after {
 	content: 'doge';
 }
 
+#observations-msg {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	bottom: 20px;
+	left: 20px;
+	z-index: 2;
+	background-color: white;
+	box-shadow: 0 3px 10px black;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
