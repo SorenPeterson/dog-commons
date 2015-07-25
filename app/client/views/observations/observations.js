@@ -66,6 +66,10 @@ Template.Observations.events({
 
 var editingNoteId = new ReactiveVar();
 
+Template.Observations.onRendered(function() {
+	$('div.title').fitText();
+});
+
 Template.Observations.helpers({
 	notes: function() {
 		return Notes.find();
