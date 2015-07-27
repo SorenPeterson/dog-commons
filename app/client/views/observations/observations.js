@@ -19,6 +19,9 @@ Template.Observations.helpers({
 	},
 	hideMsg: function() {
 		return Session.get('hideObsMsg');
+	},
+	title: function(note) {
+		return note.content.shrink(100);
 	}
 });
 
@@ -32,13 +35,11 @@ Template.Observations.events({
 		editingNoteId.set(null);
 	},
 	'click .save': function() {
-		var title = $('h1').text();
 		var content = $('div.content').text();
 		Notes.update({
 			_id: editingNoteId.get()
 		}, {
 			$set: {
-				title: title,
 				content: content
 			}
 		});
