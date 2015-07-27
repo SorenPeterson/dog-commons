@@ -116,6 +116,11 @@ Template.Observations.events({
 		});
 		$('.close').click();
 	},
+	'click .picture': function() {
+		MeteorCamera.getPicture(function() {
+			console.log(arguments);
+		});
+	},
 	'click .note-compact': function(e, tmpl) {
 		editingNoteId.set(e.target.dataset.id);
 	},
