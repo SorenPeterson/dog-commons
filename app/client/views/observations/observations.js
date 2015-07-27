@@ -9,7 +9,7 @@ Template.Observations.helpers({
 		return Notes.find();
 	},
 	photos: function(noteId) {
-		return Photos.find({noteId: noteId});
+		return Photos.find({noteId: editingNoteId.get()});
 	},
 	created: function(note) {
 		return moment(note.createdAt).calendar();
