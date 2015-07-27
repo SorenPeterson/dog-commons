@@ -8,6 +8,9 @@ Template.Observations.helpers({
 	notes: function() {
 		return Notes.find();
 	},
+	photos: function(noteId) {
+		return Photos.find({noteId: noteId});
+	},
 	created: function(note) {
 		return moment(note.createdAt).calendar();
 	},
@@ -53,9 +56,12 @@ Template.Observations.events({
 	},
 	'click .picture': function() {
 		MeteorCamera.getPicture(function(error, data) {
-			var img = document.createElement('img');
-			img.src = data;
-			$('.note-expanded').append(img);
+			if(!error) {
+				Photos.insert({
+					noteId: editingNoteId.get(),
+					uri: data
+				});
+			}
 		});
 	},
 	'click .note-compact': function(e, tmpl) {

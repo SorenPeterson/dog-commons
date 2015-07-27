@@ -15,6 +15,13 @@
 		</div>
 		{{#with openNote}}
 			<div class="note-expanded">
+				<div class="photos">
+					{{#each photos}}
+						<img class="photo" src="{{uri}}"/>
+					{{else}}
+						<p>Tap "Picture" to add a picture...</p>
+					{{/each}}
+				</div>
 				<div class="content" contentEditable="true">{{content}}</div>
 			</div>
 		{{/with}}
