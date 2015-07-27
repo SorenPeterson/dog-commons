@@ -17,5 +17,3 @@ App.accessRule('*.mapbox.com/*');
 App.accessRule('*.audubon.org/*');*/
 App.accessRule('*');
 
-App.setPreference('StatusBarOverlaysWebView', 'false');
-
