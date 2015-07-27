@@ -40,6 +40,7 @@ div.obs:not(.add) {
 
 div#action-btns {
 	text-align: center;
+	padding-bottom: 10px;
 }
 
 #action-btns .obs {
@@ -71,8 +72,12 @@ div#action-btns {
 	content: 'Untitled';
 }
 
+.note-expanded div.content {
+	min-height: 300px;
+}
+
 .note-expanded div.content:empty::after {
-	content: "Write about something you've observed or attach an image"
+	content: "Touch here to start writing...";
 }
 
 .note-expanded h1:focus::after {
