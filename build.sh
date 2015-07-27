@@ -1,3 +1,4 @@
+git pull origin master
 echo y | rm -rf devbuild/*
 cd app
 meteor build ../devbuild --server=http://nbt.otterhive.com
