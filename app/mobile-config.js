@@ -10,9 +10,10 @@ App.icons({
 	'iphone_3x': 'icons/icon-180.png'
 });
 
-App.accessRule('nbt.otterhive.com/*');
+/*App.accessRule('nbt.otterhive.com/*');
 App.accessRule('192.168.1.131/*');
 App.accessRule('localhost/*');
 App.accessRule('*.mapbox.com/*');
-App.accessRule('*.audubon.org/*');
+App.accessRule('*.audubon.org/*');*/
+App.accessRule('*');
 
