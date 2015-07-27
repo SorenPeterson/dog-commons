@@ -119,7 +119,7 @@ Template.Observations.events({
 	'click .picture': function() {
 		MeteorCamera.getPicture(function() {
 			console.log(arguments);
-			alert('something should have happened');
+			alert(' have happened');
 		});
 	},
 	'click .note-compact': function(e, tmpl) {
