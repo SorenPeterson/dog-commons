@@ -15,6 +15,16 @@ Router.route('/trees/type/:type', function() {
 	});
 });
 
+Router.route('/trees/tree/:id', function() {
+	this.render('SingleTree', {
+		data: function() {
+			return {
+				tree: Trees.findOne({_id: this.params.id})
+			}
+		}
+	});
+});
+
 Meteor.startup(function() {
 	for(var i = 0; i < TREE_DATA.length; i++) {
 		Trees.insert(TREE_DATA[i]);

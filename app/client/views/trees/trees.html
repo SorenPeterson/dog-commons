@@ -5,6 +5,43 @@
 
 <template name="TreeList">
 	{{#each trees}}
-		<h2>{{name}}</h2>
+		<a href="/trees/tree/{{this._id}}"><h2>{{name}}</h2></a>
 	{{/each}}
 </template>
+
+<template name="SingleTree">
+	{{#with tree}}
+		<h2>{{name}}</h2>
+		<h3>
+			Form
+		</h3>
+		<p>
+			{{form}}
+		</p>
+		<h3>
+			Bark
+		</h3>
+		<p>
+			{{bark}}
+		</p>
+		<h3>
+			Leaf
+		</h3>
+		<p>
+			{{leaf}}
+		</p>
+		<h3>
+			Fruit
+		</h3>
+		<p>
+			{{fruit}}
+		</p>
+		<h3>
+			Range
+		</h3>
+		<p>
+			{{range}}
+		</p>
+	{{/with}}
+</template>
+
