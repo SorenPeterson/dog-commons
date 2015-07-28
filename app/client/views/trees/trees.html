@@ -4,9 +4,11 @@
 </template>
 
 <template name="TreeList">
-	{{#each trees}}
-		<a href="/trees/tree/{{this._id}}"><h2>{{name}}</h2></a>
-	{{/each}}
+	<div class="treelist">
+		{{#each trees}}
+			<a href="/trees/tree/{{this._id}}"><h2>{{name}}</h2></a>
+		{{/each}}
+	</div>
 </template>
 
 <template name="SingleTree">
