@@ -128,7 +128,6 @@ div br::after {
 	border-radius: 5px;
 	box-shadow: 0 2px 3px black;
 	background-color: #eee;
-	overflow: scroll;
 }
 
 .note-expanded .photos img.photo {
@@ -136,7 +135,7 @@ div br::after {
 	margin: 5px 5px 10px 5px;
 	border-radius: 5px;
 	box-shadow: 0 2px 3px black;
-	height: 25vh;
+	width: 100%;
 }
 
 
