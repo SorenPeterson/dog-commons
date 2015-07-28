@@ -73,7 +73,8 @@ div#action-btns {
 }
 
 .note-expanded div.content {
-	min-height: 300px;
+	padding: 20px;
+	margin-bottom: 5px;
 }
 
 .note-expanded div.content:empty::after {
@@ -130,12 +131,12 @@ div br::after {
 	background-color: #eee;
 }
 
-.note-expanded .photos img.photo {
-	padding: 5px;
-	margin: 5px 5px 10px 5px;
+.note-expanded img.photo {
+	display: block;
+	margin: auto;
 	border-radius: 5px;
 	box-shadow: 0 2px 3px black;
-	width: 100%;
+	width: 95%;
 }
 
 

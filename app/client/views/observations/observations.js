@@ -1,4 +1,5 @@
-var editingNoteId = new ReactiveVar();
+/*var editingNoteId = new ReactiveVar();*/
+window.editingNoteId = new ReactiveVar();
 
 Template.Observations.onRendered(function() {
 	$('div.title').fitText();
