@@ -21,8 +21,6 @@ Meteor.startup(function() {
 			activityType: 'Automotive Navigation',
 			debug: false
 		});
-
-		StatusBar.hide();
 	}
 });
 
