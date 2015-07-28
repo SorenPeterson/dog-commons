@@ -67,11 +67,6 @@ Router.route('/birds', function() {
 	this.render('Birds');
 });
 
-Router.route('/trees', function() {
-	Session.set('pageTitle', 'Tree Identification');
-	this.render('Trees');
-});
-
 Router.route('/pedometer', function() {
 	Session.set('pageTitle', 'Pedometer');
 	this.render('Pedometer');
