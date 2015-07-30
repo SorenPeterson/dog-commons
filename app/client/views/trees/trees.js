@@ -62,6 +62,13 @@ Template.Trees.onRendered(function() {
 	$('div.title').fitText();
 });
 
+Template.Trees.events({
+	'submit form': function(evt, tmpl) {
+		evt.preventDefault();
+		Router.go('/trees/search/' + tmpl.find('input[type=text]').value);
+	}
+});
+
 window.Tree = function(obj) {
 	this.combined = "";
 	for(i in obj) {
