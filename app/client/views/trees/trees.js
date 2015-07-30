@@ -6,6 +6,7 @@ Router.route('/trees', function() {
 });
 
 Router.route('/trees/type/:type', function() {
+	Session.set('treesBackUrl', this.originalUrl);
 	this.layout(null);
 	this.render('TreeList', {
 		data: function() {
