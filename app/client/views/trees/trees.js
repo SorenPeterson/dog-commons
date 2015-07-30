@@ -34,4 +34,3 @@ Meteor.startup(function() {
 Template.Trees.onRendered(function() {
 	$('div.title').fitText();
 });
-

@@ -15,6 +15,9 @@
 	text-decoration: none;
 }
 
+.navigation .btn-container {
+}
+
 .navigation .btn {
 	width: 30vw;
 	height: 30vw;
