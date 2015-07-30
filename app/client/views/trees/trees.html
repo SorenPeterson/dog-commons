@@ -23,6 +23,13 @@
 </template>
 
 <template name="TreeList">
+	<div class="header">
+		<a href="/trees">Back</a>
+	</div>
+
+	<div class="header-spacer">
+	</div>
+
 	<div class="treelist">
 		{{#each trees}}
 			<a href="/trees/tree/{{this._id}}"><h2>{{name}}</h2></a>
@@ -31,6 +38,13 @@
 </template>
 
 <template name="SingleTree">
+	<div class="header">
+		<a href="{{back}}">Back</a>
+	</div>
+
+	<div class="header-spacer">
+	</div>
+
 	{{#with tree}}
 		<h2>{{name}}</h2>
 		<h3>

@@ -6,6 +6,7 @@ Router.route('/trees', function() {
 });
 
 Router.route('/trees/type/:type', function() {
+	this.layout(null);
 	this.render('TreeList', {
 		data: function() {
 			return {
@@ -16,6 +17,8 @@ Router.route('/trees/type/:type', function() {
 });
 
 Router.route('/trees/search/:phrase', function() {
+	Session.set('treesBackUrl', this.originalUrl);
+	this.layout(null);
 	this.render('TreeList', {
 		data: function() {
 			return {
@@ -38,10 +41,12 @@ Router.route('/trees/search/:phrase', function() {
 });
 
 Router.route('/trees/tree/:id', function() {
+	this.layout(null);
 	this.render('SingleTree', {
 		data: function() {
 			return {
-				tree: Trees.findOne({_id: this.params.id})
+				tree: Trees.findOne({_id: this.params.id}),
+				back: Session.get('treesBackUrl')
 			}
 		}
 	});
