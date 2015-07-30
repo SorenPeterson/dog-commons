@@ -15,21 +15,21 @@ Router.route('/trees/type/:type', function() {
 	});
 });
 
-Router.route('/trees/search/:query', function() {
+Router.route('/trees/search/:phrase', function() {
 	this.render('TreeList', {
 		data: function() {
 			return {
 				trees: Trees.find({}).map(function(obj) {
 					return new Tree(obj);
 				}).sort((function(a, b) {
-					var a = a.occurrences(this.params.query);
-					var b = b.occurrences(this.params.query);
+					var a = a.rank(this.params.phrase);
+					var b = b.rank(this.params.phrase);
 					if(a > b) {
-						return 1;
+						return -1;
 					} else if (a === b) {
 						return 0;
 					} else {
-						return -1;
+						return 1;
 					}
 				}).bind(this))
 			}
@@ -82,6 +82,7 @@ Tree.prototype.rank = function(phrase) {
 		count += this.occurrences(terms[i]);
 	}
 	this.rank[phrase];
+	console.log(this.name, count);
 	return count;
 }
 
