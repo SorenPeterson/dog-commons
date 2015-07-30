@@ -1,12 +1,22 @@
 <template name="Trees">
-	<div class="navigation">
+	<p>
+		This a copy of the MN DNR's tree identification information. To start, pick whether the tree is deciduous or coniferous.
+	</p>
+	
+	<div class="navigation trees">
 		<div class="row">
 			<a href="/trees/type/deciduous">
-				<img class="btn" src="/deciduous.png"/>
+				<div class="btn-container">
+					<img class="btn" src="/deciduous.png"/>
+					<div class="btn-label">Deciduous</div>
+				</div>
 			</a>
 
 			<a href="/trees/type/coniferous">
-				<img class="btn" src="/coniferous.png"/>
+				<div class="btn-container">
+					<img class="btn" src="/coniferous.png"/>
+					<div class="btn-label">Coniferous</div>
+				</div>
 			</a>
 		</div>
 	</div>
