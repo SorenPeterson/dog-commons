@@ -82,7 +82,6 @@ Tree.prototype.rank = function(phrase) {
 		count += this.occurrences(terms[i]);
 	}
 	this.rank[phrase];
-	console.log(this.name, count);
 	return count;
 }
 
