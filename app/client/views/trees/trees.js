@@ -42,6 +42,9 @@ Router.route('/trees/search/:phrase', function() {
 });
 
 Router.route('/trees/tree/:id', function() {
+	if(!Session.get('treesBackUrl')) {
+		Router.go('/trees');
+	}
 	this.layout(null);
 	this.render('SingleTree', {
 		data: function() {
@@ -66,7 +69,10 @@ Template.Trees.onRendered(function() {
 Template.Trees.events({
 	'submit form': function(evt, tmpl) {
 		evt.preventDefault();
-		Router.go('/trees/search/' + tmpl.find('input[type=text]').value);
+		var value = tmpl.find('input[type=text]').value;
+		if(value.length > 0) {
+			Router.go('/trees/search/' + value);
+		}
 	}
 });
 
