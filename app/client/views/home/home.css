@@ -44,6 +44,7 @@
 .navigation .btn-label {
 	position: relative;
 	top: 10px;
+	color: black;
 }
 
 .navigation .btn-label a {
