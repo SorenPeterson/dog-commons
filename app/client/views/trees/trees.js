@@ -62,6 +62,10 @@ Meteor.startup(function() {
 	}
 });
 
+Template.TreeList.onRendered(function() {
+	$('.treelist').height(window.innerHeight - $('.header').height());
+});
+
 Template.Trees.onRendered(function() {
 	$('div.title').fitText();
 });
