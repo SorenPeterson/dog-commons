@@ -64,6 +64,7 @@ Meteor.startup(function() {
 
 Template.TreeList.onRendered(function() {
 	$('.treelist').height(window.innerHeight - $('.header').height());
+	$('.trees-back-text').fitText();
 });
 
 Template.Trees.onRendered(function() {
