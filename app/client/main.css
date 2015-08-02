@@ -19,7 +19,6 @@ html {
 	-o-background-size: cover;
 	background-size: cover;*/
 	z-index: -2;
-	position: fixed;
 	top: 0;
 	left: 0;
 }
@@ -76,9 +75,5 @@ div.button {
 	padding: 10px;
 	border-radius: 5px;
 	position: absolute;
-}
-
-.scroll-container {
-	overflow: auto;
 }
 
