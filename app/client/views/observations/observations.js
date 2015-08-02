@@ -25,15 +25,16 @@ Template.Observations.helpers({
 		return Session.get('hideObsMsg');
 	},
 	title: function(note) {
-		return note.content.shrink(100);
+		return (note.content || '').shrink(100);
 	}
 });
 
 Template.Observations.events({
 	'click .add': function() {
-		Notes.insert({
+		var id = Notes.insert({
 			createdAt: (new Date).toISOString(),
 		});
+		editingNoteId.set(id);
 	},
 	'click .close': function() {
 		editingNoteId.set(null);
