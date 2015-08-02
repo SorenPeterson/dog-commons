@@ -113,7 +113,7 @@ Router.route('/api/geolocation', function() {
 
 	// Can insert into a Collection from the server (or whatever)
 	if (GeolocationLog.insert(requestData)) {
-		this.response.writeHead(200, {'Content-Type': 'application/json'});
+		this.response.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'});
 		this.response.end('ok');
 		return;
 	}
