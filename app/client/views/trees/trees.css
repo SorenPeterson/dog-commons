@@ -13,6 +13,10 @@
 	bottom: 200px;
 }
 
+.navigation.trees form {
+	margin-top: 30px;
+}
+
 .trees-back {
 	color: black;
 }
