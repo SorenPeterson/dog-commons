@@ -1,10 +1,29 @@
-/*var editingNoteId = new ReactiveVar();*/
-window.editingNoteId = new ReactiveVar();
-
-Template.Observations.onRendered(function() {
-	$('div.title').fitText();
+Router.route('/observations', function() {
+	Session.set('pageTitle', 'Observation Diary');
+	this.render('Observations');
 });
 
+Router.route('/observations/edit/:id', function() {
+	this.render('EditObservation', {
+		data: function() {
+			return {
+				openNote: Notes.findOne({_id: this.params.id})
+			}
+		}
+	});
+});
+
+Template.Observations.onRendered(function() {
+	$('div.title').fitText(1.0);
+});
+
+var Helpers = {
+	title: function(note) {
+		return (note.content || '').shrink(100);
+	}
+};
+
+Template.Observations.helpers(Helpers);
 Template.Observations.helpers({
 	notes: function() {
 		return Notes.find();
@@ -15,17 +34,8 @@ Template.Observations.helpers({
 	created: function(note) {
 		return moment(note.createdAt).calendar();
 	},
-	editing: function() {
-		return !!editingNoteId.get();
-	},
-	openNote: function() {
-		return Notes.findOne({_id: editingNoteId.get() });
-	},
 	hideMsg: function() {
 		return Session.get('hideObsMsg');
-	},
-	title: function(note) {
-		return (note.content || '').shrink(100);
 	}
 });
 
@@ -34,40 +44,44 @@ Template.Observations.events({
 		var id = Notes.insert({
 			createdAt: (new Date).toISOString(),
 		});
-		editingNoteId.set(id);
+		Router.go('/observations/edit/' + id);
 	},
+	'click .note-compact': function(e, tmpl) {
+		Router.go('/observations/edit/' + e.target.dataset.id);
+	}
+});
+
+Template.Observations.helpers(Helpers);
+Template.EditObservation.events({
 	'click .close': function() {
-		editingNoteId.set(null);
+		Router.go('/observations');
 	},
 	'click .save': function() {
 		var content = $('div.content').text();
 		Notes.update({
-			_id: editingNoteId.get()
+			_id: this.openNote._id
 		}, {
 			$set: {
 				content: content
 			}
 		});
-		$('.close').click();
+		Router.go('/observations');
 	},
 	'click .delete': function() {
 		Notes.remove({
-			_id: editingNoteId.get()
+			_id: this.openNote._id
 		});
-		$('.close').click();
+		Router.go('/observations');
 	},
 	'click .picture': function() {
 		MeteorCamera.getPicture(function(error, data) {
 			if(!error) {
 				Photos.insert({
-					noteId: editingNoteId.get(),
+					noteId: this.openNote._id,
 					uri: data
 				});
 			}
 		});
-	},
-	'click .note-compact': function(e, tmpl) {
-		editingNoteId.set(e.target.dataset.id);
 	},
 	keydown: function(e) {
 		if(e.keyCode === 13)

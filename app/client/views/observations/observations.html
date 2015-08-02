@@ -1,41 +1,38 @@
 <template name="Observations">
-	<div class="observations bg">
-	</div>
-
 	{{#unless hideMsg}}
 		{{> ObservationsMsg}}
 	{{/unless}}
 	
-	{{#if editing}}
-		<div id="action-btns">
-			<div class="obs close">Cancel</div>
-			<div class="obs save">Save</div>
-			<div class="obs delete">Delete</div>
-			<div class="obs picture">Picture</div>
-		</div>
-		<div>
-			{{#with openNote}}
-				<div class="note-expanded">
-					<div class="content" contentEditable="true">{{content}}</div>
-					{{#each photos}}
-						<img class="photo" src="{{uri}}"/>
-					{{/each}}
-				</div>
-			{{/with}}
-		</div>
-	{{else}}
-		<div class="obs add">
-			<div class="text">+</div>
-		</div>
-		<div>
-			{{#each notes}}
-				<div class="note-compact" data-id={{_id}}>
-					<h1>{{title this}}</h1>
-					<p>Created {{created this}}</p>
-				</div>
-			{{/each}}
-		</div>
-	{{/if}}
+	<div class="obs add">
+		<div class="text">+</div>
+	</div>
+	<div>
+		{{#each notes}}
+			<div class="note-compact" data-id={{_id}}>
+				<h1>{{title this}}</h1>
+				<p>Created {{created this}}</p>
+			</div>
+		{{/each}}
+	</div>
+</template>
+
+<template name="EditObservation">
+	<div id="action-btns">
+		<div class="obs close">Cancel</div>
+		<div class="obs save">Save</div>
+		<div class="obs delete">Delete</div>
+		<div class="obs picture">Picture</div>
+	</div>
+	<div>
+		{{#with openNote}}
+			<div class="note-expanded">
+				<div class="content" contentEditable="true">{{content}}</div>
+				{{#each photos}}
+					<img class="photo" src="{{uri}}"/>
+				{{/each}}
+			</div>
+		{{/with}}
+	</div>
 </template>
 
 <template name="ObservationsMsg">

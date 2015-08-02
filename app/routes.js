@@ -52,11 +52,6 @@ Router.route('/map', function() {
 	this.render('Map');
 });
 
-Router.route('/observations', function() {
-	Session.set('pageTitle', 'Observation Diary');
-	this.render('Observations');
-});
-
 Router.route('/art', function() {
 	this.layout(null);
 	this.render('Art');
