@@ -13,21 +13,23 @@
 			<div class="obs delete">Delete</div>
 			<div class="obs picture">Picture</div>
 		</div>
-		{{#with openNote}}
-			<div class="note-expanded">
-				<div class="content" contentEditable="true">{{content}}</div>
-				{{#each photos}}
-					<img class="photo" src="{{uri}}"/>
-				{{else}}
-					<p>Tap "Picture" to add a picture...</p>
-				{{/each}}
-			</div>
-		{{/with}}
+		<div class="scroll-container">
+			{{#with openNote}}
+				<div class="note-expanded">
+					<div class="content" contentEditable="true">{{content}}</div>
+					{{#each photos}}
+						<img class="photo" src="{{uri}}"/>
+					{{else}}
+						<p>Tap "Picture" to add a picture...</p>
+					{{/each}}
+				</div>
+			{{/with}}
+		</div>
 	{{else}}
 		<div class="obs add">
 			<div class="text">+</div>
 		</div>
-		<div>
+		<div class="scroll-container">
 			{{#each notes}}
 				<div class="note-compact" data-id={{_id}}>
 					<h1>{{title this}}</h1>
