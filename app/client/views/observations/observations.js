@@ -1,18 +1,3 @@
-Router.route('/observations', function() {
-	Session.set('pageTitle', 'Observation Diary');
-	this.render('Observations');
-});
-
-Router.route('/observations/edit/:id', function() {
-	this.render('EditObservation', {
-		data: function() {
-			return {
-				openNote: Notes.findOne({_id: this.params.id})
-			}
-		}
-	});
-});
-
 Template.Observations.onRendered(function() {
 	$('div.title').fitText(1.0);
 });

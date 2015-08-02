@@ -19,6 +19,16 @@ Router.route('/birds');
 Router.route('/pedometer');
 Router.route('/mla');
 
+Router.route('/observations');
+Router.route('/observations/edit/:id', function() {
+	this.render('EditObservation', {
+		data: function() {
+			return {
+				openNote: Notes.findOne({_id: this.params.id})
+			}
+		}
+	});
+});
 
 Router.route('/trees');
 Router.route('/trees/type/:type', function() {
