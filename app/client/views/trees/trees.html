@@ -1,4 +1,6 @@
 <template name="Trees">
+	<div class="header-spacer"></div>
+
 	<div id="message">
 		<p>
 			This a copy of the Minnesota Department of Natural Resources' tree identification information. To start, pick whether the tree is deciduous or coniferous, or enter search terms in the box below.
@@ -29,6 +31,8 @@
 			</form>
 		</div>
 	</div>
+
+	{{> Header pageTitle='Tree Identification'}}
 </template>
 
 <template name="TreeList">

@@ -3,6 +3,8 @@
 		{{> ObservationsMsg}}
 	{{/unless}}
 	
+	<div class="header-spacer"></div>
+
 	<div class="obs add">
 		<div class="text">+</div>
 	</div>
@@ -14,9 +16,13 @@
 			</div>
 		{{/each}}
 	</div>
+
+	{{> Header pageTitle='Observations Diary'}}
 </template>
 
 <template name="EditObservation">
+	<div class="header-spacer"></div>
+
 	<div id="action-btns">
 		<div class="obs close">Cancel</div>
 		<div class="obs save">Save</div>
@@ -33,6 +39,8 @@
 			</div>
 		{{/with}}
 	</div>
+
+	{{> Header pageTitle='Observations Diary'}}
 </template>
 
 <template name="ObservationsMsg">
