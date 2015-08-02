@@ -7,7 +7,7 @@ Meteor.startup(function() {
 		
 	if(Meteor.isCordova) {
 		GeolocationBG.config({
-			url: 'http://example.com/api/geolocation',
+			url: 'http://nbt.otterhive.com/api/geolocation',
 			params: {
 			},
 			headers: {
