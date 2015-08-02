@@ -67,6 +67,10 @@ Template.TreeList.onRendered(function() {
 	$('.trees-back-text').fitText();
 });
 
+Template.SingleTree.onRendered(function() {
+	$('.trees-back-text').fitText();
+});
+
 Template.Trees.onRendered(function() {
 	$('div.title').fitText();
 });
