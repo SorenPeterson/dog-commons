@@ -1,6 +1,12 @@
 Template.Splash.onRendered(function() {
-	$('.splash-inner h1').fitText(0.7);
-	$('.splash-inner span').fitText(0.15);
+	$('.splash h1').fitText(0.7);
+	$('.splash span').fitText(0.15);
+});
+
+Template.Splash.events({
+	'click': function() {
+		Router.go('/home');
+	}
 });
 
 if(Meteor.isCordova) {
