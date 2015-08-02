@@ -1,4 +1,9 @@
-.splash {
+.splash-outer a {
+	text-decoration: none;
+	color: black;
+}
+
+.splash-inner {
 	position: absolute;
 	top: 50vh;
 	width: 100%;
@@ -9,10 +14,6 @@
 
 .splash h1 {
 	margin: 20px;
-}
-
-.splash a {
-	text-decoration: none;
 }
 
 .splash-bg {
