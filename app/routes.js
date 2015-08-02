@@ -1,71 +1,22 @@
 /* Routing */
 Router.onBeforeAction(function(args) {
 	this.layout('Layout');
-	Tracker.nonreactive(function() {
-		if(!Session.get('background')) {
-			var backgrounds = [
-				'url("/butterfly.jpg")',
-				'url("/willow.jpg")',
-				'url("/caterpillar.jpg")'
-			];
-			var rn = Math.floor(Math.random() * backgrounds.length);
-			Session.set('background', backgrounds[rn]);
-		}
-	});
 	this.next();
 }, {
 	except: ['GeolocationBGRoute']
 });
 
-Router.onBeforeAction(function() {
-	Session.set('showHomeButton', 'bounceInUp');
-	this.next();
-}, {
-	except: ['splash', 'home', 'GeolocationBGRoute']
-});
-
 Router.route('/', function() {
-	this.layout(null);
 	this.render('Splash');
 }, {
 	name: 'splash'
 });
 
-Router.route('/home', function() {
-	Session.set('pageTitle', 'Nature Heals');
-	Tracker.nonreactive(function() {
-		if(Session.get('showHomeButton') !== 'hidden') {
-			Session.set('showHomeButton', 'bounceOutDown');
-		}
-	});
-	/*this.layout('Layout', {
-		data: {
-			hideNav: true
-		}
-	});*/
-	this.layout(null);
-	this.render('Home');
-});
-
-Router.route('/map', function() {
-	Session.set('pageTitle', 'Map');
-	this.render('Map');
-});
-
-Router.route('/art', function() {
-	this.layout(null);
-	this.render('Art');
-});
-
-Router.route('/birds', function() {
-	this.layout(null);
-	this.render('Birds');
-});
-
-Router.route('/pedometer', function() {
-	Session.set('pageTitle', 'Pedometer');
-	this.render('Pedometer');
-});
+Router.route('/home');
+Router.route('/map');
+Router.route('/art');
+Router.route('/birds');
+Router.route('/pedometer');
 
 // REST(ish) API
 // Cordova background/foreground can post GPS data HERE

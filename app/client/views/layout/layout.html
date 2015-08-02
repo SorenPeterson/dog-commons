@@ -1,13 +1,14 @@
 <template name="Layout">
-	<div class="header-spacer"></div>
 	{{> yield}}
-	{{#unless hideNav}}
-		<div class="header">
-			<div class="title">{{pageTitle}}</div>
-			<a href="/home">
-				<img class="back-btn" src="/back57.png"/>
-			</a>
-		</div>
-	{{/unless}}
+</template>
+
+<template name="Header">
+	<div class="header-spacer"></div>
+	<div class="header">
+		<div class="title">{{pageTitle}}</div>
+		<a href="/home">
+			<img class="back-btn" src="/back57.png"/>
+		</a>
+	</div>
 </template>
 
