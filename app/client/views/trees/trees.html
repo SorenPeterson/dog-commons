@@ -30,11 +30,7 @@
 </template>
 
 <template name="TreeList">
-	<a class="trees-back" href="/trees">
-		<div class="header">
-			<h1 class="trees-back-text">Back</h1>
-		</div>
-	</a>
+	{{> TreesBack}}
 
 	<div class="header-spacer">
 	</div>
@@ -49,11 +45,7 @@
 </template>
 
 <template name="SingleTree">
-	<a class="trees-back" href="{{back}}">
-		<div class="header">
-			<h1 class="trees-back-text">Back</h1>
-		</div>
-	</a>
+	{{> TreesBack}}
 
 	<div class="header-spacer">
 	</div>
@@ -91,5 +83,13 @@
 			{{range}}
 		</p>
 	{{/with}}
+</template>
+
+<template name="TreesBack">
+	<a class="trees-back" href="{{back}}">
+		<div class="header">
+			<h1 class="trees-back-text">Back</h1>
+		</div>
+	</a>
 </template>
 

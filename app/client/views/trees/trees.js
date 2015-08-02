@@ -11,7 +11,8 @@ Router.route('/trees/type/:type', function() {
 	this.render('TreeList', {
 		data: function() {
 			return {
-				trees: Trees.find({type: this.params.type})
+				trees: Trees.find({type: this.params.type}),
+				back: '/trees'
 			}
 		}
 	});
@@ -35,7 +36,8 @@ Router.route('/trees/search/:phrase', function() {
 					} else {
 						return 1;
 					}
-				}).bind(this))
+				}).bind(this)),
+				back: '/trees'
 			}
 		}
 	});
@@ -64,10 +66,9 @@ Meteor.startup(function() {
 
 Template.TreeList.onRendered(function() {
 	$('.treelist').height(window.innerHeight - $('.header').height());
-	$('.trees-back-text').fitText();
 });
 
-Template.SingleTree.onRendered(function() {
+Template.TreesBack.onRendered(function() {
 	$('.trees-back-text').fitText();
 });
 
