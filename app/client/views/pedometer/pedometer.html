@@ -1,5 +1,19 @@
 <template name="Pedometer">
 	<div class="header-spacer"></div>
 
+	<div class="navigation">
+		<div class="row">
+			{{#if started}}
+					<div class="btn text pedometer-stop">
+						<span class="text">Stop</span>
+					</div>
+			{{else}}
+					<div class="btn text pedometer-start">
+						<span class="text">Start</span>
+					</div>
+			{{/if}}
+		</div>
+	</div>
+
 	{{> Header pageTitle='Pedometer'}}
 </template>

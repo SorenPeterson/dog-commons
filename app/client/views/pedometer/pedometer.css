@@ -1,0 +1,8 @@
+.navigation .btn.pedometer-start {
+	background-color: lime;
+}
+
+.navigation .btn.pedometer-stop {
+	background-color: red;
+}
+
