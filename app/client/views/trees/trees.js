@@ -10,14 +10,6 @@ Template.TreeList.onRendered(function() {
 	$('.treelist').height(window.innerHeight - $('.header').height());
 });
 
-Template.TreesBack.onRendered(function() {
-	$('.trees-back-text').fitText();
-});
-
-Template.Trees.onRendered(function() {
-	$('div.title').fitText();
-});
-
 Template.Trees.events({
 	'submit form': function(evt, tmpl) {
 		evt.preventDefault();

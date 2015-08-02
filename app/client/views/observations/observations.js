@@ -1,7 +1,3 @@
-Template.Observations.onRendered(function() {
-	$('div.title').fitText(1.0);
-});
-
 var Helpers = {
 	title: function(note) {
 		return (note.content || '').shrink(100);
