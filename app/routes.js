@@ -17,6 +17,8 @@ Router.route('/map');
 Router.route('/art');
 Router.route('/birds');
 Router.route('/pedometer');
+Router.route('/mla');
+
 
 Router.route('/trees');
 Router.route('/trees/type/:type', function() {
