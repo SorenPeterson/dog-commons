@@ -18,6 +18,56 @@ Router.route('/art');
 Router.route('/birds');
 Router.route('/pedometer');
 
+Router.route('/trees');
+Router.route('/trees/type/:type', function() {
+	Session.set('treesBackUrl', this.originalUrl);
+	this.render('TreeList', {
+		data: function() {
+			return {
+				trees: Trees.find({type: this.params.type}),
+				back: '/trees'
+			}
+		}
+	});
+});
+Router.route('/trees/search/:phrase', function() {
+	Session.set('treesBackUrl', this.originalUrl);
+	this.render('TreeList', {
+		data: function() {
+			return {
+				trees: Trees.find({}).map(function(obj) {
+					return new Tree(obj);
+				}).sort((function(a, b) {
+					var a = a.rank(this.params.phrase);
+					var b = b.rank(this.params.phrase);
+					if(a > b) {
+						return -1;
+					} else if (a === b) {
+						return 0;
+					} else {
+						return 1;
+					}
+				}).bind(this)),
+				back: '/trees'
+			}
+		}
+	});
+});
+Router.route('/trees/tree/:id', function() {
+	if(!Session.get('treesBackUrl')) {
+		Router.go('/trees');
+	}
+	this.render('SingleTree', {
+		data: function() {
+			return {
+				tree: Trees.findOne({_id: this.params.id}),
+				back: Session.get('treesBackUrl')
+			}
+		}
+	});
+});
+
+
 // REST(ish) API
 // Cordova background/foreground can post GPS data HERE
 //
