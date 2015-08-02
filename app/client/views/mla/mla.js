@@ -6,7 +6,7 @@ Router.route('/mla', function() {
 Template.MLA.events({
 	'click a': function(evt, tmpl) {
 		evt.preventDefault();
-		var href = evt.target.closest('a').href;
+		var href = $(evt.target).closest('a').attr('href');
 		window.open(href, '_blank', 'location=yes');
 	}
 });
