@@ -20,6 +20,12 @@ Meteor.startup(function() {
 			activityType: 'Automotive Navigation',
 			debug: false
 		});
+
+		GeolocationBG.bgGeo.configure(function(location) {
+			GeolocationLog.insert(location);
+		}, function(error) {
+			console.log('error: ', error);
+		}, GeolocationBG.options);
 	}
 });
 
