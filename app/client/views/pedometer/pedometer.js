@@ -39,7 +39,6 @@ Meteor.startup(function() {
 		var distance = 0;
 		var log = GeolocationLog.find().fetch();
 		for(var i = 1; i < log.length; i++) {
-			console.log(distance);
 			distance += getDistanceFromLatLonInKm(log[i-1].lat, log[i-1].lng, log[i].lat, log[i].lng);
 		}
 		Pedometer.distance.set(distance);
@@ -52,6 +51,9 @@ Template.Pedometer.events({
 	},
 	'click .btn.pedometer-stop': function() {
 		Pedometer.stop();
+	},
+	'click .btn.pedometer-reset': function() {
+		GeolocationLog.remove({});
 	}
 });
 
@@ -62,8 +64,11 @@ Template.Pedometer.helpers({
 	started: function() {
 		return Pedometer.started.get();
 	},
-	distance: function() {
-		return Pedometer.distance.get();
+	miles: function() {
+		return Pedometer.distance.get() * 0.621371;
+	},
+	steps: function() {
+		return Pedometer.distance.get() * 6213.71;
 	}
 });
 
