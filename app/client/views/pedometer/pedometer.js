@@ -65,10 +65,10 @@ Template.Pedometer.helpers({
 		return Pedometer.started.get();
 	},
 	miles: function() {
-		return Pedometer.distance.get() * 0.621371;
+		return (Pedometer.distance.get() * 0.621371).toFixed(2);
 	},
 	steps: function() {
-		return Pedometer.distance.get() * 6213.71;
+		return Math.floor(Pedometer.distance.get() * 6213.71);
 	}
 });
 
