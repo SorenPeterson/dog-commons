@@ -1,5 +1,3 @@
-Router.route('/popuptest');
-
 var Popup = function(id) {
 	this.close = function() {
 	};
