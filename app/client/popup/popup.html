@@ -1,0 +1,15 @@
+<template name="Popup">
+	{{#unless hidden}}
+		<div id="observations-msg">
+			{{> Template.contentBlock}}
+			<div class="button close">Close</div>
+			<div class="button dontShow">Don't show this message again</div>
+		</div>
+	{{/unless}}
+</template>
+
+<template name="Popuptest">
+	{{#Popup id="observations"}}
+		<p>This is a test of the popup system</p>
+	{{/Popup}}
+</template>
