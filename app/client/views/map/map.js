@@ -4,24 +4,21 @@ Template.Map.onRendered(function() {
 	$('#map').height(window.innerHeight - 60);
 });
 
+Template.Map.onRendered(function() {
+	this.autorun(function() {
+		if(Mapbox.loaded()) {
+			mapboxOnLoaded();
+		}
+	});
 
-Meteor.startup(function() {
 	var marker;
 	Tracker.autorun(function() {
 		if(Mapbox.loaded()) {
 			marker ? marker.remove : 1;
 			var currentLocation = Geolocation.latLng();
 			if(currentLocation) {
-				//marker = L.marker([currentLocation.lat, currentLocation.lng], {}).addTo(map);
+				marker = L.marker([currentLocation.lat, currentLocation.lng], {}).addTo(map);
 			}
-		}
-	});
-});
-
-Template.Map.onRendered(function() {
-	this.autorun(function() {
-		if(Mapbox.loaded()) {
-			mapboxOnLoaded();
 		}
 	});
 });
