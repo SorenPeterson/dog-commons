@@ -22,6 +22,7 @@ Template.Observations.helpers({
 
 Template.Observations.events({
 	'click .add': function() {
+		Router.go('/blank');
 		var id = Notes.insert({
 			createdAt: (new Date).toISOString(),
 		});
