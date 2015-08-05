@@ -1,8 +1,9 @@
-window.Trees = new Mongo.Collection(null);
-
 Meteor.startup(function() {
-	for(var i = 0; i < TREE_DATA.length; i++) {
-		Trees.insert(TREE_DATA[i]);
+	if(Trees.find({}).count() < 52) {
+		Trees.remove({});
+		for(var i = 0; i < TREE_DATA.length; i++) {
+			Trees.insert(TREE_DATA[i]);
+		}
 	}
 });
 

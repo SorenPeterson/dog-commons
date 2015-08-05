@@ -12,9 +12,7 @@ Meteor.startup(function() {
 			marker ? marker.remove : 1;
 			var currentLocation = Geolocation.latLng();
 			if(currentLocation) {
-				marker = L.marker([currentLocation.lat, currentLocation.lng], {}).addTo(map);
-				console.log(marker);
-				console.log(currentLocation);
+				//marker = L.marker([currentLocation.lat, currentLocation.lng], {}).addTo(map);
 			}
 		}
 	});
