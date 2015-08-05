@@ -70,12 +70,3 @@ Template.EditObservation.events({
 	}
 });
 
-Template.ObservationsMsg.events({
-	'click .button.close': function() {
-		Session.set('hideObsMsg', true);
-	},
-	'click .button.dontShow': function() {
-		Session.setPersistent('hideObsMsg', true);
-	}
-});
-
