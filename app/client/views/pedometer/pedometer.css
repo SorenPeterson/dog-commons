@@ -6,7 +6,7 @@
 	background-color: red;
 }
 
-.row:first-child {
+.navigation.pedometer .row:first-child {
 	margin-bottom: 50px;
 }
 
