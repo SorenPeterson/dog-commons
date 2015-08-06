@@ -5,10 +5,6 @@ var Popup = function(id) {
 	};
 };
 
-Template.Popup.onRendered(function() {
-	this.popupData = {};
-});
-
 Template.Popup.helpers({
 	hidden: function() {
 		return Session.get('hide-popup-msg-' + this.id);
