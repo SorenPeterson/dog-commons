@@ -21,8 +21,9 @@ Template.Observations.helpers({
 });
 
 Template.Observations.events({
-	'click .add': function() {
-		Router.go('/blank');
+	'click .add': function(evt, tmpl) {
+		console.log(tmpl);
+		Blaze.remove(tmpl.view);
 		var id = Notes.insert({
 			createdAt: (new Date).toISOString(),
 		});

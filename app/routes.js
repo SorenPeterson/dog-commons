@@ -13,7 +13,6 @@ Router.route('/', function() {
 });
 
 Router.route('/home');
-Router.route('/blank');
 Router.route('/map');
 Router.route('/art');
 Router.route('/birds');
