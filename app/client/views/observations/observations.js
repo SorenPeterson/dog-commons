@@ -75,3 +75,10 @@ Template.EditObservation.helpers({
 	}
 });
 
+Template.Photo.events({
+	'click .photo-delete-button': function(evt, tmpl) {
+		if(confirm('Are you sure?')) {
+			Photos.remove({_id: tmpl.data._id});
+		}
+	}
+});
