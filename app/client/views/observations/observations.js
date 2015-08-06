@@ -9,9 +9,6 @@ Template.Observations.helpers({
 	notes: function() {
 		return Notes.find();
 	},
-	photos: function(noteId) {
-		return Photos.find({noteId: editingNoteId.get()});
-	},
 	created: function(note) {
 		return moment(note.createdAt).calendar();
 	},
@@ -56,11 +53,11 @@ Template.EditObservation.events({
 		});
 		Router.go('/observations');
 	},
-	'click .picture': function() {
+	'click .picture': function(evt, tmpl) {
 		MeteorCamera.getPicture(function(error, data) {
 			if(!error) {
 				Photos.insert({
-					noteId: this.openNote._id,
+					noteId: tmpl.data.openNote._id,
 					uri: data
 				});
 			}
@@ -69,6 +66,12 @@ Template.EditObservation.events({
 	keydown: function(e) {
 		if(e.keyCode === 13)
 			e.preventDefault();
+	}
+});
+
+Template.EditObservation.helpers({
+	photos: function() {
+		return Photos.find({noteId: this._id});
 	}
 });
 
