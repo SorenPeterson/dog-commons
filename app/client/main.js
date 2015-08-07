@@ -29,3 +29,11 @@ Meteor.startup(function() {
 	}
 });
 
+Template.Layout.events({
+	'click a.in-app-browser': function(evt, tmpl) {
+		evt.preventDefault();
+		var href = $(evt.target).closest('a').attr('href');
+		window.open(href, '_blank', 'location=yes');
+	}
+});
+
