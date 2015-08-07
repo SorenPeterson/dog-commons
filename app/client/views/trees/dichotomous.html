@@ -1,0 +1,487 @@
+<template name="TreesConiferous">
+<a href="/trees">Back</a>
+
+<p>Does it have needles?</p>
+
+<div class="navigation">
+	<a href="/trees/Needle">
+		<div class="btn text">
+			<span class="text">Yes</span>
+		</div>
+	</a>
+	<a href="/trees/NotNeedle">
+		<div class="btn text">
+			<span class="text">No</span>
+		</div>
+	</a>
+</div>
+</template>
+
+<template name="TreesDeciduous">
+<a href="/trees">Back</a>
+
+<p>Are the branches alternating or opposite?</p>
+
+<div class="navigation">
+	<a href="/trees/AlternateBranching">
+		<div class="btn text">
+			<span class="text">Alternate Branching</span>
+		</div>
+	</a>
+	<a href="/trees/OppositeBranching">
+		<div class="btn text">
+			<span class="text">Opposite Branching</span>
+		</div>
+	</a>
+</div>
+</template>
+
+<template name="TreesNeedle">
+<a href="/trees/coniferous">Back</a>
+
+<p>How are the needles arranged at the base?</p>
+
+<div class="navigation">
+	<a href="/trees/SingleNeedle">
+		<div class="btn text">
+			<span class="text">Single Needles</span>
+		</div>
+	</a>
+	<a href="/trees/GroupedNeedl">
+		<div class="btn text">
+			<span class="text">Grouped Needles</span>
+		</div>
+	</a>
+	<a href="/trees/ClusteredNeedle">
+		<div class="btn text">
+			<span class="text">Clustered Needles</span>
+		</div>
+	</a>
+</div>
+</template>
+
+<template name="TreesNotNeedle">
+<a href="/trees/coniferous">Back</a>
+
+<p>It's probably one of these two:</p>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Northern White Cedar</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Red Cedar</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesSingleNeedle">
+<a href="/trees/needle">Back</a>
+
+<p>Are the needles flat or angled?</p>
+
+<div class="navigation">
+	<a href="/trees/FlatNeedle">
+		<div class="btn text">
+			<span class="text">Flat Needles</span>
+		</div>
+	</a>
+	<a href="/trees/AngledNeedle">
+		<div class="btn text">
+			<span class="text">Angled Needles</span>
+		</div>
+	</a>
+</div>
+</template>
+
+<template name="TreesGroupedNeedle">
+<a href="/trees/needle">Back</a>
+
+<p>It's probably one of these three: </p>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">White Pine</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Red Pine / Norway Pine</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Jack Pine</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesClusteredNeedle">
+<a href="/trees/needle">Back</a>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Tamarack</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesFlatNeedle">
+<a href="/trees/singleneedle">Back</a>
+
+<p>It's probably one of these two:</p>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Balsam Fir</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Hemlock</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesAngledNeedle">
+<a href="/trees/singleneedle">Back</a>
+
+<p>It's probably one of these two:</p>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">White Spruce</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Black Spruce</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesAlternateBranching">
+<a href="/trees/deciduous">Back</a>
+
+<p>Does the tree have simple or compound leaves?</p>
+
+<div class="navigation">
+	<a href="/trees/AlternateBranchingSimpleLeaf">
+		<div class="btn text">
+			<span class="text">Simple Leafs</span>
+		</div>
+	</a>
+	<a href="/trees/AlternateBranchingCompoundLeaf">
+		<div class="btn text">
+			<span class="text">Compound Leafs</span>
+		</div>
+	</a>
+</div>
+</template>
+
+<template name="TreesOppositeBranching">
+<a href="/trees/deciduous">Back</a>
+
+<p>Does the tree have simple or compound leaves?</p>
+
+<div class="navigation">
+	<a href="/trees/OppositeBranchingSimpleLeaf">
+		<div class="btn text">
+			<span class="text">Simple Leaf</span>
+		</div>
+	</a>
+	<a href="/trees/OppositeBranchingCompoundLeaf">
+		<div class="btn text">
+			<span class="text">Compound Leaf</span>
+		</div>
+	</a>
+</div>
+</template>
+
+<template name="TreesAlternateBranchingSimpleLeaf">
+<a href="/trees/alternatebranching">Back</a>
+
+<p>Does the tree have lobed leaves?</p>
+
+<div class="navigation">
+	<a href="/trees/SimpleLobedLeaf">
+		<div class="btn text">
+			<span class="text">Yes</span>
+		</div>
+	</a>
+	<a href="/trees/SimpleNonLobedLeaf">
+		<div class="btn text">
+			<span class="text">No</span>
+		</div>
+	</a>
+</div>
+</template>
+
+<template name="TreesAlternateBranchingCompoundLeaf">
+<a href="/trees/alternatebranching">Back</a>
+
+<p>Does the tree have a plated pith?</p>
+
+<div class="navigation">
+	<a href="/trees/PlatedPith">
+		<div class="btn text">
+			<span class="text">Yes</span>
+		</div>
+	</a>
+	<a href="/trees/NotPlatedPith">
+		<div class="btn text">
+			<span class="text">No</span>
+		</div>
+	</a>
+</div>
+</template>
+
+<template name="TreesSimpleLobedLeaf">
+<a href="/trees/alternatebranchingsimpleleaf">Back</a>
+
+<p>It's probably one of these</p>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Chinkapin Oak</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Burk Oak</span>
+	</div>
+	<div class="btn text">
+		<span class="text">White Oak</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Swamp White Oak</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Black Oak</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Red Oak</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Northern Pin Oak</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesSimpleNonLobedLeaf">
+<a href="/trees/alternatebranchingsimpleleaf">Back</a>
+
+<p>Pick one of these attributes that fits the tree:</p>
+
+<div class="navigation">
+	<a href="/trees/Thorns">
+		<div class="btn text">
+			<span class="text">Thorns</span>
+		</div>
+	</a>
+	<a href="/trees/PaperyBark">
+		<div class="btn text">
+			<span class="text">Papery Bark</span>
+		</div>
+	</a>
+	<a href="/trees/FlattenedStems">
+		<div class="btn text">
+			<span class="text">Flattened Stems</span>
+		</div>
+	</a>
+	<a href="/trees/Other">
+		<div class="btn text">
+			<span class="text">Other</span>
+		</div>
+	</a>
+</div>
+</template>
+
+<template name="TreesThorns">
+<a href="/trees/simplenonlobedleaf">Back</a>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Hawthorn</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesPaperyBark">
+<a href="/trees/simplenonlobedleaf">Back</a>
+
+<p>It's probably one of these three:</p>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Yellow Birch</span>
+	</div>
+	<div class="btn text">
+		<span class="text">River Birch</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Paper Birch</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesFlattenedStems">
+<a href="/trees/simplenonlobedleaf">Back</a>
+
+<p>It's probably one of these three:</p>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Large Tooth Aspen</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Quaking Aspen</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Balm of Gilead</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesOther">
+<a href="/trees/simplenonlobedleaf">Back</a>
+
+<p>Unfortunately, it can't be narrowed down anymore but it should be in this list.</p>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Bluebeech</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Ironwood</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Beech</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Choke Cherry</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Pin Cherry</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Black Cherry</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Hackberry</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Basswood</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Juneberry or Service Berry</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Rock Elm</span>
+	</div>
+	<div class="btn text">
+		<span class="text">American Elm</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Slippery Elm</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Willow</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesPlatedPith">
+<a href="/trees/alternatebranchingcompoundleaf">Back</a>
+
+<p>It's probably one of these two:</p>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Black Walnut</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Butternut</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesNotPlatedPith">
+<a href="/trees/alternatebranchingcompoundleaf">Back</a>
+
+<p>It's probably one of these trees:</p>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Bitternut Hickory</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Shagbark Hickory</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Black Locust</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Honey Locust</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Mountain Ash</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesOppositeBranchingSimpleLeaf">
+<a href="/trees/oppositebranching">Back</a>
+
+<p>Does the leaf have a smooth or a toothed outline?</p>
+
+<div class="navigation">
+	<a href="/trees/SmoothOutline">
+		<div class="btn text">
+			<span class="text">Smooth Outline</span>
+		</div>
+	</a>
+	<a href="/trees/ToothedOutline">
+		<div class="btn text">
+			<span class="text">Toothed Outline</span>
+		</div>
+	</a>
+</div>
+</template>
+
+<template name="TreesOppositeBranchingCompoundLeaf">
+<a href="/trees/oppositebranching">Back</a>
+
+<p>It's probably one of these trees:</p>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Black Ash</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Green Ash</span>
+	</div>
+	<div class="btn text">
+		<span class="text">White Ash Mountain Ash</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Box Elder</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesSmoothOutline">
+<a href="/trees/oppositebranchingsimpleleaf">Back</a>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Sugar Maple</span>
+	</div>
+</div>
+</template>
+
+<template name="TreesToothedOutline">
+<a href="/trees/oppositebranchingsimpleleaf">Back</a>
+
+<p>It's probably one of these two:</p>
+
+<div class="navigation">
+	<div class="btn text">
+		<span class="text">Red Maple</span>
+	</div>
+	<div class="btn text">
+		<span class="text">Silver Maple</span>
+	</div>
+</div>
+</template>
+

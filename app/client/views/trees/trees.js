@@ -34,7 +34,7 @@ Template.SingleTree.onRendered(function() {
 			Router.go('/trees/search/' + value);
 		}
 	}
-});
+});*/
 
 window.Tree = function(obj) {
 	this.combined = "";
@@ -62,4 +62,4 @@ Tree.prototype.rank = function(phrase) {
 	}
 	this.rank[phrase];
 	return count;
-}*/
+}

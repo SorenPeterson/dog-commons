@@ -1,243 +1,94 @@
 <template name="Trees">
-	<div class="header-spacer"></div>
+<div class="header-spacer"></div>
 
-	<div id="message">
-		<p>
-		This a copy of the Minnesota Department of Natural Resources' tree identification information. To start, pick whether the tree is deciduous or coniferous. For more information, please go to the <a class="system-browser" href="http://www.dnr.state.mn.us/trees_shrubs/index.html">Minnesota Department of Natural Resources</a>
-		</p>
+<div id="message">
+	<p>
+	This a copy of the Minnesota Department of Natural Resources' tree identification information. To start, pick whether the tree is deciduous or coniferous. For more information, please go to the <a class="system-browser" href="http://www.dnr.state.mn.us/trees_shrubs/index.html">Minnesota Department of Natural Resources</a>
+	</p>
+</div>
+
+<div class="navigation trees">
+	<div class="row">
+		<a href="/trees/deciduous">
+			<div class="btn-container">
+				<img class="btn" src="/deciduous.png"/>
+				<div class="btn-label">Deciduous</div>
+			</div>
+		</a>
+
+		<a href="/trees/coniferous">
+			<div class="btn-container">
+				<img class="btn" src="/coniferous.png"/>
+				<div class="btn-label">Coniferous</div>
+			</div>
+		</a>
 	</div>
-	
-	<div class="navigation trees">
-		<div class="row">
-			<a href="/trees/type/deciduous">
-				<div class="btn-container">
-					<img class="btn" src="/deciduous.png"/>
-					<div class="btn-label">Deciduous</div>
-				</div>
-			</a>
+</div>
 
-			<a href="/trees/type/coniferous">
-				<div class="btn-container">
-					<img class="btn" src="/coniferous.png"/>
-					<div class="btn-label">Coniferous</div>
-				</div>
-			</a>
-		</div>
-	</div>
-
-	{{> Header pageTitle='Identification'}}
+{{> Header pageTitle='Identification'}}
 </template>
 
 <template name="TreeList">
-	{{> TreesBack}}
+{{> TreesBack}}
 
-	<div class="header-spacer">
-	</div>
+<div class="header-spacer">
+</div>
 
-	<div>
-		<div class="treelist">
-			{{#each trees}}
-				<a href="/trees/tree/{{this._id}}"><h2>{{name}}</h2></a>
-			{{/each}}
-		</div>
+<div>
+	<div class="treelist">
+		{{#each trees}}
+		<a href="/trees/tree/{{this._id}}"><h2>{{name}}</h2></a>
+		{{/each}}
 	</div>
+</div>
 </template>
 
 <template name="SingleTree">
-	{{> TreesBack}}
+{{> TreesBack}}
 
-	<div class="header-spacer">
-	</div>
+<div class="header-spacer">
+</div>
 
-	{{#with tree}}
-		<h2>{{name}}</h2>
-		<h3>
-			Form
-		</h3>
-		<p>
-			{{form}}
-		</p>
-		<h3>
-			Bark
-		</h3>
-		<p>
-			{{bark}}
-		</p>
-		<h3>
-			Leaf
-		</h3>
-		<p>
-			{{leaf}}
-		</p>
-		<h3>
-			Fruit
-		</h3>
-		<p>
-			{{fruit}}
-		</p>
-		<h3>
-			Range
-		</h3>
-		<p>
-			{{range}}
-		</p>
-	{{/with}}
+{{#with tree}}
+<h2>{{name}}</h2>
+<h3>
+	Form
+</h3>
+<p>
+{{form}}
+</p>
+<h3>
+	Bark
+</h3>
+<p>
+{{bark}}
+</p>
+<h3>
+	Leaf
+</h3>
+<p>
+{{leaf}}
+</p>
+<h3>
+	Fruit
+</h3>
+<p>
+{{fruit}}
+</p>
+<h3>
+	Range
+</h3>
+<p>
+{{range}}
+</p>
+{{/with}}
 </template>
 
 <template name="TreesBack">
-	<a class="trees-back" href="{{back}}">
-		<div class="header">
-			<h1 class="trees-back-text">Back</h1>
-		</div>
-	</a>
-</template>
-
-<template name="Coniferous">
-	Needle
-	NotNeedle
-</template>
-
-<template name="Deciduous">
-	AlternateBranching
-	OppositeBranching
-</template>
-
-<template name="Needle">
-	SingleNeedle
-	GroupedNeedl
-	ClusteredNeedle
-</template>
-
-<template name="NotNeedle">
-	Northern White Cedar
-	Red Cedar
-</template>
-
-<template name="SingleNeedle">
-	FlatNeedle
-	AngledNeedle
-</template>
-
-<template name="GroupedNeedle">
-	White Pine
-	Red Pine / Norway Pine
-	Jack Pine
-</template>
-
-<template name="ClusteredNeedle">
-	Tamarack
-</template>
-
-<template name="FlatNeedle">
-	Balsam Fir
-	Hemlock
-</template>
-
-<template name="AngledNeedle">
-	White Spruce
-	Black Spruce
-</template>
-
-<template name="AlternateBranching">
-	AlternateBranchingSimpleLeaf
-	AlternateBranchingCompoundLeaf
-</template>
-
-<template name="OppositeBranching">
-	OppositeBranchingSimpleLeaf
-	OppositeBranchingCompoundLeaf
-</template>
-
-<template name="AlternateBranchingSimpleLeaf">
-	SimpleLobedLeaf
-	SimpleNonLobedLeaf
-</template>
-
-<template name="AlternateBranchingCompoundLeaf">
-	PlatedPith
-	NotPlatedPith
-</template>
-
-<template name="SimpleLobedLeaf">
-	Chinkapin Oak
-	Burk Oak
-	White Oak
-	Swamp White Oak
-	Black Oak
-	Red Oak
-	Northern Pin Oak
-</template>
-
-<template name="SimpleNonLobedLeaf">
-	Thorns
-	PaperyBark
-	FlattenedStems
-	Other
-</template>
-
-<template name="Thorns">
-	Hawthorn
-</template>
-
-<template name="PaperyBark">
-	Yellow Birch
-	River Birch
-	Paper Birch
-</template>
-
-<template name="FlattenedStems">
-	Large Tooth Aspen
-	Quaking Aspen
-	Balm of Gilead
-</template>
-
-<template name="Other">
-	Bluebeech
-	Ironwood
-	Beech
-	Choke Cherry
-	Pin Cherry
-	Black Cherry
-	Hackberry
-	Basswood
-	Juneberry or Service Berry
-	Rock Elm
-	American Elm
-	Slippery Elm
-	Willow
-</template>
-
-<template name="PlatedPith">
-	Black Walnut
-	Butternut
-</template>
-
-<template name="NotPlatedPith">
-	Bitternut Hickory
-	Shagbark Hickory
-	Black Locust
-	Honey Locust
-	Mountain Ash
-</template>
-
-<template name="OppositeBranchingSimpleLeaf">
-	SmoothOutline
-	ToothedOutline
-</template>
-
-<template name="OppositeBranchingCompoundLeaf">
-	Black Ash
-	Green Ash
-	White Ash Mountain Ash
-	Box Elder
-</template>
-
-<template name="SmoothOutline">
-	Sugar Maple
-</template>
-
-<template name="ToothedOutline">
-	Red Maple
-	Silver Maple
+<a class="trees-back" href="{{back}}">
+	<div class="header">
+		<h1 class="trees-back-text">Back</h1>
+	</div>
+</a>
 </template>
 
