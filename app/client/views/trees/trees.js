@@ -11,7 +11,7 @@ Template.TreeList.onRendered(function() {
 	$('.treelist').height(window.innerHeight - $('.header').height());
 });
 
-Template.Trees.events({
+/*Template.Trees.events({
 	'submit form': function(evt, tmpl) {
 		evt.preventDefault();
 		var value = tmpl.find('input[type=text]').value;
@@ -47,5 +47,4 @@ Tree.prototype.rank = function(phrase) {
 	}
 	this.rank[phrase];
 	return count;
-}
-
+}*/
