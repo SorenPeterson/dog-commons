@@ -10,7 +10,8 @@
 }
 
 .navigation.trees {
-	bottom: 200px;
+	top: initial;
+	bottom: 0px;
 }
 
 .navigation.trees form {
