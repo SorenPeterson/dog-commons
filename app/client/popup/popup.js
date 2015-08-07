@@ -5,6 +5,17 @@ var Popup = function(id) {
 	};
 };
 
+Template.Popup.onRendered(function() {
+	var $elem = $(this.find('#popup-msg-content'));
+	var desiredHeight = innerHeight * 0.6;
+	var size = 0.9;
+	do {
+		size += 0.1;
+		var currentHeight = $elem.height();
+		$elem.css('font-size', size + 'em');
+	} while(currentHeight < desiredHeight && size < 1.6)
+});
+
 Template.Popup.helpers({
 	hidden: function() {
 		return Session.get('hide-popup-msg-' + this.id);

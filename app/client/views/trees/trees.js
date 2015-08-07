@@ -7,11 +7,26 @@ Meteor.startup(function() {
 	}
 });
 
+var scroll = new ReactiveVar(0);
+Tracker.autorun(function() {
+	console.log(scroll.get());
+});
 Template.TreeList.onRendered(function() {
-	$('.treelist').height(window.innerHeight - $('.header').height());
+	scrollTo(0, scroll.get());
+});
+Template.TreeList.events({
+	'click .trees-back-text': function() {
+		scroll.set(0);
+	},
+	'click .treelist a': function() {
+		scroll.set(scrollY);
+	}
+});
+Template.SingleTree.onRendered(function() {
+	scrollTo(0, 0);
 });
 
-Template.Trees.events({
+/*Template.Trees.events({
 	'submit form': function(evt, tmpl) {
 		evt.preventDefault();
 		var value = tmpl.find('input[type=text]').value;
@@ -47,5 +62,4 @@ Tree.prototype.rank = function(phrase) {
 	}
 	this.rank[phrase];
 	return count;
-}
-
+}*/

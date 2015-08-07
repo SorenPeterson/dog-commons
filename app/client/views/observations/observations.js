@@ -1,6 +1,6 @@
 var Helpers = {
 	title: function(note) {
-		return (note.content || '').shrink(100);
+		return (note.content || '').shrink(80);
 	}
 };
 

@@ -42,29 +42,6 @@ Router.route('/trees/type/:type', function() {
 		}
 	});
 });
-Router.route('/trees/search/:phrase', function() {
-	Session.set('treesBackUrl', this.originalUrl);
-	this.render('TreeList', {
-		data: function() {
-			return {
-				trees: Trees.find({}).map(function(obj) {
-					return new Tree(obj);
-				}).sort((function(a, b) {
-					var a = a.rank(this.params.phrase);
-					var b = b.rank(this.params.phrase);
-					if(a > b) {
-						return -1;
-					} else if (a === b) {
-						return 0;
-					} else {
-						return 1;
-					}
-				}).bind(this)),
-				back: '/trees'
-			}
-		}
-	});
-});
 Router.route('/trees/tree/:id', function() {
 	if(!Session.get('treesBackUrl')) {
 		Router.go('/trees');
