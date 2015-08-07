@@ -1,0 +1,17 @@
+#popup-msg p {
+	padding-top: 10px;
+}
+
+#popup-msg p:first-child {
+	padding: 0;
+}
+
+#popup-msg .button {
+	bottom: 10px;
+	max-width: 50%;
+}
+
+#popup-msg .button.dontShow {
+	right: 10px;
+}
+

@@ -100,7 +100,7 @@ div br::after {
 	content: 'doge';
 }
 
-#observations-msg {
+#popup-msg {
 	position: fixed;
 	top: 20px;
 	right: 20px;
@@ -111,23 +111,6 @@ div br::after {
 	box-shadow: 0 3px 10px black;
 	border-radius: 10px;
 	padding: 10px;
-}
-
-#observations-msg p {
-	padding-top: 10px;
-}
-
-#observations-msg p:first-child {
-	padding: 0;
-}
-
-#observations-msg .button {
-	bottom: 10px;
-	max-width: 50%;
-}
-
-#observations-msg .button.dontShow {
-	right: 10px;
 }
 
 .note-expanded .photos {
