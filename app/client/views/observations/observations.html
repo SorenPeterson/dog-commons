@@ -37,12 +37,19 @@
 			<div class="note-expanded">
 				<div class="content" contentEditable="true">{{content}}</div>
 				{{#each photos}}
-					<img class="photo" src="{{uri}}"/>
+					{{> Photo}}
 				{{/each}}
 			</div>
 		{{/with}}
 	</div>
 
 	{{> Header pageTitle='Observations'}}
+</template>
+
+<template name="Photo">
+	<div class="photo-container">
+		<img class="photo" src="{{uri}}"/>
+		<div class="photo-delete-button">X</div>
+	</div>
 </template>
 

@@ -113,6 +113,29 @@ div br::after {
 	padding: 10px;
 }
 
+<<<<<<< HEAD
+=======
+#observations-msg p {
+	padding-top: 10px;
+}
+
+#observations-msg p:first-child {
+	padding: 0;
+}
+
+#observations-msg .button {
+	bottom: 10px;
+	max-width: 50%;
+}
+
+#observations-msg .button.dontShow {
+	right: 10px;
+}
+
+.note-expanded .photo-container {
+	position: relative;
+}
+
 .note-expanded .photos {
 	padding: 5px;
 	margin: 5px 5px 10px 5px;
@@ -121,10 +144,25 @@ div br::after {
 	background-color: #eee;
 }
 
+.note-expanded .photo-delete-button {
+	text-align: center;
+	background-image: url('/x.png');
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	border: 1px solid black;
+	background-color: white;
+	border-radius: 100%;
+}
+
 .note-expanded img.photo {
 	display: block;
-	margin: auto;
+	margin: 2.5%;
 	border-radius: 5px;
 	box-shadow: 0 2px 3px black;
 	width: 95%;
 }
+
