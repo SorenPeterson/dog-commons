@@ -48,6 +48,7 @@ div#action-btns {
 }
 
 .note-compact {
+	position: relative;
 	border-bottom: 1px solid black;
 	padding: 10px 0;
 }
@@ -66,6 +67,12 @@ div#action-btns {
 
 .note-compact:last-child {
 	border: none;
+}
+
+div.button.open-observation {
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }
 
 .note-expanded h1:empty::after {
@@ -138,42 +145,3 @@ div br::after {
 	box-shadow: 0 2px 3px black;
 	width: 95%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
