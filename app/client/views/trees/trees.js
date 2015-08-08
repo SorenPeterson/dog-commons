@@ -63,3 +63,8 @@ Tree.prototype.rank = function(phrase) {
 	this.rank[phrase];
 	return count;
 }
+
+Template.Dichotomous.events({
+
+});
+

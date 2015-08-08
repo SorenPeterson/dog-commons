@@ -56,32 +56,43 @@ Router.route('/trees/tree/:id', function() {
 	});
 });
 
-Router.route('/trees/Coniferous');
-Router.route('/trees/Deciduous');
-Router.route('/trees/Needle');
-Router.route('/trees/NotNeedle');
-Router.route('/trees/SingleNeedle');
-Router.route('/trees/GroupedNeedle');
-Router.route('/trees/ClusteredNeedle');
-Router.route('/trees/FlatNeedle');
-Router.route('/trees/AngledNeedle');
-Router.route('/trees/AlternateBranching');
-Router.route('/trees/OppositeBranching');
-Router.route('/trees/AlternateBranchingSimpleLeaf');
-Router.route('/trees/AlternateBranchingCompoundLeaf');
-Router.route('/trees/SimpleLobedLeaf');
-Router.route('/trees/SimpleNonLobedLeaf');
-Router.route('/trees/Thorns');
-Router.route('/trees/PaperyBark');
-Router.route('/trees/FlattenedStems');
-Router.route('/trees/Other');
-Router.route('/trees/Other2');
-Router.route('/trees/PlatedPith');
-Router.route('/trees/NotPlatedPith');
-Router.route('/trees/OppositeBranchingSimpleLeaf');
-Router.route('/trees/OppositeBranchingCompoundLeaf');
-Router.route('/trees/SmoothOutline');
-Router.route('/trees/ToothedOutline');
+(function() {
+	var names = ['Coniferous',
+	'Deciduous',
+	'Needle',
+	'NotNeedle',
+	'SingleNeedle',
+	'GroupedNeedle',
+	'ClusteredNeedle',
+	'FlatNeedle',
+	'AngledNeedle',
+	'AlternateBranching',
+	'OppositeBranching',
+	'AlternateBranchingSimpleLeaf',
+	'AlternateBranchingCompoundLeaf',
+	'SimpleLobedLeaf',
+	'SimpleNonLobedLeaf',
+	'Thorns',
+	'PaperyBark',
+	'FlattenedStems',
+	'Other',
+	'Other2',
+	'PlatedPith',
+	'NotPlatedPith',
+	'OppositeBranchingSimpleLeaf',
+	'OppositeBranchingCompoundLeaf',
+	'SmoothOutline',
+	'ToothedOutline'];
+	
+	for(var i in names) {
+		Router.route('/trees/' + names[i], (function(name) {
+			return function() {
+				this.layout('Dichotomous');
+				this.render('Trees' + name);
+			}
+		})(names[i]));
+	}
+})()
 
 // REST(ish) API
 // Cordova background/foreground can post GPS data HERE
