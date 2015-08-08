@@ -75,6 +75,7 @@ Router.route('/trees/Thorns');
 Router.route('/trees/PaperyBark');
 Router.route('/trees/FlattenedStems');
 Router.route('/trees/Other');
+Router.route('/trees/Other2');
 Router.route('/trees/PlatedPith');
 Router.route('/trees/NotPlatedPith');
 Router.route('/trees/OppositeBranchingSimpleLeaf');
