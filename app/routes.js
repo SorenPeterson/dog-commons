@@ -31,6 +31,18 @@ Router.route('/observations/edit/:id', function() {
 });
 
 Router.route('/trees');
+Router.route('/noTrees', function() {
+	if(!Session.get('treesBackUrl')) {
+		Router.go('/trees');
+	}
+	this.render('NoTrees', {
+		data: function() {
+			return {
+				back: Session.get('treesBackUrl')
+			}
+		}
+	});
+});
 Router.route('/trees/type/:type', function() {
 	Session.set('treesBackUrl', this.originalUrl);
 	this.render('TreeList', {

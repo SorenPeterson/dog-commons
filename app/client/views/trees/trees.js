@@ -65,6 +65,18 @@ Tree.prototype.rank = function(phrase) {
 }
 
 Template.Dichotomous.events({
-
+	'click .dichotomous-container .tree-item': function(evt, tmpl) {
+		var name = $(evt.target).find('span').text();
+		var pattern = new RegExp(name, 'i');
+		var tree = Trees.findOne({name: pattern});
+		console.log('hi');
+		Session.set('treesBackUrl', window.location.pathname);
+		console.log('hi');
+		if(tree) {
+			Router.go('/trees/tree/' + tree._id);
+		} else {
+			Router.go('/notrees');
+		}
+	}
 });
 

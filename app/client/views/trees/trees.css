@@ -26,3 +26,7 @@
 	margin: 0;
 }
 
+.dichotomous-container .btn.text span.text {
+	pointer-events: none;
+}
+

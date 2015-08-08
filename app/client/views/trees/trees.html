@@ -93,5 +93,17 @@
 </template>
 
 <template name="Dichotomous">
-	{{> yield}}
+	<div class="dichotomous-container">
+		{{> yield}}
+	</div>
+</template>
+
+<template name="NoTrees">
+	{{> TreesBack}}
+
+	<div class="header-spacer"></div>
+
+	<div id="message">
+		<p>I'm sorry but it looks like we don't have any information on that tree.</p>
+	</div>
 </template>
