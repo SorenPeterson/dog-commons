@@ -1,94 +1,110 @@
 <template name="Trees">
-	<div class="header-spacer"></div>
+<div class="header-spacer"></div>
 
-	<div id="message">
-		<p>
-		This a copy of the Minnesota Department of Natural Resources' tree identification information. To start, pick whether the tree is deciduous or coniferous. For more information, please go to the <a class="system-browser" href="http://www.dnr.state.mn.us/trees_shrubs/index.html">Minnesota Department of Natural Resources</a>
-		</p>
+<div id="message">
+	<p>
+	This a copy of the Minnesota Department of Natural Resources' tree identification information. To start, pick whether the tree is deciduous or coniferous. For more information, please go to the <a class="system-browser" href="http://www.dnr.state.mn.us/trees_shrubs/index.html">Minnesota Department of Natural Resources</a>
+	</p>
+</div>
+
+<div class="navigation trees">
+	<div class="row">
+		<a href="/trees/deciduous">
+			<div class="btn-container">
+				<img class="btn" src="/deciduous.png"/>
+				<div class="btn-label">Deciduous</div>
+			</div>
+		</a>
+
+		<a href="/trees/coniferous">
+			<div class="btn-container">
+				<img class="btn" src="/coniferous.png"/>
+				<div class="btn-label">Coniferous</div>
+			</div>
+		</a>
 	</div>
-	
-	<div class="navigation trees">
-		<div class="row">
-			<a href="/trees/type/deciduous">
-				<div class="btn-container">
-					<img class="btn" src="/deciduous.png"/>
-					<div class="btn-label">Deciduous</div>
-				</div>
-			</a>
+</div>
 
-			<a href="/trees/type/coniferous">
-				<div class="btn-container">
-					<img class="btn" src="/coniferous.png"/>
-					<div class="btn-label">Coniferous</div>
-				</div>
-			</a>
-		</div>
-	</div>
-
-	{{> Header pageTitle='Identification'}}
+{{> Header pageTitle='Identification'}}
 </template>
 
 <template name="TreeList">
-	{{> TreesBack}}
+{{> TreesBack}}
 
-	<div class="header-spacer">
-	</div>
+<div class="header-spacer">
+</div>
 
-	<div>
-		<div class="treelist">
-			{{#each trees}}
-				<a href="/trees/tree/{{this._id}}"><h2>{{name}}</h2></a>
-			{{/each}}
-		</div>
+<div>
+	<div class="treelist">
+		{{#each trees}}
+		<a href="/trees/tree/{{this._id}}"><h2>{{name}}</h2></a>
+		{{/each}}
 	</div>
+</div>
 </template>
 
 <template name="SingleTree">
-	{{> TreesBack}}
+{{> TreesBack}}
 
-	<div class="header-spacer">
-	</div>
+<div class="header-spacer">
+</div>
 
-	{{#with tree}}
-		<h2>{{name}}</h2>
-		<h3>
-			Form
-		</h3>
-		<p>
-			{{form}}
-		</p>
-		<h3>
-			Bark
-		</h3>
-		<p>
-			{{bark}}
-		</p>
-		<h3>
-			Leaf
-		</h3>
-		<p>
-			{{leaf}}
-		</p>
-		<h3>
-			Fruit
-		</h3>
-		<p>
-			{{fruit}}
-		</p>
-		<h3>
-			Range
-		</h3>
-		<p>
-			{{range}}
-		</p>
-	{{/with}}
+{{#with tree}}
+<h2>{{name}}</h2>
+<h3>
+	Form
+</h3>
+<p>
+{{form}}
+</p>
+<h3>
+	Bark
+</h3>
+<p>
+{{bark}}
+</p>
+<h3>
+	Leaf
+</h3>
+<p>
+{{leaf}}
+</p>
+<h3>
+	Fruit
+</h3>
+<p>
+{{fruit}}
+</p>
+<h3>
+	Range
+</h3>
+<p>
+{{range}}
+</p>
+{{/with}}
 </template>
 
 <template name="TreesBack">
-	<a class="trees-back" href="{{back}}">
-		<div class="header">
-			<h1 class="trees-back-text">Back</h1>
-		</div>
-	</a>
+<a class="trees-back" href="{{back}}">
+	<div class="header">
+		<h1 class="trees-back-text">Back</h1>
+	</div>
+</a>
 </template>
 
+<template name="Dichotomous">
+	<div class="header-spacer"></div>
+	<div class="dichotomous-container">
+		{{> yield}}
+	</div>
+</template>
+
+<template name="NoTrees">
+	{{> TreesBack}}
+
+	<div class="header-spacer"></div>
+
+	<div id="message">
+		<p>I'm sorry but it looks like we don't have any information on that tree.</p>
+	</div>
+</template>

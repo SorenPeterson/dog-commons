@@ -31,6 +31,18 @@ Router.route('/observations/edit/:id', function() {
 });
 
 Router.route('/trees');
+Router.route('/noTrees', function() {
+	if(!Session.get('treesBackUrl')) {
+		Router.go('/trees');
+	}
+	this.render('NoTrees', {
+		data: function() {
+			return {
+				back: Session.get('treesBackUrl')
+			}
+		}
+	});
+});
 Router.route('/trees/type/:type', function() {
 	Session.set('treesBackUrl', this.originalUrl);
 	this.render('TreeList', {
@@ -56,6 +68,43 @@ Router.route('/trees/tree/:id', function() {
 	});
 });
 
+(function() {
+	var names = ['Coniferous',
+	'Deciduous',
+	'Needle',
+	'NotNeedle',
+	'SingleNeedle',
+	'GroupedNeedle',
+	'ClusteredNeedle',
+	'FlatNeedle',
+	'AngledNeedle',
+	'AlternateBranching',
+	'OppositeBranching',
+	'AlternateBranchingSimpleLeaf',
+	'AlternateBranchingCompoundLeaf',
+	'SimpleLobedLeaf',
+	'SimpleNonLobedLeaf',
+	'Thorns',
+	'PaperyBark',
+	'FlattenedStems',
+	'Other',
+	'Other2',
+	'PlatedPith',
+	'NotPlatedPith',
+	'OppositeBranchingSimpleLeaf',
+	'OppositeBranchingCompoundLeaf',
+	'SmoothOutline',
+	'ToothedOutline'];
+	
+	for(var i in names) {
+		Router.route('/trees/' + names[i], (function(name) {
+			return function() {
+				this.layout('Dichotomous');
+				this.render('Trees' + name);
+			}
+		})(names[i]));
+	}
+})()
 
 // REST(ish) API
 // Cordova background/foreground can post GPS data HERE
