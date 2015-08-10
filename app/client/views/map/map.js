@@ -14,7 +14,7 @@ Template.Map.onRendered(function() {
 	var marker;
 	Tracker.autorun(function() {
 		if(Mapbox.loaded()) {
-			marker ? marker.remove : 1;
+			marker ? marker.remove() : 1;
 			var currentLocation = Geolocation.latLng();
 			if(currentLocation) {
 				marker = L.marker([currentLocation.lat, currentLocation.lng], {}).addTo(map);
