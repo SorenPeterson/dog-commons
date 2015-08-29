@@ -76,7 +76,19 @@
 	width: 100%;
 }
 
+.home.title p {
+	font-size: 0.8em;
+}
+
 .home.title * {
 	margin: 0;
+}
+
+.credit.box p.information.credit {
+	font-size: 0.8em;
+}
+
+.credit.box p.information.credit:last-child {
+	padding-bottom: 10px;
 }
 
