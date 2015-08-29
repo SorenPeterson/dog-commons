@@ -31,7 +31,13 @@ var Pedometer = {
 		};
 		this.started.set(true);
 	},
-	stop: function() {}
+	stop: function() {},
+	miles: function() {
+		return (this.distance.get() * 0.621371).toFixed(2);
+	},
+	steps: function() {
+		return Math.floor(this.miles() * 2000);
+	}
 };
 
 Meteor.startup(function() {
@@ -65,10 +71,10 @@ Template.Pedometer.helpers({
 		return Pedometer.started.get();
 	},
 	miles: function() {
-		return (Pedometer.distance.get() * 0.621371).toFixed(2);
+		return Pedometer.miles();
 	},
 	steps: function() {
-		return Math.floor(Pedometer.distance.get() * 6213.71);
+		return Pedometer.steps();
 	}
 });
 
