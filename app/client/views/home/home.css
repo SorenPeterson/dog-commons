@@ -22,8 +22,8 @@
 .navigation .btn {
 	width: 30vw;
 	height: 30vw;
-	max-width: 20vh;
-	max-height: 20vh;
+	/*max-width: 20vh;
+	max-height: 20vh;*/
 	display: inline-block;
 	border-radius: 100%;
 	box-shadow: 0 2px 4px black;
@@ -36,21 +36,23 @@
 .navigation.home .btn {
 	width: 20vw;
 	height: 20vw;
-	max-width: 15vh;
-	max-height: 15vh;
+	/*max-width: 15vh;
+	max-height: 15vh;*/
 }
 
 .navigation .btn.corner {
 	position: relative;
 	top: 10vw;
+	margin-left: -2vw;
+	margin-right: -2vw;
 }
 
 .navigation .btn.logo {
 	background-color: #5665fd;
 	width: 60vw;
 	height: 60vw;
-	max-width: 40vh;
-	max-height: 40vh;
+	/*max-width: 40vh;
+	max-height: 40vh;*/
 }
 
 .navigation .btn.text {
