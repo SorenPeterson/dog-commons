@@ -5,6 +5,7 @@ Template.Splash.onRendered(function() {
 
 Template.Splash.events({
 	'click': function() {
+		(new Audio('/woof.mp3')).play();
 		Router.go('/home');
 	}
 });
