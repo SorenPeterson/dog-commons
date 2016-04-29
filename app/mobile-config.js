@@ -1,7 +1,7 @@
 App.info({
-	name: '3030 - Nature Based Therapy',
+	name: 'Dog Commons',
 	description: 'Minnesota Landscape Arboretum',
-	version: '0.2.3'
+	version: '1.0.0'
 });
 
 App.icons({
@@ -43,4 +43,3 @@ App.accessRule('*');
 
 App.setPreference('StatusBarOverlaysWebView', 'false');
 App.setPreference('StatusBarStyle', 'default');
-
