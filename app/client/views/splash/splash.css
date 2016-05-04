@@ -1,20 +1,24 @@
 .splash {
 	position: absolute;
-	top: 50vh;
 	width: 100%;
 	text-align: center;
-	transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
+	font-size: 2em;
+	text-shadow: 2px 2px 2px white;
 }
 
-.splash h1 {
+h1.splash {
+	top: 0;
 	margin: 20px;
+}
+
+h2.splash {
+	bottom: 0;
 }
 
 .splash-bg {
 	width: 100vw;
 	height: 100vh;
-	background: url('/splash.png') center center fixed; 
+	background: url('/splash.png') center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
