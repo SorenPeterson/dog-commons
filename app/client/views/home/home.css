@@ -31,6 +31,7 @@
 	text-align: center;
 	margin: 0 1vw;
 	background-color: #7be7d8;
+	background-size: contain;
 }
 
 .navigation.home .btn {
@@ -53,6 +54,23 @@
 	height: 60vw;
 	/*max-width: 40vh;
 	max-height: 40vh;*/
+	background-image: url(/dogcommons.png);
+}
+
+.navigation .btn.mla {
+	background-image: url(/mla.png)
+}
+
+.navigation .btn.map {
+	background-image: url(/mapicon.png)
+}
+
+.navigation .btn.diary {
+	background-image: url(/diaryicon.png)
+}
+
+.navigation .btn.foot {
+	background-image: url(/footicon.png)
 }
 
 .navigation .btn.text {
