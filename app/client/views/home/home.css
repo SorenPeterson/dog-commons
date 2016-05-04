@@ -30,7 +30,7 @@
 	vertical-align: top;
 	text-align: center;
 	margin: 0 1vw;
-	background-color: #7be7d8;
+	background-color: #0c8a3b;
 	background-size: contain;
 }
 
@@ -49,7 +49,6 @@
 }
 
 .navigation .btn.logo {
-	background-color: #5665fd;
 	width: 60vw;
 	height: 60vw;
 	/*max-width: 40vh;
