@@ -20,8 +20,6 @@
 }
 
 .navigation .btn {
-	width: 30vw;
-	height: 30vw;
 	/*max-width: 20vh;
 	max-height: 20vh;*/
 	display: inline-block;
@@ -35,17 +33,17 @@
 }
 
 .navigation.home .btn {
-	width: 20vw;
-	height: 20vw;
+	width: 25vw;
+	height: 25vw;
 	/*max-width: 15vh;
 	max-height: 15vh;*/
 }
 
 .navigation .btn.corner {
 	position: relative;
-	top: 10vw;
-	margin-left: -2vw;
-	margin-right: -2vw;
+	top: 15vw;
+	margin-left: -5vw;
+	margin-right: -5vw;
 }
 
 .navigation .btn.logo {
