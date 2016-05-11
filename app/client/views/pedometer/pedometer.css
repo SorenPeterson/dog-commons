@@ -1,5 +1,5 @@
 .navigation .btn.pedometer-start {
-	background-color: #7be7d8;
+	background-color: #0c8a3b;
 }
 
 .navigation .btn.pedometer-stop {
@@ -9,4 +9,3 @@
 .navigation.pedometer .row:first-child {
 	margin-bottom: 50px;
 }
-
