@@ -12,12 +12,26 @@ Router.route('/', function() {
 	name: 'splash'
 });
 
-Router.route('/home');
-Router.route('/map');
-Router.route('/art');
-Router.route('/birds');
-Router.route('/pedometer');
-Router.route('/mla');
+Router.route('/home', function () {
+	this.render('Home');
+}, {
+	name: 'home'
+});
+Router.route('/map', function () {
+	this.render('Map');
+}, {
+	name: 'map'
+});
+Router.route('/art', function () {
+	this.render('Art');
+}, {
+	name: 'art'
+});
+Router.route('/pedometer', function () {
+	this.render('Pedometer');
+}, {
+	name: 'pedometer'
+});
 
 Router.route('/observations');
 Router.route('/observations/edit/:id', function() {
@@ -29,82 +43,6 @@ Router.route('/observations/edit/:id', function() {
 		}
 	});
 });
-
-Router.route('/trees');
-Router.route('/noTrees', function() {
-	if(!Session.get('treesBackUrl')) {
-		Router.go('/trees');
-	}
-	this.render('NoTrees', {
-		data: function() {
-			return {
-				back: Session.get('treesBackUrl')
-			}
-		}
-	});
-});
-Router.route('/trees/type/:type', function() {
-	Session.set('treesBackUrl', this.originalUrl);
-	this.render('TreeList', {
-		data: function() {
-			return {
-				trees: Trees.find({type: this.params.type}),
-				back: '/trees'
-			}
-		}
-	});
-});
-Router.route('/trees/tree/:id', function() {
-	if(!Session.get('treesBackUrl')) {
-		Router.go('/trees');
-	}
-	this.render('SingleTree', {
-		data: function() {
-			return {
-				tree: Trees.findOne({_id: this.params.id}),
-				back: Session.get('treesBackUrl')
-			}
-		}
-	});
-});
-
-(function() {
-	var names = ['Coniferous',
-	'Deciduous',
-	'Needle',
-	'NotNeedle',
-	'SingleNeedle',
-	'GroupedNeedle',
-	'ClusteredNeedle',
-	'FlatNeedle',
-	'AngledNeedle',
-	'AlternateBranching',
-	'OppositeBranching',
-	'AlternateBranchingSimpleLeaf',
-	'AlternateBranchingCompoundLeaf',
-	'SimpleLobedLeaf',
-	'SimpleNonLobedLeaf',
-	'Thorns',
-	'PaperyBark',
-	'FlattenedStems',
-	'Other',
-	'Other2',
-	'PlatedPith',
-	'NotPlatedPith',
-	'OppositeBranchingSimpleLeaf',
-	'OppositeBranchingCompoundLeaf',
-	'SmoothOutline',
-	'ToothedOutline'];
-	
-	for(var i in names) {
-		Router.route('/trees/' + names[i], (function(name) {
-			return function() {
-				this.layout('Dichotomous');
-				this.render('Trees' + name);
-			}
-		})(names[i]));
-	}
-})()
 
 // REST(ish) API
 // Cordova background/foreground can post GPS data HERE
@@ -151,4 +89,3 @@ Router.route('/api/geolocation', function() {
 	where: 'server',
 	name: 'GeolocationBGRoute'
 });
-
