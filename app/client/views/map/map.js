@@ -26,6 +26,6 @@ Template.Map.onRendered(function() {
 var mapboxOnLoaded = function() {
 	L.mapbox.accessToken = 'pk.eyJ1Ijoic29yZW40NjgiLCJhIjoiOTZiMTc3MThlZjFlMTFmOGQ0NjIwNzcwODJhZTM4YWQifQ.Ycl3ox-mvLD4IM64nGNCxA';
 	map = L.mapbox.map('map', 'soren468.03nalcef');
-	var center = new L.LatLng(44.859180, -93.614343);
-	map.setView(center, 14);
+	var center = new L.LatLng(44.863, -93.627);
+	map.setView(center, 16);
 };

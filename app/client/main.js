@@ -1,5 +1,16 @@
 Meteor.startup(function() {
 	Mapbox.load();
+
+	ShareIt.configure({
+		sites: {
+			facebook: {
+				'appId': '1717747728494318'
+			},
+		},
+		iconOnly: true,
+		faClass: 'square',
+		faSize: 'fa-lg'
+	});
 });
 
 Template.Layout.events({
@@ -14,4 +25,3 @@ Template.Layout.events({
 		window.open(href, '_system', 'location=yes');
 	}
 });
-

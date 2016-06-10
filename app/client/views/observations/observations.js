@@ -72,6 +72,14 @@ Template.EditObservation.events({
 Template.EditObservation.helpers({
 	photos: function() {
 		return Photos.find({noteId: this._id});
+	},
+	shareData: function () {
+		var note = Notes.findOne({_id: this.openNote._id});
+		return {
+			description: note.content,
+			title: Helpers.title(note.content),
+			author: Meteor.user().profile.name
+		}
 	}
 });
 
