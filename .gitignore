@@ -3,4 +3,5 @@
 .meteor/meteorite
 **/.DS_Store
 /devbuild/*
+settings.json
 
