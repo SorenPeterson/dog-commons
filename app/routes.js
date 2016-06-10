@@ -1,4 +1,4 @@
-/* Routing */
+	/* Routing */
 Router.onBeforeAction(function(args) {
 	this.layout('Layout');
 	this.next();
@@ -33,7 +33,11 @@ Router.route('/pedometer', function () {
 	name: 'pedometer'
 });
 
-Router.route('/observations');
+Router.route('/observations', function () {
+	this.render('Observations');
+}, {
+	name: 'observations'
+});
 Router.route('/observations/edit/:id', function() {
 	this.render('EditObservation', {
 		data: function() {
