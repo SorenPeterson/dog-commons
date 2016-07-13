@@ -1,7 +1,7 @@
 App.info({
 	name: 'Dog Commons',
-	description: 'Minnesota Landscape Arboretum',
-	version: '1.0.0'
+	description: 'Dog Commons Park',
+	version: '1.0.1'
 });
 
 App.icons({
